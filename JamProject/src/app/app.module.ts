@@ -13,6 +13,7 @@ import { DummyResultComponent } from './dummy-result/dummy-result.component';
 import { SongkicklistComponent } from './songkicklist/songkicklist.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'dummy-result', component: DummyResultComponent}
 ]
 
