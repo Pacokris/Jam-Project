@@ -14,7 +14,8 @@ import { SongkicklistComponent } from './songkicklist/songkicklist.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dummy-result', component: DummyResultComponent}
+  {path: 'songkicklist', component: SongkicklistComponent},
+  {path: 'home', component: HomeComponent}
 ]
 
 @NgModule({

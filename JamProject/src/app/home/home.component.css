@@ -1,0 +1,14 @@
+.centerBtn {
+    display: block;
+    margin: 10vw auto;
+    width: 15%;
+}
+
+.purpleBtn {
+    background: purple;
+    color: white;
+}
+
+.bigBtn {
+    font-size: 1.5em;
+}
