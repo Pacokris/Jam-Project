@@ -1,0 +1,9 @@
+<app-main-nav></app-main-nav>
+<div class="div">
+    <h2 class="titreListe">Liste des concerts</h2>
+    <ul class="listeConcerts" *ngFor="let event of events">
+        <li>{{event.displayName}}</li>
+        <li>{{event.start.time}}</li>
+        <li><a href={{event.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
+    </ul>
+</div>

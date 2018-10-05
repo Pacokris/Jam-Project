@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+body{
+    background-image: url("/src/assets/concert.jpg");
+    /* background-position: center; */
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
