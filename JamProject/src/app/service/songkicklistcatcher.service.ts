@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SongkicklistcatcherService {
 
-  public _url: string = "assets/calendarU2.json";
+  public _url: string = "https://api.songkick.com/api/3.0/artists/313388/calendar.json?apikey=R82Hox7PJZDJyV0G";
 
   constructor(private http: HttpClient) { }
 
