@@ -19,7 +19,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: ListComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  { path: 'map', component: MapComponent }
 ];
 
 @NgModule({
