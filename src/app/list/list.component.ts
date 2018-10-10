@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventCatcherService } from '../services/event-catcher.service';
+
 
 @Component({
   selector: 'app-list',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  public events = [];
+
+  constructor(private _EventCatcherService: EventCatcherService) { }
 
   ngOnInit() {
+    this._EventCatcherService.getEventListCatcher()
+        .subscribe(data=> {
+          this.events = data.resultsPage.results.event;
+        })
   }
 
 }

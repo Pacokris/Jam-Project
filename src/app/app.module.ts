@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
+<<<<<<< HEAD
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+=======
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> origin/mergeListMap
 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
@@ -40,6 +44,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatButtonModule,
     MatToolbarModule,
     MatRadioModule,
