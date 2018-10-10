@@ -11,6 +11,12 @@
     padding-top: 15%;
 }
 
+.btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
 .mat-raised-button.mat-primary {
     background-color:darkmagenta;
 }

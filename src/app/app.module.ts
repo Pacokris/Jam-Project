@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
@@ -15,6 +16,8 @@ import { EventComponent } from './event/event.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -39,6 +42,10 @@ const routes: Routes = [
     BrowserModule,
     MatButtonModule,
     MatToolbarModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'
