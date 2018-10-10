@@ -11,7 +11,7 @@ export class MapComponent implements OnInit {
   longitude = 4.84671;
   zoom = 15;
 
-  markers: marker[] = [
+  markers = [
 	  {
 		  lat: 45.743858,
 		  lng: 4.84871,

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
@@ -12,6 +13,14 @@ import { ListComponent } from './list/list.component';
 import { MapComponent } from './map/map.component';
 import { EventComponent } from './event/event.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'list', component: ListComponent},
+  {path: 'home', component: HomeComponent}
+];
 
 @NgModule({
   declarations: [
@@ -27,6 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    MatButtonModule,
+    MatToolbarModule,
+    RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'
     }),
