@@ -11,6 +11,7 @@ import { RhrnComponent } from './rhrn/rhrn.component';
 import { ListComponent } from './list/list.component';
 import { MapComponent } from './map/map.component';
 import { EventComponent } from './event/event.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EventComponent } from './event/event.component';
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_KEY'
-    })
+    }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
