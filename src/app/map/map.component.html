@@ -3,3 +3,29 @@
 </p>
 
 <app-event></app-event>
+
+<agm-map [latitude] = "latitude" [longitude] = "longitude" [zoom] = "zoom" (mapClick)="onChoseLocation($event)">
+
+    <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+    </agm-marker>
+
+</agm-map>
+
+<!-- <agm-map [latitude]="59.326242" [longitude]="17.8419719" >
+    <agm-marker [latitude]="59.326242" [longitude]="17.8419719">
+      
+    </agm-marker>
+  </agm-map>
+ -->
+
