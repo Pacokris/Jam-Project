@@ -1,24 +1,26 @@
 <app-nav></app-nav>
 <app-event></app-event>
 
-
 <agm-map [latitude] = "latitude" [longitude] = "longitude" [zoom] = "zoom" (mapClick)="onChoseLocation($event)">
 
     <agm-marker 
-      *ngFor="let m of markers; let i = index"
+      *ngFor="let m of events; let i = index"
       (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
+      [latitude]="m.venue.lat"
+      [longitude]="m.venue.lng"
       [label]="m.label"
       [markerDraggable]="m.draggable"
       (dragEnd)="markerDragEnd(m, $event)">
       
     <agm-info-window>
-      <strong>InfoWindow content</strong>
+      <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
+      <p>{{m.displayName}}</p>
+      <a class="tickets" href={{m.uri}} target="_blank"><button class="btn btn-success">reservation</button></a>
     </agm-info-window>
     </agm-marker>
 
 </agm-map>
+
 
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventCatcherService } from '../services/event-catcher.service';
 
 @Component({
 	selector: 'app-map',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-	latitude = 45.74846;
-	longitude = 4.84671;
-	zoom = 15;
+	latitude = 46.74846;
+	longitude = 3.84671;
+	zoom = 5;
 
 	markers = [
 		{
@@ -28,10 +29,15 @@ export class MapComponent implements OnInit {
 			label: 'C',
 		}
 	]
+	public events = [];
 
-	constructor() { }
+	constructor(private _EventCatcherService: EventCatcherService) { }
 
 	ngOnInit() {
-	}
+		this._EventCatcherService.getEventListCatcher()
+			.subscribe(data=> {
+			  this.events = data.resultsPage.results.event;
+			})
+	  }
 
 }
