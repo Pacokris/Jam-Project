@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
+import { ActivatedRoute, Params } from "@angular/router"; 
+
 
 @Component({
 	selector: 'app-map',
@@ -30,14 +32,18 @@ export class MapComponent implements OnInit {
 		}
 	]
 	public events = [];
+	public inputSearch : string;
 
-	constructor(private _EventCatcherService: EventCatcherService) { }
+
+	constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute) { }
 
 	ngOnInit() {
-		this._EventCatcherService.getEventListCatcher()
-			.subscribe(data=> {
-			  this.events = data.resultsPage.results.event;
-			})
+		this.route.params.subscribe((params: Params) =>{
+			this.inputSearch = params['value'];
+			this._EventCatcherService.getEventListCatcher(this.inputSearch)
+			.subscribe(data=> 
+			  this.events = data.resultsPage.results.event);
+			});
+		  }
+	  
 	  }
-
-}

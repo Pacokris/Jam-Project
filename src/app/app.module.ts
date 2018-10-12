@@ -23,8 +23,12 @@ import { MatInputModule } from '@angular/material/input';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: ListComponent},
+  {path: 'list/:value', component: ListComponent},
   {path: 'home', component: HomeComponent},
-  { path: 'map', component: MapComponent }
+  { path: 'map', component: MapComponent },
+  { path: 'map/:value', component: MapComponent },
+  { path: 'result/:value', component: ResultComponent}
+
 ];
 
 @NgModule({
