@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'dream';
+    src:url(/src/assets/fonts/Dream.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.mat-raised-button.mat-primary {
+    background-color:darkmagenta;
+}
+
+.mat-raised-button {
+    display: flex;
+    align-items: center;
+    height: 12vw;
+    font-family: 'dream';
+    font-weight: bold;
+    font-size: 120%;
+    border-radius: 5px;
+}
+
+.mat-elevation-z20 {
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+}
+
+.mat-elevation-z20:hover {
+    box-shadow:  1px 1px 5px rgb(250, 243, 142), -1px -1px 5px rgb(250, 243, 142), -1px 1px 5px rgb(250, 243, 142), 1px -1px 5px rgb(250, 243, 142), 1px 1px 10px rgb(252, 29, 241), -1px -1px 10px rgb(252, 29, 241), -1px 1px 10px rgb(252, 29, 241), 1px -1px 10px rgb(252, 29, 241);
+}
+
+@media screen and (min-width: 640px) {
+    .mat-raised-button {
+        height: 4vw;
+        font-size: 150%;
+        border-radius: 15px;
+    }
+}
