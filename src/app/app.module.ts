@@ -26,6 +26,7 @@ const routes: Routes = [
   {path: 'list/:value', component: ListComponent},
   {path: 'home', component: HomeComponent},
   { path: 'map', component: MapComponent },
+  { path: 'rhrn', component: RhrnComponent },
   { path: 'map/:value', component: MapComponent },
   { path: 'result/:value', component: ResultComponent}
 
