@@ -1,32 +1,33 @@
-<<<<<<< HEAD
-<agm-map [latitude] = "latitude" [longitude] = "longitude" [zoom] = "zoom" (mapClick)="onChoseLocation($event)">
-=======
 <app-nav></app-nav>
 <app-search></app-search>
 
+<agm-map [latitude]="getLatitude()" [longitude]="getLongitude()" [zoom]="getZoom()">
 
-<agm-map [latitude] = "getLatitude()" [longitude] = "getLongitude()" [zoom] = "getZoom()" >
->>>>>>> zoom
-
-    <agm-marker 
-      *ngFor="let m of events; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
-      [label]="m.label"
-      [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)"
-      [latitude]="m.venue.lat"
-      [longitude]="m.venue.lng">
-      
-      
-    <agm-info-window>
-      <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
-      <p>{{m.displayName}}</p>
-      <a class="tickets" href={{m.uri}} target="_blank"><button class="btn btn-success">reservation</button></a>
-    </agm-info-window>
-    </agm-marker>
-
+  <agm-marker *ngFor="let m of events; let i = index" [latitude]="m.venue.lat" [longitude]="m.venue.lng" [label]="m.label"
+    [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+    <agm-snazzy-info-window [closeWhenOthersOpen]="true" [showCloseButton]="false">
+      <ng-template>
+        <div class="mapCard">
+          <p class="si-shadow-frame">{{m.venue.metroArea.displayName}}</p>
+          <p class="displayArtist"> {{m.performance[0].displayName}} - {{m.venue.displayName}}</p>
+          <p class="displayDate"> {{m.start.date | date:'dd-MM-yyyy'}}</p>
+          <a class="tickets" href={{m.uri}} target="_blank"><button class="reservBtn">reservation</button></a>
+        </div>
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
 </agm-map>
 
 
+<!--<agm-info-window>
+        <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
+        <p>{{m.displayName}}</p>
+        <a class="tickets" href={{m.uri}} target="_blank"><button class="btn btn-success">reservation</button></a>
+      </agm-info-window> -->
 
-
+<!--<div class="popHeader">
+        <p class="si-shadow-frame">{{m.venue.metroArea.displayName}}</p>
+      </div>
+      <p class="displayArtist"> {{m.performance[0].displayName}} - {{m.venue.displayName}}</p>
+      <p class="displayDate"> {{m.start.date | date:'dd-MM-yyyy'}}</p>
+      <a class="tickets" href={{m.uri}} target="_blank"><button class="reservBtn">reservation</button></a> -->

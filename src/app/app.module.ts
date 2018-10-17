@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -57,7 +58,8 @@ const routes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'
     }),
-    BrowserAnimationsModule,
+    AgmSnazzyInfoWindowModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
