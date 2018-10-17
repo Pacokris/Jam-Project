@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rhrn',
@@ -9,7 +10,15 @@ export class RhrnComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
+  location = {};
+  setPosition(position){
+     this.location = position.coords;
+     console.log(position.coords);
+     }
+     ngOnInit(){
+       if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+          };
+       }
 }

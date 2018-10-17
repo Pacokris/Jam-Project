@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 <agm-map [latitude] = "latitude" [longitude] = "longitude" [zoom] = "zoom" (mapClick)="onChoseLocation($event)">
+=======
+<app-nav></app-nav>
+<app-search></app-search>
+
+
+<agm-map [latitude] = "getLatitude()" [longitude] = "getLongitude()" [zoom] = "getZoom()" >
+>>>>>>> zoom
 
     <agm-marker 
       *ngFor="let m of events; let i = index"
       (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.venue.lat"
-      [longitude]="m.venue.lng"
       [label]="m.label"
       [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)">
+      (dragEnd)="markerDragEnd(m, $event)"
+      [latitude]="m.venue.lat"
+      [longitude]="m.venue.lng">
+      
       
     <agm-info-window>
       <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
