@@ -18,6 +18,7 @@ export class ResultComponent implements OnInit {
 
   sendInputList(input) {
     this.router.navigate(['/list', input]);
+    
   }
 
   sendInputMap(input) {
