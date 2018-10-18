@@ -14,16 +14,16 @@ export class RhrnMapComponent implements OnInit {
   constructor(private _EventCatcherService: EventCatcherService) { }
 
 
-  location = {};
   public events: any [];
   zoom : number = 12;
 	latitude: number;
 	longitude: number;
 
   setPosition(position) {
-     this.location = position.coords;
-     this.latitude = this.location.latitude;
-     this.longitude = this.location.longitude;
+     this.latitude = position.coords.latitude;
+     this.longitude = position.coords.longitude;
+     this._EventCatcherService.getArtistRhrn(this.latitude, this.longitude).subscribe(data => 
+      this.events = data.resultsPage.results.event);
      console.log(position.coords);
   }
 
@@ -33,8 +33,7 @@ export class RhrnMapComponent implements OnInit {
       };
       // navigator.geolocation.getCurrentPosition((pos)=>this.setPosition(pos))
     
-    this._EventCatcherService.getArtistRhrn(45.74, 4.84).subscribe(data => 
-          this.events = data.resultsPage.results.event);
+    
     
         
   }
