@@ -1,14 +1,12 @@
-<app-nav></app-nav>
-<app-search></app-search>
-
 <div class="div">
   <h2 class="titreListe">Liste des artistes</h2>
   <ul class="listeConcerts" *ngFor="let artist of artists">
       <li>{{artist.displayName}}</li>
-      <li>On tour until {{artist.onTourUntil | date : short}}</li>
+      <li *ngIf="artist.onTourUntil != null">On tour until {{artist.onTourUntil | date : short}}</li>
+      <li *ngIf="artist.onTourUntil === null">Not on tour right now !!</li>
       <div class="choixaffi container ">
-          <button class="m-1" (click)="sendInputList(artist.id)" routerLink="/list/:value">Upcoming concerts list</button>
-          <button class="m-1" (click)="sendInputMap(artist.id)" routerLink="/map/:value">Upcoming concerts on map</button>
+          <button *ngIf="artist.onTourUntil != null" class="m-1" (click)="sendInputList(artist.id)" routerLink="/list/:value">Upcoming concerts list</button>
+          <button *ngIf="artist.onTourUntil != null" class="m-1" (click)="sendInputMap(artist.id)" routerLink="/map/:value">Upcoming concerts on map</button>
       </div>      
   </ul>
 </div>

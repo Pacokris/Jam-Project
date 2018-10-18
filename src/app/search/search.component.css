@@ -5,8 +5,31 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'potra';
+    src:url(/src/assets/fonts/Potra.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.JAMbutton{
+    height: 70% !important;
+    background-color: purple;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+    font-family:'potra', Helvetica, Arial, sans-serif !important;
+    font-size: 200% !important;
+    letter-spacing: 7px;
+    vertical-align: middle;
+}
+
+.blackNav {
+    background: rgb(78, 78, 78);
+    max-width : 100%;
+}
+
 .searchblock{
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-content: center;
     /* padding: 10vh; */
@@ -32,7 +55,7 @@
 .mat-raised-button {
     display: flex;
     align-items: center;
-    height: 12vw;
+    height: 100%;
     font-family: 'dream';
     font-weight: bold;
     font-size: 120%;
@@ -48,13 +71,76 @@
 }
 
 
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 640px) {
     .searchblock{
-        flex-direction: row;
+        flex-direction: column;
+        margin-top: 6vh;
     }
+
+    .blackNav {
+        background: rgb(78, 78, 78);
+        max-width : 100%;
+        height : 18vh;
+    }
+
     .mat-raised-button {
-        height: 4vw;
+        height: 10%;
         font-size: 150%;
         border-radius: 15px;
     }
+
+    .searchbar{
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-top: 6%;
+        border-radius: 15px;
+        margin-right: 100px;
+    }
+
+    .JAMbutton{
+        height: 150% !important;
+        background-color: purple;
+        top: 70%;
+        font-weight: bold;
+        color: rgb(253, 253, 253);
+        font-family:'potra', Helvetica, Arial, sans-serif !important;
+        font-size: 180% !important;
+        letter-spacing: -2px;
+        margin-right: 15px;
+    }
+    
+    
+    .mat-elevation-z10 {
+        margin-top: -5%;
+        width: 200%;
+        box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+        right: 0.5vh;
+    }
+
+    .bouton {
+        display: flex;
+        justify-content: center;
+        padding: 1vh;
+        margin-right: 200px;
+        width: 220px;
+        
+    }
+
+
+    .mat-raised-button {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        font-family: 'dream';
+        font-weight: bold;
+        text-align: center;
+        font-size: 105%;
+        border-radius: 5px;
+    }
+
+    input {
+        max-width: 25vh;
+    }
+
 }
