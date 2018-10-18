@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'dream';
+    src:url(/src/assets/fonts/Dream.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    
+    
+.div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+
+.titreListe {
+    align-self: center;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-size: 1.8em;
+    padding: 0.4em;
+    letter-spacing: 5px;
+    background-color: rgba(249, 231, 252, 0.836);
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgb(78, 78, 78);
+    border-radius: 15px;
+}
+    
+.tickets {
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    letter-spacing: 5px;
+    font-weight: bold;
+    width: 50%;
+}
+    
+.listeConcerts {
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    list-style-type: none;
+    font-size: 170%;
+    padding: 0;
+    width: 50vw;
+    border-width: 0.08em;
+    border-style: solid;
+    border-color: rgb(78, 78, 78);
+    align-self: center;
+    border-radius: 15px;
+    background-color: rgba(249, 231, 252, 0.836);
+}
+    
+.listeConcerts li {
+    padding: .3em 0;
+    text-align: center;
+}
+    
+@media screen and (max-width: 640px) {
+    .div{
+        display: flex;
+        flex-direction: column;
+        margin-top: 16vh;
+    }
+
+
+    
+    .listeConcerts {
+        font-family:'dream', Helvetica, Arial, sans-serif;
+        list-style-type: none;
+        font-size: 110%;
+        padding: 0;
+        width: 90%;
+        border-width: 0.08em;
+        border-style: solid;
+        border-color: rgb(78, 78, 78);
+        align-self: center;
+    }
+}

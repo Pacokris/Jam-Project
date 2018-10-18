@@ -17,6 +17,10 @@ export class SearchComponent implements OnInit {
   sendInputResult(input){
     this.router.navigate(['/result', input]);
   }
+
+  sendInputLocation(input){
+    this.router.navigate(['/placeresult', input]);
+  }
   // sendInputList(input) {
   //   this.router.navigate(['/list', input]);
   // }

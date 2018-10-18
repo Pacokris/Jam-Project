@@ -7,7 +7,8 @@
         <div class="searchblock container d-flex" >
         <div class="searchbar"><input  #searchInput type="text"></div> 
         <div class="bouton"><a class="mat-elevation-z10" mat-raised-button color="primary" (click)="sendInputResult(searchInput.value)" routerLink="/result/:value">Search your artist</a></div>
-        </div>
+        <div class="bouton"><a class="mat-elevation-z10" mat-raised-button color="primary" (click)="sendInputLocation(searchInput.value)" routerLink="/placeresult/:value">Search your location</a></div>
+    </div>
     </mat-toolbar-row>
 </mat-toolbar>
       

@@ -1,0 +1,9 @@
+<div class="div">
+  <h2 class="titreListe">Liste des concerts à {{places[0].location.city}}</h2>
+  <ul class="listeConcerts" *ngFor="let event of places">
+      <li>{{event.displayName}}</li>
+      <li>{{event.start.date | date : 'dd-MM-yyyy'}}</li>
+      <li>{{event.start.time | slice : 0 :5}}</li>
+      <li><a class="tickets" href={{event.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
+  </ul>
+</div>

@@ -21,17 +21,21 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { RhrnMapComponent } from './rhrn-map/rhrn-map.component';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { PlacelistComponent } from './placelist/placelist.component';
+import { PlaceresultComponent } from './placeresult/placeresult.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'list', component: ListComponent},
-  {path: 'list/:value', component: ListComponent},
-  {path: 'home', component: HomeComponent},
+  { path: '', component: HomeComponent },
+  { path: 'list', component: ListComponent },
+  { path: 'list/:value', component: ListComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'map', component: MapComponent },
   { path: 'rhrn', component: RhrnComponent },
   { path: 'rhrnMap', component: RhrnMapComponent },
   { path: 'map/:value', component: MapComponent },
-  { path: 'result/:value', component: ResultComponent}
+  { path: 'result/:value', component: ResultComponent },
+  { path: 'placelist/:value', component: PlacelistComponent },
+  { path: 'placeresult/:value', component: PlaceresultComponent }
 
 ];
 
@@ -46,7 +50,9 @@ const routes: Routes = [
     ListComponent,
     MapComponent,
     EventComponent,
-    RhrnMapComponent
+    RhrnMapComponent,
+    PlacelistComponent,
+    PlaceresultComponent
   ],
   imports: [
     BrowserModule,

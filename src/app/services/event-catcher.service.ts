@@ -28,6 +28,16 @@ export class EventCatcherService {
     this._url = "https://api.songkick.com/api/3.0/events.json?apikey=R82Hox7PJZDJyV0G&min_date="+this.dateUrl+"&max_date="+this.dateUrl+"&location=geo:"+latitude+","+longitude
     return this.http.get(this._url)
   }
+
+  getArea(inputSearch): Observable<any>{
+    this._url = "https://api.songkick.com/api/3.0/search/locations.json?apikey=R82Hox7PJZDJyV0G&query=" + inputSearch;
+    return this.http.get(this._url)
+  }
+
+  getAreaEvent(inputSearch): Observable<any>{
+    this._url = "https://api.songkick.com/api/3.0/metro_areas/" + inputSearch + "/calendar.json?apikey=R82Hox7PJZDJyV0G"
+    return this.http.get(this._url);
+  };
 }
 // https://api.songkick.com/api/3.0/search/artists.json?apikey={your_api_key}&query={artist_name}
 // 45.7465468,4.8271808
