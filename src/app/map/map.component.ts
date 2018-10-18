@@ -11,15 +11,11 @@ import { ActivatedRoute, Params } from "@angular/router";
 export class MapComponent implements OnInit {
 
 	zoom : number;
-
-
 	latitude: number ;
 	longitude: number;
 
-
 	public events = [];
 	public inputSearch : string;
-
 
 	constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute) { }
 

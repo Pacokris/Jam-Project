@@ -10,15 +10,7 @@ export class RhrnComponent implements OnInit {
 
   constructor() { }
 
-
-  location = {};
-  setPosition(position){
-     this.location = position.coords;
-     console.log(position.coords);
-     }
+     
      ngOnInit(){
-       if(navigator.geolocation){
-          navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
-          };
        }
 }

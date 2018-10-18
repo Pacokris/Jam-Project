@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-<agm-map [latitude] = "latitude" [longitude] = "longitude" [zoom] = "zoom" (mapClick)="onChoseLocation($event)">
-=======
 <app-nav></app-nav>
 <app-search></app-search>
 
 
 <agm-map [latitude] = "getLatitude()" [longitude] = "getLongitude()" [zoom] = "getZoom()" >
->>>>>>> zoom
 
     <agm-marker 
       *ngFor="let m of events; let i = index"
