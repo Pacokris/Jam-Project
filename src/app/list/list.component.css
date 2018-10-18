@@ -50,36 +50,39 @@
     text-align: center;
 }
 
+.jumbotron{
+  width: 50vw;
+  margin: 0 auto;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+  border-radius: 1vmin;
+}
+
+
+
+.photoArtist{
+  max-width: 100%;
+  height: auto;
+}
+
+p{
+  text-align: justify;
+}
+
+.nomArtist{
+  margin-top: 3vmin;
+  text-align: center;
+}
+
 @media screen and (max-width: 640px) {
     .div{
         display: flex;
         flex-direction: column;
         margin-top: 16vh;
     }
-
-    .jumbotron{
-      width: 50vw;
-      margin: 0 auto;
-      margin-top: 2vmin;
-      margin-bottom: 2vmin;
-      border-radius: 1vmin;
-    }
+}
 
 
-
-    .photoArtist{
-      max-width: 100%;
-      height: auto;
-    }
-
-    p{
-      text-align: justify;
-    }
-
-    .nomArtist{
-      margin-top: 3vmin;
-      text-align: center;
-    }
 
     @media screen and (max-width: 640px) {
     .listeConcerts {

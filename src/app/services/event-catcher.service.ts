@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class EventCatcherService {
 
   public _url: string;
+  public d: Date = new Date();
+  public dateUrl: string = this.d.getFullYear()+"-"+(this.d.getMonth()+1)+"-"+this.d.getDate();
   public urlFM: string;
   // U2 ID : 313388
 

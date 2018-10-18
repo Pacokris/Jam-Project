@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { RhrnComponent } from './rhrn/rhrn.component';
+import { RhrnMapComponent } from './rhrn-map/rhrn-map.component';
 import { ListComponent } from './list/list.component';
 import { MapComponent } from './map/map.component';
 import { EventComponent } from './event/event.component';
@@ -20,6 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 
 const routes: Routes = [
