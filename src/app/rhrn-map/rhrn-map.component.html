@@ -18,7 +18,7 @@
             <div class="mapCard">
               <p class="si-shadow-frame">{{m.venue.metroArea.displayName}}</p>
               <p class="displayArtist"> {{m.performance[0].displayName}} - {{m.venue.displayName}}</p>
-              <p class="displayDate"> {{m.start.date | date:'dd-MM-yyyy'}}</p>
+              <p class="displayDate"> {{m.start.time }}</p>
               <a class="tickets" href={{m.uri}} target="_blank"><button class="reservBtn">reservation</button></a>
             </div>
           </ng-template>
