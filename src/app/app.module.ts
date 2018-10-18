@@ -19,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { InfoArtistComponent } from './info-artist/info-artist.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -41,7 +43,8 @@ const routes: Routes = [
     RhrnComponent,
     ListComponent,
     MapComponent,
-    EventComponent
+    EventComponent,
+    InfoArtistComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
+    MatCardModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'

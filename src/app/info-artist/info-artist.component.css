@@ -1,0 +1,14 @@
+.jumbotron{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+p{
+  text-align: justify;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}

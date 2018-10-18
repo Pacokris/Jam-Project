@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <app-search></app-search>
-
+{{infoArtist.name}}
 <div class="div">
   <h2 class="titreListe">Liste des artistes</h2>
   <ul class="listeConcerts" *ngFor="let artist of artists">
@@ -9,6 +9,6 @@
       <div class="choixaffi container ">
           <button class="m-1" (click)="sendInputList(artist.id)" routerLink="/list/:value">Upcoming concerts list</button>
           <button class="m-1" (click)="sendInputMap(artist.id)" routerLink="/map/:value">Upcoming concerts on map</button>
-      </div>      
+      </div>
   </ul>
 </div>

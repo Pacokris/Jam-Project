@@ -4,7 +4,7 @@
     font-weight: normal;
     font-style: normal;
     }
-    
+
     .div{
     display: flex;
     flex-direction: column;
@@ -21,20 +21,20 @@
     border-color: rgb(78, 78, 78);
     border-radius: 15px;
     }
-    
+
     .tickets {
     font-family:'dream', Helvetica, Arial, sans-serif;
     letter-spacing: 5px;
     font-weight: bold;
     width: 50%;
     }
-    
+
     .listeConcerts {
     font-family:'dream', Helvetica, Arial, sans-serif;
     list-style-type: none;
     font-size: 170%;
     padding: 0;
-    width: 50vw;
+    width: 62w;
     border-width: 0.08em;
     border-style: solid;
     border-color: rgb(78, 78, 78);
@@ -42,12 +42,32 @@
     border-radius: 15px;
     background-color: rgba(249, 231, 252, 0.836);
     }
-    
+
     .listeConcerts li {
     padding: .3em 0;
     text-align: center;
     }
-    
+
+    .jumbotron{
+      width: 62vw;
+      margin: 0 auto;
+      margin-top: 2vmin;
+      margin-bottom: 2vmin;
+    }
+
+    p{
+      text-align: justify;
+    }
+
+    .photoArtist{
+      max-width: 100%;
+      height: auto;
+    }
+
+    .nomArtist{
+      margin-top: 3vmin;
+    }
+
     @media screen and (max-width: 640px) {
     .listeConcerts {
     font-family:'dream', Helvetica, Arial, sans-serif;

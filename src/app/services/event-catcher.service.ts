@@ -21,5 +21,10 @@ export class EventCatcherService {
     this._url = "https://api.songkick.com/api/3.0/search/artists.json?apikey=R82Hox7PJZDJyV0G&query=" + inputSearch
     return this.http.get(this._url)
   }
+
+  getArtistInfoCatcher(inputSearch): Observable<any>{
+    this._url = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + inputSearch + "&api_key=d50d7e40256f53b0a6d56732619d1903&format=json"
+    return this.http.get(this._url)
+  }
 }
 // https://api.songkick.com/api/3.0/search/artists.json?apikey={your_api_key}&query={artist_name}

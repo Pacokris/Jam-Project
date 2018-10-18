@@ -1,0 +1,32 @@
+<!--
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row d-flex justify-content-around">
+      <div class="row col-lg-6">
+        <img class="display-4" src="https://content.internetvideoarchive.com/content/photos/1424/05984531_.jpg" alt="Photo de l'artiste">
+        <h4 class="display-4">Nom de l'artiste</h4>
+      </div>
+      <div class="row col-lg-6">
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#" role="button">More about this Artist!</a>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row d-flex justify-content-around">
+      <div class="row col-md-5 d-flex">
+        <img class="display-4 col-lg-12 photoArtist" [src]="artist.image[4]['#text']" alt="Photo de l'artiste">
+        <h4 class="display-4 col-lg-12 nomArtist">{{artist.displayName}}</h4>
+      </div>
+      <div class="row col-sm-7 d-flex align-content-between flex-shrink:6">
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#" role="button">More about this Artist!</a>
+      </div>
+    </div>
+  </div>
+</div>
