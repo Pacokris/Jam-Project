@@ -22,6 +22,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { PlacelistComponent } from './placelist/placelist.component';
+import { PlaceresultComponent } from './placeresult/placeresult.component';
 
 
 const routes: Routes = [
@@ -33,7 +35,9 @@ const routes: Routes = [
   { path: 'rhrn', component: RhrnComponent },
   { path: 'rhrnMap', component: RhrnMapComponent },
   { path: 'map/:value', component: MapComponent },
-  { path: 'result/:value', component: ResultComponent}
+  { path: 'result/:value', component: ResultComponent },
+  { path: 'placelist/:value', component: PlacelistComponent },
+  { path: 'placeresult/:value', component: PlaceresultComponent }
 
 ];
 
@@ -48,7 +52,9 @@ const routes: Routes = [
     ListComponent,
     MapComponent,
     EventComponent,
-    RhrnMapComponent
+    RhrnMapComponent,
+    PlacelistComponent,
+    PlaceresultComponent
   ],
   imports: [
     BrowserModule,
