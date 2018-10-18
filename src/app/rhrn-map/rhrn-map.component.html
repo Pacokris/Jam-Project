@@ -13,11 +13,16 @@
         [longitude]="m.venue.lng">
         
         
-      <agm-info-window>
-        <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
-        <p>{{m.displayName}}</p>
-        <a class="tickets" href={{m.uri}} target="_blank"><button class="btn btn-success">reservation</button></a>
-      </agm-info-window>
+        <agm-snazzy-info-window [closeWhenOthersOpen]="true" [showCloseButton]="false">
+          <ng-template>
+            <div class="mapCard">
+              <p class="si-shadow-frame">{{m.venue.metroArea.displayName}}</p>
+              <p class="displayArtist"> {{m.performance[0].displayName}} - {{m.venue.displayName}}</p>
+              <p class="displayDate"> {{m.start.date | date:'dd-MM-yyyy'}}</p>
+              <a class="tickets" href={{m.uri}} target="_blank"><button class="reservBtn">reservation</button></a>
+            </div>
+          </ng-template>
+        </agm-snazzy-info-window>
       </agm-marker>
   
   </agm-map>

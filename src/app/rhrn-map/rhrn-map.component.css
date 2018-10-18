@@ -2,9 +2,44 @@ agm-map {
     height: 100vh;
     width: 100%;
     display: block;
+    margin: auto;   
+}
+
+.mapCard {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    min-width: 60vw;
+    padding: 15px 25px;
+    max-width: 325px;
+    position: absolute;
+    transform: translateX(-50%);
+    width: calc(100% - 60px);
+    top: 5px;
+    border:2px solid black;
+    border-radius: 10px;
+    font-size: 1.5em;
+    box-shadow: 4px 4px 4px;
+}
+
+.reservBtn {
+    display: block;
     margin: auto;
-   
-    
+    box-shadow: 4px 4px 4px;
+    background-color: grey;
+}
+
+.si-shadow-frame, .displayArtist, .displayDate {
+    text-align: center;
+}
+
+@media (min-width: 768px) { 
+    .mapCard {
+        display: block;
+        margin: auto;
+        min-height: 20vh;
+        min-width: 30vh;
+    }
 }
 
 @media screen and (max-width: 640px) {
