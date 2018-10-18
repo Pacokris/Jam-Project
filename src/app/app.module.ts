@@ -19,13 +19,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
-import { RhrnMapComponent } from './rhrn-map/rhrn-map.component';
-import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { MatCardModule } from '@angular/material/card';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: ListComponent},
-  {path: 'list/:value', component: ListComponent},
+  {path: 'list/:value/:name', component: ListComponent},
   {path: 'home', component: HomeComponent},
   { path: 'map', component: MapComponent },
   { path: 'rhrn', component: RhrnComponent },
@@ -57,6 +57,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
+    MatCardModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'

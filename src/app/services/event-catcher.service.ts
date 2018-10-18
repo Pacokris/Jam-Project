@@ -8,10 +8,8 @@ import { Observable } from 'rxjs';
 export class EventCatcherService {
 
   public _url: string;
-  public d: Date = new Date();
-  public dateUrl: string = this.d.getFullYear()+"-"+(this.d.getMonth()+1)+"-"+this.d.getDate();
-
-  
+  public urlFM: string;
+  // U2 ID : 313388
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +26,12 @@ export class EventCatcherService {
     this._url = "https://api.songkick.com/api/3.0/events.json?apikey=R82Hox7PJZDJyV0G&min_date="+this.dateUrl+"&max_date="+this.dateUrl+"&location=geo:"+latitude+","+longitude
     return this.http.get(this._url)
   }
+
+
+
+  getArtistInfoCatcher(inputSearch): Observable<any>{
+    this.urlFM = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + inputSearch + "&api_key=d50d7e40256f53b0a6d56732619d1903&format=json"
+    return this.http.get(this.urlFM)
+  }
 }
 // https://api.songkick.com/api/3.0/search/artists.json?apikey={your_api_key}&query={artist_name}
-// 45.7465468,4.8271808
