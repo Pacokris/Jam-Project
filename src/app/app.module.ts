@@ -20,12 +20,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import { InfoArtistComponent } from './info-artist/info-artist.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: ListComponent},
-  {path: 'list/:value', component: ListComponent},
+  {path: 'list/:value/:name', component: ListComponent},
   {path: 'home', component: HomeComponent},
   { path: 'map', component: MapComponent },
   { path: 'map/:value', component: MapComponent },
@@ -43,8 +43,7 @@ const routes: Routes = [
     RhrnComponent,
     ListComponent,
     MapComponent,
-    EventComponent,
-    InfoArtistComponent
+    EventComponent
   ],
   imports: [
     BrowserModule,

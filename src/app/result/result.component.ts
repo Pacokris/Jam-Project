@@ -11,14 +11,13 @@ export class ResultComponent implements OnInit {
 
   public artists = [];
   public inputSearch : string;
-  public infoArtist : any;
 
 
   constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
 
 
-  sendInputList(input) {
-    this.router.navigate(['/list', input]);
+  sendInputList(input, name) {
+    this.router.navigate(['/list', input, name]);
   }
 
   sendInputMap(input) {
@@ -31,9 +30,7 @@ export class ResultComponent implements OnInit {
       this._EventCatcherService.getArtistListCatcher(this.inputSearch)
       .subscribe(data=>
         this.artists = data.resultsPage.results.artist);
-      this._EventCatcherService.getArtistInfoCatcher(this.inputSearch)
-      .subscribe(data=>
-        this.infoArtist = data.artist);
+      
       });
     }
 

@@ -34,7 +34,7 @@
     list-style-type: none;
     font-size: 170%;
     padding: 0;
-    width: 62w;
+    width: 50vw;
     border-width: 0.08em;
     border-style: solid;
     border-color: rgb(78, 78, 78);
@@ -49,23 +49,27 @@
     }
 
     .jumbotron{
-      width: 62vw;
+      width: 50vw;
       margin: 0 auto;
       margin-top: 2vmin;
       margin-bottom: 2vmin;
+      border-radius: 1vmin;
     }
 
-    p{
-      text-align: justify;
-    }
+
 
     .photoArtist{
       max-width: 100%;
       height: auto;
     }
 
+    p{
+      text-align: justify;
+    }
+
     .nomArtist{
       margin-top: 3vmin;
+      text-align: center;
     }
 
     @media screen and (max-width: 640px) {

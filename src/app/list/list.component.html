@@ -3,18 +3,17 @@
 
 <div class="div">
     <h2 class="titreListe">Liste des concerts</h2>
-    <!--{{infoArtist.name}}-->
+    <!--<p>{{artist.name}}</p>-->
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <div class="row d-flex justify-content-around">
-          <div class="row col-lg-5 d-flex">
-            <img class="flex-no-shrink display-4 col-lg-12 photoArtist" src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F_RNm4NwtU4Bk%2FTIdVPclq4bI%2FAAAAAAAAAPs%2FQ2forrsK46s%2Fs1600%2Fjean.jpg&f=1" alt="Photo de l'artiste">
-            <h4 class="display-4 col-lg-12 nomArtist">Nom de l'artiste</h4>
+          <div class="row col-lg-5 d-flex flex-no-shrink">
+            <img *ngIf="artist.image" class="display-4 col-xl-12 photoArtist" [src]="artist.image[4]['#text']" alt="Photo de l'artiste">
+            <h4 class="display-4 col-xl-12 nomArtist">{{artist.name}}</h4>
           </div>
-          <div class="row col-sm-7 d-flex align-content-between flex-shrink:6">
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <hr class="my-4">
-            <a class="btn btn-primary btn-lg" href="#" role="button">More about this Artist!</a>
+          <div *ngIf="artist.bio && artistBioSummary" class="row col-lg-7 d-flex justify-content-end align-content-between flex-shrink:6">
+            <p class="lead">{{artistBioSummary}}</p>
+            <a class="btn btn-primary btn-lg" [href]="artist.bio.links.link.href" target="_blank" role="button">More about this Artist!</a>
           </div>
         </div>
       </div>
