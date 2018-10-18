@@ -2,7 +2,7 @@ agm-map {
     height: 100vh;
     width: 100%;
     display: block;
-    margin: auto;   
+    margin: 32vw auto;
 }
 
 .mapCard {
@@ -40,12 +40,13 @@ agm-map {
         min-height: 20vh;
         min-width: 30vh;
     }
-}
 
-@media screen and (max-width: 640px) {
     agm-map {
-        width: 95%;
-        margin: 4.1%;
-        margin-top: 48%;
+        height: 40vw;
+        width: 60vw;
+        display: block;
+        margin: auto;
+        margin-top: 6%;
     }
+
 }
