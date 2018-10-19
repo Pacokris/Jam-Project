@@ -24,10 +24,10 @@
         padding: 0.4em;
         letter-spacing: 5px;
         background-color: rgba(249, 231, 252, 0.836);
-        border-width: 0.1em;
+        border-width: 0.05em;
         border-style: solid;
         border-color: rgb(78, 78, 78);
-        border-radius: 15px;
+        border-radius: 5px;
     }
 
     .listeConcerts {
@@ -40,7 +40,7 @@
         border-style: solid;
         border-color: rgb(78, 78, 78);
         align-self: center;
-        border-radius: 15px;
+        border-radius: 5px;
         background-color: rgba(249, 231, 252, 0.836);
     }
 
@@ -76,7 +76,15 @@
     }
 
     @media screen and (max-width: 640px) {
-      .listeConcerts {
+    
+    .div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 19vh;
+    }
+
+        
+    .listeConcerts {
         font-family:'dream', Helvetica, Arial, sans-serif;
         list-style-type: none;
         font-size: 110%;

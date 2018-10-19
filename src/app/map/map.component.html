@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <app-search></app-search>
-
+<button class="reservBtn mat-elevation-z10 btn btn-secondary btn-lg" (click)="sendInputList(events[0].performance[0].artist.id, events[0].performance[0].artist.displayName)" routerLink="/list/:value/:name">Show concerts on list</button>
 <agm-map [latitude]="getLatitude()" [longitude]="getLongitude()" [zoom]="getZoom()">
 
   <agm-marker *ngFor="let m of events; let i = index" [latitude]="m.venue.lat" [longitude]="m.venue.lng" [label]="m.label"
@@ -18,7 +18,6 @@
   </agm-marker>
 </agm-map>
 
-<button class="reservBtn" (click)="sendInputList(events[0].performance[0].artist.id, events[0].performance[0].artist.displayName)" routerLink="/list/:value/:name">Show concerts on list</button>
 
 <!--<agm-info-window>
         <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
