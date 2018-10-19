@@ -3,11 +3,12 @@
 
 body {
     margin: 0; 
-    background-image: url("/src/assets/img/concert.jpg");
+    background-image: url("/src/assets/img/319933.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;      
+    background-position: center;
+    overflow: hidden;     
 }
 
 a:hover{
