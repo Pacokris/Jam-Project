@@ -28,8 +28,16 @@ agm-map {
     font-family:'dream', Helvetica, Arial, sans-serif;
     box-shadow: 4px 4px 4px;
     background-color: grey;
-    margin-top: 53vh;
+    margin-top: 20vh;
     margin-bottom: -13vh;
+}
+
+.reservBtn2 {
+    display: block;
+    margin: auto;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    box-shadow: 4px 4px 4px;
+    background-color: grey;
 }
 
 .mat-elevation-z10 {

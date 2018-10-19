@@ -52,6 +52,7 @@
 
 .jumbotron{
   width: 70vw;
+  height : 40hw;
   margin: 0 auto;
   margin-top: 2vmin;
   margin-bottom: 2vmin;
@@ -90,6 +91,7 @@ p{
 .nomArtist{
   margin-top: 3vmin;
   text-align: center;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 640px) {
