@@ -74,7 +74,7 @@
 @media screen and (max-width: 640px) {
     .searchblock{
         flex-direction: column;
-        margin-top: 6vh;
+        margin-top: 8vh;
     }
 
     .blackNav {
@@ -95,7 +95,7 @@
         justify-content: center;
         margin-top: 6%;
         border-radius: 15px;
-        margin-right: 100px;
+        margin-right: 27vw;
     }
 
     .JAMbutton{
