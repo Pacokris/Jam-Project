@@ -55,10 +55,19 @@
   margin: 0 auto;
   margin-top: 2vmin;
   margin-bottom: 2vmin;
-  border-radius: 1vmin;
+  border-radius: 15px;
+  border-width: 0.08em;
+  border-style: solid;
+  border-color: rgb(78, 78, 78);
+  background-color: rgba(249, 231, 252, 0.836);
 }
 
-
+.reservBtn {
+    display: block;
+    margin: auto;
+    box-shadow: 4px 4px 4px;
+    background-color: grey;
+}
 
 .photoArtist{
   max-width: 100%;

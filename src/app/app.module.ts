@@ -28,7 +28,7 @@ import { PlaceresultComponent } from './placeresult/placeresult.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'list', component: ListComponent},
+  {path: 'list/:value', component: ListComponent},
   {path: 'list/:value/:name', component: ListComponent},
   {path: 'home', component: HomeComponent},
   { path: 'map', component: MapComponent },

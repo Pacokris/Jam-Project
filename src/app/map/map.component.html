@@ -18,6 +18,7 @@
   </agm-marker>
 </agm-map>
 
+<button class="reservBtn" (click)="sendInputList(events[0].performance[0].artist.id, events[0].performance[0].artist.displayName)" routerLink="/list/:value/:name">Show concerts on list</button>
 
 <!--<agm-info-window>
         <p><strong>{{m.venue.metroArea.displayName}}</strong></p>

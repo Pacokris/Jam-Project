@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
-import { ActivatedRoute, Params } from "@angular/router"; 
+import { ActivatedRoute, Params, Router } from "@angular/router"; 
 
 
 @Component({
@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
 	public events = [];
 	public inputSearch : string;
 
-	constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute) { }
+	constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
 
 	ngOnInit() {
 		this.route.params.subscribe((params: Params) =>{
@@ -27,7 +27,11 @@ export class MapComponent implements OnInit {
 			  this.events = data.resultsPage.results.event);
 			});
 			
-		  }
+			}
+			
+	sendInputList(input, name) {
+    this.router.navigate(['/list', input, name]);
+  }
 	
 		  getLatitude() { 
 			  let maxLat = this.events[0].venue.lat;

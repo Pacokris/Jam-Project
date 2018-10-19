@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
-import { ActivatedRoute, Params, } from "@angular/router";
+import { ActivatedRoute, Router, Params, } from "@angular/router";
 
 @Component({
   selector: 'app-list',
@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   public artist = {};
   public artistBioSummary : string;
 
-constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute) { }
+constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
@@ -32,6 +32,10 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
 
     });
 
+  }
+
+  sendInputMap(input) {
+    this.router.navigate(['/map', input]);
   }
 
   bioWithoutLink = param => this.artistBioSummary = param.slice(0, param.indexOf("[")).slice(0, param.indexOf("<a"));
