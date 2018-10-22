@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { EventCatcherService } from "../services/event-catcher.service";
 import { ActivatedRoute, Router, Params } from "@angular/router";
 
@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, Params } from "@angular/router";
   templateUrl: "./placelist.component.html",
   styleUrls: ["./placelist.component.css"]
 })
-export class PlacelistComponent implements OnInit, OnDestroy {
+export class PlacelistComponent implements OnInit{
   public places = [];
   public inputSearch: string;
   public villes = [];

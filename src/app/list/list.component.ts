@@ -26,7 +26,7 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
         {this.events = data.resultsPage.results.event;
         this.events.forEach(event => {
             const artiste = event.displayName;
-            event.displayName = artiste.slice(0, artiste.indexOf('at'))};
+            event.displayName = artiste.slice(0, artiste.indexOf('at'))});
         });
       this._EventCatcherService.getArtistInfoCatcher(this.name)
       .subscribe(data => {
