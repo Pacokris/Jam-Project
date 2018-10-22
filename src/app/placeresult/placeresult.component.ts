@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
 import { ActivatedRoute, Params, Router } from "@angular/router";
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-placeresult',
@@ -16,10 +17,14 @@ export class PlaceresultComponent implements OnInit {
   constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
 
 
-  sendInputList(input) {
-    this.router.navigate(['/placelist', input]);
+
+  sendInputList(input, name) {
     
+    this.router.navigate(['/placelist', input, name]);
+
   }
+  
+ 
 
   sendInputMap(input) {
     this.router.navigate(['/map', input]);

@@ -22,8 +22,12 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
       this.name = params['name'];
       this.inputSearch = params['value'];
       this._EventCatcherService.getEventListCatcher(this.inputSearch)
-      .subscribe(data=>
-        this.events = data.resultsPage.results.event);
+      .subscribe((data)=>
+        {this.events = data.resultsPage.results.event;
+        this.events.forEach(event => {
+            const artiste = event.displayName;
+            event.displayName = artiste.slice(0, artiste.indexOf('at'))};
+        });
       this._EventCatcherService.getArtistInfoCatcher(this.name)
       .subscribe(data => {
         this.artist = data.artist
@@ -31,6 +35,21 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
       });
 
     });
+
+    // ngOnInit() {
+    //   this.route.params.subscribe((params: Params) =>{
+    //     this.name = params['name'];
+    //     this.inputSearch = params['value'];
+    //     this._EventCatcherService.getEventListCatcher(this.inputSearch)
+    //     .subscribe(data=>
+    //       this.events = data.resultsPage.results.event);
+    //     this._EventCatcherService.getArtistInfoCatcher(this.name)
+    //     .subscribe(data => {
+    //       this.artist = data.artist
+    //       this.bioWithoutLink(data.artist.bio.summary);
+    //     });
+  
+    //   });
 
   }
 

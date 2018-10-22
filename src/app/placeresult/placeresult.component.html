@@ -7,7 +7,7 @@
   <ul class="listeConcerts" *ngFor="let lieu of area">
       <li>{{lieu.city.displayName}}, {{lieu.city.country.displayName}}</li>
       <div class="choixaffi container ">
-          <button class="m-1" (click)="sendInputList(lieu.metroArea.id)" routerLink="/placelist/:value">Upcoming concerts list</button>
+          <button class="m-1" (click)="sendInputList(lieu.metroArea.id, lieu.city.displayName)"  routerLink="/placelist/:value/:name"> Upcoming concerts list</button>
           <!-- <button class="m-1" (click)="sendInputMap(lieu.metroArea.id)" routerLink="/map/:value">Upcoming concerts on map</button> -->
       </div>      
   </ul>
