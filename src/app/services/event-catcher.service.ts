@@ -15,6 +15,12 @@ export class EventCatcherService {
 
   constructor(private http: HttpClient) { }
 
+  rechercheElargie: number = 0;
+
+  setRechercheElargie(isElargie) {
+    this.rechercheElargie = isElargie ? 1 : 0;
+  }
+
   getEventListCatcher(inputSearch): Observable<any>{
     this._url = "https://api.songkick.com/api/3.0/artists/" + inputSearch + "/calendar.json?apikey=R82Hox7PJZDJyV0G"
     return this.http.get(this._url);

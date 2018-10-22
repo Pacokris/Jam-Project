@@ -36,7 +36,8 @@ const routes: Routes = [
   { path: 'rhrnMap', component: RhrnMapComponent },
   { path: 'map/:value', component: MapComponent },
   { path: 'result/:value', component: ResultComponent },
-  { path: 'placelist/:value', component: PlacelistComponent },
+  { path: 'placelist/:value/:name', component: PlacelistComponent },
+  { path: 'placelist/:value/:name/:name', component: PlacelistComponent },
   { path: 'placeresult/:value', component: PlaceresultComponent }
 
 ];
