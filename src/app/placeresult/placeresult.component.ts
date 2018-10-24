@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router, RouterLink } from "@angular/router";
 import { EventEmitter } from 'events';
 
 @Component({
@@ -12,11 +12,10 @@ export class PlaceresultComponent implements OnInit {
 
   public area = [];
   public inputSearch : string;
-
+  public nbVille: number;
+  public test = [];
 
   constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
-
-
 
   sendInputList(input, name) {
     
@@ -24,8 +23,6 @@ export class PlaceresultComponent implements OnInit {
 
   }
   
- 
-
   sendInputMap(input) {
     this.router.navigate(['/map', input]);
   }
@@ -34,10 +31,25 @@ export class PlaceresultComponent implements OnInit {
     this.route.params.subscribe((params: Params) =>{
       this.inputSearch = params['value'];
       this._EventCatcherService.getArea(this.inputSearch)
-      .subscribe(data=> 
-        this.area = data.resultsPage.results.location);
-      });
-    }
+      .subscribe(data=> {
+        this.test = data.resultsPage;
+        this.area = this.test.results.location;
+        this.nbVille = this.test.totalEntries;
+        console.log(this.nbVille)
+        if(this.nbVille == 1){this.sendInputList(this.area[0].metroArea.id, this.area[0].city.displayName);}
+    });
+    
+    })
+
+    // ngOnInit() {
+    //   this.route.params.subscribe((params: Params) =>{
+    //     this.inputSearch = params['value'];
+    //     this._EventCatcherService.getArea(this.inputSearch)
+    //     .subscribe(data=> 
+    //       this.area = data.resultsPage.results.location);
+    //     });
+    //   }
 
 }
 
+}

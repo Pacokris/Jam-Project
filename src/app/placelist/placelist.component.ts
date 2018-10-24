@@ -13,7 +13,9 @@ export class PlacelistComponent implements OnInit{
   public villes = [];
   public ville: string;
   public Id: number;
+  public area: string;
   private displayNoEvent;
+  private rechercheElargie: boolean = false;
 
   constructor(
     private _EventCatcherService: EventCatcherService,
@@ -48,7 +50,8 @@ export class PlacelistComponent implements OnInit{
         .getAreaEvent(this.inputSearch)
         .subscribe(data => {
           this.places = data.resultsPage.results.event;
-          console.log(this.places);
+          this.area = this.places[0].venue.metroArea.displayName;
+          console.log(this.area, "area")
           this.places.forEach(event => {
             const city = event.location.city;
             event.location.city = city.slice(0, city.indexOf(","));
@@ -65,6 +68,7 @@ export class PlacelistComponent implements OnInit{
           });
           if (this._EventCatcherService.rechercheElargie >= 1) {
             this._EventCatcherService.setRechercheElargie(0);
+            this.rechercheElargie = true
           }
         });
     });

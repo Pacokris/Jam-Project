@@ -14,7 +14,6 @@ import { RhrnComponent } from './rhrn/rhrn.component';
 import { RhrnMapComponent } from './rhrn-map/rhrn-map.component';
 import { ListComponent } from './list/list.component';
 import { MapComponent } from './map/map.component';
-import { EventComponent } from './event/event.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -52,7 +51,6 @@ const routes: Routes = [
     RhrnComponent,
     ListComponent,
     MapComponent,
-    EventComponent,
     RhrnMapComponent,
     PlacelistComponent,
     PlaceresultComponent
