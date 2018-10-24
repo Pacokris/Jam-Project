@@ -21,11 +21,13 @@
     font-size: 200% !important;
     letter-spacing: 7px;
     vertical-align: middle;
+    border-radius: 10px;
 }
 
 .blackNav {
     background: rgb(78, 78, 78);
     max-width : 100%;
+    z-index: 1;
 }
 
 .searchblock{
@@ -40,6 +42,10 @@
     align-self: center;
     justify-content: center;
     padding: 1vh;
+}
+
+.searchOptionMenu{
+    z-index: 10;
 }
 
 .bouton {
@@ -70,6 +76,39 @@
     box-shadow:  1px 1px 5px rgb(250, 243, 142), -1px -1px 5px rgb(250, 243, 142), -1px 1px 5px rgb(250, 243, 142), 1px -1px 5px rgb(250, 243, 142), 1px 1px 10px rgb(252, 29, 241), -1px -1px 10px rgb(252, 29, 241), -1px 1px 10px rgb(252, 29, 241), 1px -1px 10px rgb(252, 29, 241);
 }
 
+.inputSearch {
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: 0;
+}
+
+mat-radio-button {
+    margin-left: 0.2vw;
+}
+
+mat-radio-button ~ .mat-radio-button {
+  margin-top: 8px;
+}
+
+.iconInput{
+    position: relative;
+    margin-left: -70px;
+    margin-top: 7px;
+    width: 0px;
+    height: 0px;
+    outline:0;
+}
+
+.searchOptions {
+    background-color: purple;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+    vertical-align: middle;
+    margin-top: 6px;
+    border-radius: 10px;
+    outline: 0;
+    font-size: 0.8em;
+}
 
 @media screen and (max-width: 640px) {
     .searchblock{

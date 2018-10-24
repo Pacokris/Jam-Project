@@ -22,6 +22,10 @@ import { MatCardModule } from '@angular/material/card';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { PlacelistComponent } from './placelist/placelist.component';
 import { PlaceresultComponent } from './placeresult/placeresult.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 const routes: Routes = [
@@ -64,6 +68,9 @@ const routes: Routes = [
     FormsModule,
     MatInputModule,
     MatCardModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatIconModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'

@@ -9,23 +9,36 @@ import { Router } from '@angular/router';
 })
 
 export class SearchComponent implements OnInit {
+  resultParameter: string = "";
+  routerLinkValue: string = "";
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  sendInputResult(input){
+  sendInputResult(input) {
     this.router.navigate(['/result', input]);
   }
 
-  sendInputLocation(input){
+  sendInputLocation(input) {
     this.router.navigate(['/placeresult', input]);
   }
-  // sendInputList(input) {
-  //   this.router.navigate(['/list', input]);
-  // }
-  // sendInputMap(input) {
-  //   this.router.navigate(['/map', input]);
-  // }
 
+  setToArtist() {
+    this.resultParameter = "Artists";
+  }
+
+  setToLocation() {
+    this.resultParameter = "Locations";
+  }
+
+  goToResult(input) {
+    if (this.resultParameter === "Artists") {
+      this.router.navigate(['/result', input]);
+      this.routerLinkValue === "/result/:value";
+    } else if (this.resultParameter === "Locations") {
+      this.router.navigate(['/placeresult', input]);
+      this.routerLinkValue === "/placeresult/:value";
+    }
+  }
 }
