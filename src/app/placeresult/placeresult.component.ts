@@ -33,8 +33,9 @@ export class PlaceresultComponent implements OnInit {
       this._EventCatcherService.getArea(this.inputSearch)
       .subscribe(data=> {
         this.test = data.resultsPage;
-        this.area = this.test.results.location;
-        this.nbVille = this.test.totalEntries;
+        this.area = this.test['results'].location;
+        this.nbVille = this.test['totalEntries'];
+        console.log(this.test)
         console.log(this.nbVille)
         if(this.nbVille == 1){this.sendInputList(this.area[0].metroArea.id, this.area[0].city.displayName);}
     });
