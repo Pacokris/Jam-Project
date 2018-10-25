@@ -1,27 +1,37 @@
-<div class="div">
-    <h2 class="titreListe">About the artist</h2>
-    <div class="listeConcerts p-3 jumbotron jumbotron-fluid">
-      <div class="container caseArtist">
-        <div class="row d-flex justify-content-around">
-          <div class="row col-lg-5 d-flex flex-no-shrink">
-            <img *ngIf="artist.image" class="display-4 col-xl-12 photoArtist" [src]="artist.image[4]['#text']" alt="Photo de l'artiste">
-            <h4 class="display-4 col-xl-12 nomArtist">{{artist.name}}</h4>
-          </div>
-          <div *ngIf="artist.bio && artistBioSummary" class="row col-lg-7 d-flex justify-content-end align-content-between flex-shrink:6">
-            <p class="lead">{{artistBioSummary}}</p>
-            <a class="btn btn-secondary btn-lg mat-elevation-z10 morebtn" [href]="artist.bio.links.link.href" target="_blank" role="button">More about this Artist!</a>
-          </div>
+<div class="container">
+  <section class="row justify-content-around">
+    <div class="card col-md-4 bio">
+      <img *ngIf="artist.image" class="card-img-top photoArtist" [src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+      <div class="card-body">
+        <h5 class="card-title nomArtist">{{artist.name}}</h5>
+        <p *ngIf="artist.bio && artistBioSummary" class="card-text">{{artistBioSummary}}</p>
+        <div class="row d-flex justify-content-end">
+          <a [href]="artist.bio.links.link.href" target="_blank" class="btn btn-secondary mat-elevation-z10 morebtn">More about this Artist!</a>
         </div>
       </div>
     </div>
-    <button class="btn btn-secondary btn-lg mat-elevation-z10 reservBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
 
-    <ul class="listeConcerts" *ngFor="let event of events">
-        <li>{{event.displayName}}</li>
-        <li>at {{event.location.city}}</li>
-        <li>at {{ event.venue.displayName | titlecase}}</li>
-        <li >{{event.start.date | date : 'dd-MM-yyyy'}}</li>
-        <li>{{event.start.time | slice : 0 :5}}</li>
-        <li><a class="tickets" href={{event.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
-    </ul>
+    <div class="concertList row col-md-8">
+      <div class="row d-flex justify-content-around align-items-center enteteListe">
+        <h2 class="titreListe">Concert List</h2>
+        <button class="btn btn-secondary btn-lg mat-elevation-z10 reservBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
+      </div>
+
+      <ul class="list-group list-group-flush listeConcerts" *ngFor="let event of events">
+        <div class="card text-center concert">
+          <h3 class="card-header">{{event.displayName}} at {{ event.venue.displayName | titlecase}}</h3>
+          <div class="card-body row justify-content-around align-items-center">
+            <h4 class="card-title">{{event.location.city}}</h4>
+            <h4 class="card-text">{{event.start.date | date : 'dd-MM-yyyy'}} {{event.start.time | slice : 0 :5}}</h4>
+          </div>
+          <div class="row justify-content-center">
+            <a class="btn btn-primary tickets"href={{event.uri}} target="_blank">Buy Tickets !</a>
+          </div>
+        </div>
+      </ul>
+
+    </div>
+
+  </section>
+
 </div>
