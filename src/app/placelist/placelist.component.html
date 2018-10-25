@@ -1,6 +1,24 @@
 <div class="div">
   <h2 class="titreListe" *ngIf="villes.length > 0">Upcoming concerts in <span *ngIf="rechercheElargie == true">{{area}} area</span><span *ngIf="rechercheElargie == false">{{ville}}</span></h2>
 
+  <div *ngIf="(nbEvent >=15 && area == ville) || (nbEvent >=15 && rechercheElargie ==1)" class="div mb-5">
+    <div class="listeConcerts pt-2 pb-2">
+      <p>There are {{nbEvent}} upcomming events, do you want to search events by dates ?</p>
+      <mat-form-field class="matinput">
+        <input  matInput [min]="minDate" [matDatepicker]="picker" placeholder="Start Date"  [(ngModel)]="dateDebut">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="matinput">
+        <input  matInput [matDatepicker]="picker2" placeholder="End Date" [(ngModel)]="dateFin">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 ></mat-datepicker>
+      </mat-form-field>
+      
+      <button class="tickets" (click)="sendDateList(dateDebut, dateFin)" routerLink="/placedateresult/:value1/:value2/:value3/:value4/:value5" >YES!!!!</button>
+    </div>  
+</div>
+
   <ul class="listeConcerts" *ngFor="let event of villes, let i=index">
       <li>{{event.displayName}}</li>
       <li>at {{ event.venue.displayName | titlecase}}</li>
@@ -9,7 +27,8 @@
       <li>{{event.start.time | slice : 0 :5}}</li>
       <li><a class="tickets" href={{event.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
   </ul>
-  <div *ngIf="villes.length <= 50 && villes.length != 0 && displayNoEvent && this.area != this.ville  " class="div mb-5">
+
+  <div *ngIf="villes.length <= 10 && villes.length != 0 && displayNoEvent && this.area != this.ville  " class="div mb-5">
       <div class="listeConcerts pt-2 pb-2">
         <p>Do you want to search events in {{ville}} area ?</p>
         <button class="tickets" (click)="sendInputList()"  routerLink="/placelist/:value/:name">YES!!!!</button>
@@ -23,4 +42,11 @@
       <button class="tickets" (click)="sendInputList()"  routerLink="/placelist/:value/:name">YES!!!!</button>
     </div>  
 </div>
+
+
+
+
+
+
+
   

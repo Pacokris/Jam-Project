@@ -1,0 +1,12 @@
+<div class="div">
+  <h2 class="titreListe">Upcoming concerts in <span>{{area}} area</span></h2>
+
+  <ul class="listeConcerts" *ngFor="let ville of villes, let i=index">
+      <li>{{ville.displayName}}</li>
+      <li>at {{ ville.venue.displayName | titlecase}}</li>
+      <li >at {{ville.location.city}} city</li>
+      <li >{{ville.start.date | date : 'dd-MM-yyyy'}}</li>
+      <li>{{ville.start.time | slice : 0 :5}}</li>
+      <li><a class="tickets" href={{ville.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
+  </ul>
+</div>

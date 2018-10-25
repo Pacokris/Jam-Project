@@ -1,6 +1,9 @@
 import { Component, OnInit} from "@angular/core";
 import { EventCatcherService } from "../services/event-catcher.service";
 import { ActivatedRoute, Router, Params } from "@angular/router";
+import { FormControl } from "@angular/forms";
+
+
 
 @Component({
   selector: "app-placelist",
@@ -15,7 +18,16 @@ export class PlacelistComponent implements OnInit{
   public Id: number;
   public area: string;
   private displayNoEvent;
-  private rechercheElargie: boolean = false;
+  public rechercheElargie: boolean = false;
+  public test = [];
+  public nbEvent: number;
+  public minDate = new Date();
+  public date1 = new FormControl(new Date());
+  public dateDebut: Date;
+  public dateFin: Date;
+  public dateDebutStr: string;
+  public dateFinStr: string;
+  public IdArea: number;
 
   constructor(
     private _EventCatcherService: EventCatcherService,
@@ -23,6 +35,21 @@ export class PlacelistComponent implements OnInit{
     private router: Router
   ) {
     this.displayNoEvent = false;
+  }
+
+
+  sendDateList(dateDebut, dateFin) {
+
+  this.dateDebutStr=this._EventCatcherService.formatDate(dateDebut);
+  this.dateFinStr=this._EventCatcherService.formatDate(dateFin);  
+    
+    //  this.dateDebutStr= dateDebut.getFullYear()+"-"+(dateDebut.getMonth()+1)+"-"+dateDebut.getDate();
+
+    //  this.dateFinStr= dateFin.getFullYear()+"-"+(dateFin.getMonth()+1)+"-"+dateFin.getDate();
+    // console.log(this.dateDebutStr, this.dateFinStr);
+
+    this.router.navigate(['/placedateresult', this.dateDebutStr, this.dateFinStr, this.IdArea, this.ville, this.rechercheElargie]);
+    
   }
 
   ngOnInit() {
@@ -49,7 +76,13 @@ export class PlacelistComponent implements OnInit{
       this._EventCatcherService
         .getAreaEvent(this.inputSearch)
         .subscribe(data => {
+          this.test = data.resultsPage;
+          this.nbEvent = this.test['totalEntries'];
           this.places = data.resultsPage.results.event;
+          this.IdArea = this.places[0].venue.metroArea.id;
+          console.log(this.IdArea);
+          console.log(this.nbEvent);
+          
           this.area = this.places[0].venue.metroArea.displayName;
           console.log(this.area, "area")
           this.places.forEach(event => {

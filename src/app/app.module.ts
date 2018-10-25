@@ -22,10 +22,15 @@ import { MatCardModule } from '@angular/material/card';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { PlacelistComponent } from './placelist/placelist.component';
 import { PlaceresultComponent } from './placeresult/placeresult.component';
+<<<<<<< HEAD
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 
+=======
+import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
+import { PlacedateresultComponent } from './placedateresult/placedateresult.component';
+>>>>>>> rechercheDates
 
 
 const routes: Routes = [
@@ -40,7 +45,8 @@ const routes: Routes = [
   { path: 'result/:value', component: ResultComponent },
   { path: 'placelist/:value/:name', component: PlacelistComponent },
   { path: 'placelist/:value/:name/:name', component: PlacelistComponent },
-  { path: 'placeresult/:value', component: PlaceresultComponent }
+  { path: 'placeresult/:value', component: PlaceresultComponent },
+  { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent}
 
 ];
 
@@ -56,7 +62,9 @@ const routes: Routes = [
     MapComponent,
     RhrnMapComponent,
     PlacelistComponent,
-    PlaceresultComponent
+    PlaceresultComponent,
+    PlacedateresultComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -68,9 +76,14 @@ const routes: Routes = [
     FormsModule,
     MatInputModule,
     MatCardModule,
+<<<<<<< HEAD
     MatMenuModule,
     MatDividerModule,
     MatIconModule,
+=======
+    MatDatepickerModule,
+    MatNativeDateModule,
+>>>>>>> rechercheDates
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'
@@ -78,7 +91,7 @@ const routes: Routes = [
     AgmSnazzyInfoWindowModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
