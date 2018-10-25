@@ -4,12 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
-
-.matinput {
-    margin-left: 5% !important;
-    margin-right: 5% !important;
-} 
-    
+      
 .div{
     display: flex;
     flex-direction: column;
