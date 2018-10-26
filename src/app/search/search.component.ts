@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 
 export class SearchComponent implements OnInit {
-  resultParameter: string = "";
-  routerLinkValue: string = "";
+  resultParameter: string = "Artists";
+  routerLinkValue: string = "/result/:value";
 
   constructor(private router: Router) { }
 
