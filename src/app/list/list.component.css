@@ -41,6 +41,7 @@ section{
   overflow: auto;
   position: sticky;
   top: 0vh;
+  border: 1px solid black;
 }
 
 
@@ -75,11 +76,12 @@ section{
     font-family:'dream', Helvetica, Arial, sans-serif;
     list-style-type: none;
     font-size: 170%;
-    margin: 3px;
+    margin: 15px;
     width: 100%;
     border-width: 0.08em;
     border-radius: 5px;
     align-self: center;
+    border: 1px solid black;
 }
 
 .tickets {
