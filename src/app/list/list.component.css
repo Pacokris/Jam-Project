@@ -8,34 +8,52 @@
 .container{
   width: 100%;
 }
-
+/* 
 section{
   padding-top: 68px;
+} */
+
+.enteteListe{
+  margin-top: 10vh;
+  width: 100%;
+  position: sticky;
+  top: 10vh;
+  z-index: 10;
+}
+
+.main{
+  max-height: 80vh;
+  overflow: auto;
+  position: sticky;
+  top: 20vh;
 }
 
 .bio{
-  max-height: 100%;
-  overflow: scroll;
+  max-height: 80vh;
+  overflow: auto;
+  position: sticky;
+  top: 5vh;
+}
+
+
+.photoArtist{
+  width: 40%;
+  height: auto;
+  align-self: center;
 }
 
 .nomArtist{
-  margin-top: 3vmin;
+  /* margin-top: 3vmin; */
   text-align: center;
   font-weight: bold;
 }
 
-.ConcertList{
-  width: 100%;
-}
+
 
 .concert{
   border-color: white;
   border-style: solid;
   border-width: 3px;
-}
-
-.enteteListe{
-  width: 100%;
 }
 
 .titreListe {
@@ -44,7 +62,7 @@ section{
     font-size: 1.8em;
     padding: 0.4em;
     letter-spacing: 5px;
-    background-color: rgba(249, 231, 252, 0.836);
+    background-color: rgba(249, 231, 252);
     border-width: 0.08em;
     border-radius: 5px;
     border-color: rgb(78, 78, 78);
