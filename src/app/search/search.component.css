@@ -25,7 +25,7 @@
 }
 
 .blackNav {
-    background: rgb(78, 78, 78);
+    background: gray;
     max-width : 100%;
     z-index: 1;
 }
@@ -79,6 +79,7 @@
 .inputSearch {
     border: 1px solid black;
     border-radius: 10px;
+    padding-left: 10px;
     outline: 0;
 }
 
@@ -100,7 +101,7 @@ mat-radio-button ~ .mat-radio-button {
 }
 
 .searchOptions {
-    background-color: purple;
+    background-color: rgb(156, 35, 156);
     font-weight: bold;
     color: rgb(253, 253, 253);
     vertical-align: middle;
