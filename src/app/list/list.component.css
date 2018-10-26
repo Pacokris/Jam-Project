@@ -99,6 +99,7 @@ section{
 
 .mat-elevation-z10:hover {
     box-shadow:  1px 1px 5px rgb(250, 243, 142), -1px -1px 5px rgb(250, 243, 142), -1px 1px 5px rgb(250, 243, 142), 1px -1px 5px rgb(250, 243, 142), 1px 1px 10px rgb(252, 29, 241), -1px -1px 10px rgb(252, 29, 241), -1px 1px 10px rgb(252, 29, 241), 1px -1px 10px rgb(252, 29, 241);
+    outline:0;
 }
 
 .btn {
