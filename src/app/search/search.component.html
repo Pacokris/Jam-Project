@@ -1,13 +1,19 @@
-<mat-toolbar class="blackNav fixed-top">
+<!--<mat-toolbar class="blackNav fixed-top">
     <mat-toolbar-row>
+JAM BUTTON----------------------------------------------------------------------------------------------------
         <a mat-raised-button class="JAMbutton mat-elevation-z10 mat-button-wrapper" routerLink="/home">JAM</a>
+
         <div class="searchblock container d-flex">
-            <div class="searchbar"><input class="inputSearch" #searchInput type="text" (keyup.enter)="goToResult(searchInput.value)"
-                    placeholder="Search your artist"></div>
+SEARCH INPUT--------------------------------------------------------------------------------------------------
+            <div class="searchbar">
+              <input class="inputSearch" #searchInput type="text" (keyup.enter)="goToResult(searchInput.value)" placeholder="Search your artist">
+            </div>
             <button mat-button class="iconInput" (click)="goToResult(searchInput.value)" routerLink="{{ routerLinkValue }}">
                 <mat-icon>search</mat-icon>
             </button>
+SEARCH MENU BTN ----------------------------------------------------------------------------------------------
             <button class="searchOptions mat-elevation-z10 mat-button-wrapper" mat-raised-button [matMenuTriggerFor]="menu">Search Options</button>
+SEARCH MENU --------------------------------------------------------------------------------------------------
             <mat-menu class="searchOptionMenu" #menu="matMenu" [overlapTrigger]="false">
                 <mat-radio-group>
                     <mat-radio-button (click)="setToArtist()" value="1">Artist</mat-radio-button>
@@ -17,11 +23,53 @@
             </mat-menu>
         </div>
     </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar>-->
 
-<!--
-<mat-menu #menu="matMenu" [overlapTrigger]="false">
-    <button mat-radio-item (click)="sendInputResult(searchInput.value)" routerLink="/result/:value">By Artist</button>
-    <button mat-menu-item (click)="sendInputLocation(searchInput.value)" routerLink="/placeresult/:value">By Location</button>
-</mat-menu>
--->
+<mat-toolbar class="mainNav fixed-top">
+    <!--JAM Btn-->
+    <span>
+      <button mat-button class="JAMbtn mat-elevation-z20" routerLink="/home">JAM</button>
+    </span>
+  
+    <span class="inputSearchBtnContainer">
+      <!--Search Input-->
+      <mat-form-field class="inputFormField">
+        <mat-label></mat-label> <!--Allows to disable placeholder animation-->
+        <input matInput class="searchInputField" #searchInput type="text" (keyup.enter)="goToResult(searchInput.value)" placeholder="search..." autofocus>
+      </mat-form-field>
+
+      <!--Search Icon-->
+      <button mat-icon-button class="searchIconBtn" (click)="goToResult(searchInput.value)">
+        <mat-icon class="searchIcon" aria-label="Search icon">search</mat-icon>
+      </button>
+
+      <!--Search Options Btn displayed in Desktop Only-->
+      <span class="filterBtnContainerDesktop">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <i class="material-icons" aria-label="Drop menu icon">keyboard_arrow_down</i>
+                Search options
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+              <mat-radio-group>
+                  <mat-radio-button (click)="setToArtist()" value="1" checked>Artist</mat-radio-button>
+                  <mat-divider></mat-divider>
+                  <mat-radio-button (click)="setToLocation()" value="2">Location</mat-radio-button>
+              </mat-radio-group>
+            </mat-menu>
+          </span>
+      </span>
+  
+    <!--Search Options Btn displayed in Mobile Only-->
+    <span class="filterBtnContainerMobile">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="material-icons filterIcon" aria-label="Filter icon">add_circle_outline</i>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <mat-radio-group>
+            <mat-radio-button (click)="setToArtist()" value="1" checked>Artist</mat-radio-button>
+            <mat-divider></mat-divider>
+            <mat-radio-button (click)="setToLocation()" value="2">Location</mat-radio-button>
+        </mat-radio-group>
+      </mat-menu>
+    </span>
+  </mat-toolbar>

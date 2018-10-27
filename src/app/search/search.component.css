@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: 'dream';
     src:url(/src/assets/fonts/Dream.ttf) format('truetype');
     font-weight: normal;
@@ -34,11 +34,9 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    /* padding: 10vh; */
 
 }
 .searchbar{
-    /* display: flex; */
     align-self: center;
     justify-content: center;
     padding: 1vh;
@@ -182,4 +180,88 @@ mat-radio-button ~ .mat-radio-button {
         max-width: 25vh;
     }
 
+}*/
+
+/* --- NEW CSS --- */ 
+@font-face {
+    font-family: 'dream';
+    src:url(/src/assets/fonts/Dream.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'potra';
+    src:url(/src/assets/fonts/Potra.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mainNav {
+    background-color: purple;
+    z-index: 1;
+}
+
+.JAMbtn {
+    font-family:'potra', Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 1.8em;
+    outline: 0;
+    height: 6vh;
+    box-shadow: 2px 2px 2px black;
+    border: 1px solid black;
+}
+
+.searchIconBtn {
+    outline: 0;
+}
+
+.inputFormField {
+    width: 35vw;
+    margin-left: 8vw;
+  }
+  
+.inputSearchBtnContainer {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: auto;
+}
+
+.searchIconBtn{
+    outline: 0;
+}
+
+.searchIcon{
+    font-size: 36px;    
+}
+
+.filterBtnContainerDesktop {
+    display: none;
+}
+
+.filterIcon {
+    font-size: 36px;
+}
+
+  @media (min-width: 768px) {
+    .JAMbtn {
+        font-size: 2em;
+        height: 8vh;
+    }
+
+    .inputFormField {
+        width: 20vw;
+    }
+
+    .inputSearchBtnContainer {
+        text-align: center;
+    }
+
+    .filterBtnContainerMobile {
+        display: none;
+    }
+
+    .filterBtnContainerDesktop {
+        display: inline;
+    }
+  }

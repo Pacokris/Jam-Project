@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 
 export class SearchComponent implements OnInit {
-  resultParameter: string = "";
-  routerLinkValue: string = "";
+  resultParameter: string = "Artists";
+  routerLinkValue: string = "/result/:value";
 
   constructor(private router: Router) { }
 
@@ -35,10 +35,10 @@ export class SearchComponent implements OnInit {
   goToResult(input) {
     if (this.resultParameter === "Artists") {
       this.router.navigate(['/result', input]);
-      this.routerLinkValue === "/result/:value";
+      //this.routerLinkValue === "/result/:value";
     } else if (this.resultParameter === "Locations") {
       this.router.navigate(['/placeresult', input]);
-      this.routerLinkValue === "/placeresult/:value";
+      //this.routerLinkValue === "/placeresult/:value";
     }
   }
 }
