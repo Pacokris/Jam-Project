@@ -28,7 +28,7 @@ agm-map {
     font-family:'dream', Helvetica, Arial, sans-serif;
     box-shadow: 4px 4px 4px;
     background-color: grey;
-    margin-top: 20vh;
+    margin-top: 10vh;
     margin-bottom: -13vh;
 }
 
@@ -44,10 +44,6 @@ agm-map {
     box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
 }
 
-.mat-elevation-z10:hover {
-    box-shadow:  1px 1px 5px rgb(250, 243, 142), -1px -1px 5px rgb(250, 243, 142), -1px 1px 5px rgb(250, 243, 142), 1px -1px 5px rgb(250, 243, 142), 1px 1px 10px rgb(252, 29, 241), -1px -1px 10px rgb(252, 29, 241), -1px 1px 10px rgb(252, 29, 241), 1px -1px 10px rgb(252, 29, 241);
-}
-
 .si-shadow-frame, .displayArtist, .displayDate {
     text-align: center;
 }
@@ -61,29 +57,22 @@ agm-map {
     }
 
     agm-map {
-        height: 40vw;
+        height: 80vh;
         width: 60vw;
         display: block;
         margin: auto;
-        margin-top: 6%;
+       
     }
     
     .reservBtn {
-        display: block;
-        margin: auto;
-        font-family:'dream', Helvetica, Arial, sans-serif;
-        box-shadow: 4px 4px 4px;
-        background-color: grey;
-        margin-top: 10vh;
-        margin-bottom: -10vh;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    box-shadow: 4px 4px 4px;
+    background-color: rgb(155, 151, 151);
+    margin-bottom: 1.5vh;
     }
     
     .mat-elevation-z10 {
-        box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
     }
     
-    .mat-elevation-z10:hover {
-        box-shadow:  1px 1px 5px rgb(250, 243, 142), -1px -1px 5px rgb(250, 243, 142), -1px 1px 5px rgb(250, 243, 142), 1px -1px 5px rgb(250, 243, 142), 1px 1px 10px rgb(252, 29, 241), -1px -1px 10px rgb(252, 29, 241), -1px 1px 10px rgb(252, 29, 241), 1px -1px 10px rgb(252, 29, 241);
-    }
-
 }

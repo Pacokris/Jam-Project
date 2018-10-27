@@ -1,31 +1,33 @@
-<div class="container">
-  <section class="row justify-content-around">
-    <div class="card col-md-4 bio">
-      <img *ngIf="artist.image" class="card-img-top photoArtist" [src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+<div class="container-fluid">
+
+  <div class="row d-flex justify-content-around align-items-center enteteListe">
+      <button class="btn btn-secondary btn-lg mat-elevation-z10 reservBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
+      <h2 class="titreListe">Concert List</h2>
+    </div>
+
+  <section class="row justify-content-around main">
+
+    <div class="card col-md-5  bio">
+      <img *ngIf="artist.image" class="card-img-top photoArtist mt-4" [src]="artist.image[3]['#text']" alt="Photo de l'artiste">
       <div class="card-body">
         <h5 class="card-title nomArtist">{{artist.name}}</h5>
         <p *ngIf="artist.bio && artistBioSummary" class="card-text">{{artistBioSummary}}</p>
         <div class="row d-flex justify-content-end">
-          <a [href]="artist.bio.links.link.href" target="_blank" class="btn btn-secondary mat-elevation-z10 morebtn">More about this Artist!</a>
+          <a [href]="artist.bio.links.link.href" target="_blank" class="btn btn-light mat-elevation-z10 morebtn">More about this Artist</a>
         </div>
       </div>
     </div>
 
-    <div class="concertList row col-md-8">
-      <div class="row d-flex justify-content-around align-items-center enteteListe">
-        <h2 class="titreListe">Concert List</h2>
-        <button class="btn btn-secondary btn-lg mat-elevation-z10 reservBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
-      </div>
-
+    <div class="concertList row col-md-6">
       <ul class="list-group list-group-flush listeConcerts" *ngFor="let event of events">
         <div class="card text-center concert">
-          <h3 class="card-header">{{event.displayName}} at {{ event.venue.displayName | titlecase}}</h3>
-          <div class="card-body row justify-content-around align-items-center">
-            <h4 class="card-title">{{event.location.city}}</h4>
-            <h4 class="card-text">{{event.start.date | date : 'dd-MM-yyyy'}} {{event.start.time | slice : 0 :5}}</h4>
+          <h3 class="card-header">{{event.location.city | titlecase}}</h3>
+          <div class="card-body align-items-center">
+            <h4 class="card-text">{{event.venue.displayName}}</h4>
+            <p>{{event.start.date | date : 'dd-MM-yyyy'}} {{event.start.time | slice : 0 :5}}</p>
           </div>
           <div class="row justify-content-center">
-            <a class="btn btn-primary tickets"href={{event.uri}} target="_blank">Buy Tickets !</a>
+            <a class="btn btn-light mat-elevation-z10 tickets"href={{event.uri}} target="_blank">Buy Tickets</a>
           </div>
         </div>
       </ul>

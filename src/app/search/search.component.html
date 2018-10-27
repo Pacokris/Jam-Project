@@ -16,7 +16,7 @@ SEARCH MENU BTN ----------------------------------------------------------------
 SEARCH MENU --------------------------------------------------------------------------------------------------
             <mat-menu class="searchOptionMenu" #menu="matMenu" [overlapTrigger]="false">
                 <mat-radio-group>
-                    <mat-radio-button (click)="setToArtist()" value="1">Artist</mat-radio-button>
+                    <mat-radio-button (click)="setToArtist()" value="1" checked>Artist</mat-radio-button>
                     <mat-divider></mat-divider>
                     <mat-radio-button (click)="setToLocation()" value="2">Location</mat-radio-button>
                 </mat-radio-group>
