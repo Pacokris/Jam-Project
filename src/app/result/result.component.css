@@ -68,12 +68,6 @@
 
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
 @media (min-width: 768px) {
-    .pageTitleCard {
-        width: 40vw;
-        text-align: center;
-        margin: 2vh auto;
-    }
-
     .cardTitle {
         width: 35vw;
     }
