@@ -1,5 +1,3 @@
-<app-nav></app-nav>
-<app-search></app-search>
 <button class="reservBtn mat-elevation-z10 btn btn-secondary btn-lg" (click)="sendInputList(events[0].performance[0].artist.id, events[0].performance[0].artist.displayName)" routerLink="/list/:value/:name">Show concerts on list</button>
 <agm-map [latitude]="getLatitude()" [longitude]="getLongitude()" [zoom]="getZoom()">
 

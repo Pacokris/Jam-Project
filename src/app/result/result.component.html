@@ -1,18 +1,5 @@
-<!--<div class="div">
-  <h2 class="titreListe">Artists list</h2>
-  <ul class="listeConcerts" *ngFor="let artist of artists">
-      <li>{{artist.displayName}}</li>
-      <li *ngIf="artist.onTourUntil != null">On tour until {{artist.onTourUntil | date : short}}</li>
-      <li *ngIf="artist.onTourUntil === null">Not on tour right now !!</li>
-      <div class="choixaffi container ">
-          <button *ngIf="artist.onTourUntil != null" class="m-1" (click)="sendInputList(artist.id, artist.displayName)" routerLink="/list/:value/:name">Upcoming concerts list</button>
-          <button *ngIf="artist.onTourUntil != null" class="m-1" (click)="sendInputMap(artist.id)" routerLink="/map/:value">Upcoming concerts on map</button>
-      </div>
-  </ul>
-</div>-->
-
 <div class="artistListResutContainer">
-    <mat-card class="pageTitleCard"><h2>Artists list</h2></mat-card>
+    <h2 class="pageTitle">Artists list</h2>
 
     <mat-list role="list" *ngFor="let artist of artists">
         <mat-card-title class="cardTitle">{{artist.displayName}}</mat-card-title>

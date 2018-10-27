@@ -1,30 +1,3 @@
-<!--<mat-toolbar class="blackNav fixed-top">
-    <mat-toolbar-row>
-JAM BUTTON----------------------------------------------------------------------------------------------------
-        <a mat-raised-button class="JAMbutton mat-elevation-z10 mat-button-wrapper" routerLink="/home">JAM</a>
-
-        <div class="searchblock container d-flex">
-SEARCH INPUT--------------------------------------------------------------------------------------------------
-            <div class="searchbar">
-              <input class="inputSearch" #searchInput type="text" (keyup.enter)="goToResult(searchInput.value)" placeholder="Search your artist">
-            </div>
-            <button mat-button class="iconInput" (click)="goToResult(searchInput.value)" routerLink="{{ routerLinkValue }}">
-                <mat-icon>search</mat-icon>
-            </button>
-SEARCH MENU BTN ----------------------------------------------------------------------------------------------
-            <button class="searchOptions mat-elevation-z10 mat-button-wrapper" mat-raised-button [matMenuTriggerFor]="menu">Search Options</button>
-SEARCH MENU --------------------------------------------------------------------------------------------------
-            <mat-menu class="searchOptionMenu" #menu="matMenu" [overlapTrigger]="false">
-                <mat-radio-group>
-                    <mat-radio-button (click)="setToArtist()" value="1" checked>Artist</mat-radio-button>
-                    <mat-divider></mat-divider>
-                    <mat-radio-button (click)="setToLocation()" value="2">Location</mat-radio-button>
-                </mat-radio-group>
-            </mat-menu>
-        </div>
-    </mat-toolbar-row>
-</mat-toolbar>-->
-
 <mat-toolbar class="mainNav">
     <!--JAM Btn-->
     <span>
@@ -72,4 +45,4 @@ SEARCH MENU --------------------------------------------------------------------
         </mat-radio-group>
       </mat-menu>
     </span>
-  </mat-toolbar>
+</mat-toolbar>
