@@ -1,98 +1,53 @@
-@font-face {
-    font-family: 'dream';
-    src:url(/src/assets/fonts/Dream.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
+/* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
+.pageTitleCard {
+    width: 80vw;
+    text-align: center;
+    margin: 2vh auto;
+}
 
-    .choixaffi{
-        display: flex;
-        flex-direction: column;
-        justify-content: center
-    }
+.cardTitle {
+    text-align: center;
+    font-weight: bold;
+    background-color: blue;
+    width: 90vw;
+    margin: auto;
+}
 
-    .div{
-        display: flex;
-        flex-direction: column;
-        margin-top: 10vh;
-    }
+.resultCard {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 2vh;
+}
 
-    .titreListe {
-        align-self: center;
-        font-family:'dream', Helvetica, Arial, sans-serif;
-        font-size: 2em;
-        padding: 0.4em;
-        letter-spacing: 5px;
-        background-color: rgba(249, 231, 252, 0.836);
-        border-width: 0.05em;
-        border-style: solid;
-        border-color: rgb(78, 78, 78);
-        border-radius: 5px;
-    }
+.onTourText {
+    text-align: center;
+    font-size: 1.4em;
+}
 
-    .listeConcerts {
-        font-family:'dream', Helvetica, Arial, sans-serif;
-        list-style-type: none;
-        font-size: 170%;
-        padding: 0;
-        width: 70vw;
-        border-width: 0.08em;
-        border-style: solid;
-        border-color: rgb(78, 78, 78);
-        align-self: center;
-        border-radius: 5px;
-        background-color: rgba(249, 231, 252, 0.836);
-    }
+.cardBtnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
-    .tickets {
-        font-family:'dream', Helvetica, Arial, sans-serif;
-        letter-spacing: 5px;
-        font-weight: bold;
-        width: 50%;
-    }
+.mapListDisplayBtn {
+    font-weight: bold;
+}
 
-    .listeConcerts li {
-        padding: .3em 0;
+/* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+@media (min-width: 768px) {
+    .pageTitleCard {
+        width: 40vw;
         text-align: center;
+        margin: 2vh auto;
     }
 
-    .jumbotron{
-      width: 95%;
-      margin: 0 auto;
-      margin-top: 2%;
+    .cardTitle {
+        width: 35vw;
     }
 
-    p{
-      text-align: justify;
+    .resultCard {
+        width: 35vw;
     }
 
-    .photoArtist{
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .nomArtist{
-      margin-top: 3vmin;
-    }
-
-    @media screen and (max-width: 640px) {
-    
-    .div {
-        display: flex;
-        flex-direction: column;
-        margin-top: 19vh;
-    }
-
-        
-    .listeConcerts {
-        font-family:'dream', Helvetica, Arial, sans-serif;
-        list-style-type: none;
-        font-size: 110%;
-        padding: 0;
-        width: 90%;
-        border-width: 0.08em;
-        border-style: solid;
-        border-color: rgb(78, 78, 78);
-        align-self: center;
-    }
-  }
+}

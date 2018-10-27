@@ -25,6 +25,7 @@ import { PlaceresultComponent } from './placeresult/placeresult.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
 import { PlacedateresultComponent } from './placedateresult/placedateresult.component';
@@ -78,6 +79,7 @@ const routes: Routes = [
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatListModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'
