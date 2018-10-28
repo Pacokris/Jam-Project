@@ -105,6 +105,11 @@
     font-weight: bold;
 }
 
+.datePickerFormsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .datePicker {
     display: block;
     width: 60vw;
@@ -152,7 +157,7 @@
 }
 
 .resultCardTitle {
-        width: 90vw;
+    width: 90vw;
     margin: auto;
     text-align: center;
     font-weight: bold;
@@ -163,8 +168,7 @@
     /*CSS de 'titreListe' de la page list.component*/
     background-color: purple;
     color: white;
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    
+    font-family:'dream', Helvetica, Arial, sans-serif; 
 }
 
 .placeListBtn {
@@ -182,6 +186,44 @@
     /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
     font-weight: bold; 
+}
+
+/* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+@media (min-width: 768px) {
+    .datePickerContainer {
+        width: 40vw;
+    }
+
+    .datePickerFormsContainer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .datePicker {
+        width: 15vw;
+    }
+
+    .validateDateBtn {
+        font-size: 1.2em;
+    }
+
+    .resultCard {
+        width: 50vw;
+    }
+
+    .cardTitle {
+        width: 50vw;
+    }
+
+    .resultCardTitle {
+        width: 50vw;
+    }
+
+    .userPromptResult {
+        font-size: 2em;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+    }
 }
 
 
