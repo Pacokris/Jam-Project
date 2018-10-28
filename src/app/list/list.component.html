@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<!--<div class="container-fluid">
 
   <div class="row d-flex justify-content-around align-items-center enteteListe">
       <button class="btn btn-secondary btn-lg mat-elevation-z10 reservBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
       <h2 class="titreListe">Concert List</h2>
-    </div>
+  </div>
 
   <section class="row justify-content-around main">
 
@@ -35,5 +35,61 @@
     </div>
 
   </section>
+
+</div>-->
+<div class="listPageContainer">
+
+  <!--Page Title and button to display concert on map-->
+  <div class="pageTitleMapBtnContainer">
+    <div class="pageTitleContainer">
+      <h2 class="pageTitle">Concert list</h2>
+    </div>
+    <div class="mapDisplayBtnContainer">
+      <button mat-button class="mapDisplayBtn">Show concerts on map</button>
+    </div>
+  </div>
+
+  <div class="bioConcertListContainer">
+    <!--Artist Biography-->
+    <div class="bioContainer">
+      <mat-card-title class="artistCardTitle">{{artist.name}}</mat-card-title>
+      <mat-card class="artistResultCard">
+          <img mat-card-image *ngIf="artist.image" class="artistImage" [src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+          <!--Biography in an expansion panel-->
+          <mat-accordion>
+            <mat-expansion-panel> 
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="bioPanelTitle">
+                    Artist Biography
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+              <mat-card-content>
+                <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+              </mat-card-content>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </mat-card>
+    </div>
+
+    <!--Concert List-->
+    <div class="listContainer">
+      <mat-list role="list" *ngFor="let event of events">
+        <mat-card-title class="cardTitle">{{event.location.city | titlecase}}</mat-card-title>
+        <mat-card class="resultCard">
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">place</i>
+              {{event.venue.displayName}}
+            </mat-card-content>
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">alarm</i>
+              {{event.start.date | date : 'dd-MM-yyyy'}} {{event.start.time | slice : 0 :5}}
+            </mat-card-content>
+            <mat-card-actions class="cardBtnContainer">
+                <button mat-button class="goToBuyTicketsBtn"><a href={{event.uri}} target="_blank">Buy Tickets</a></button>
+            </mat-card-actions>
+        </mat-card>
+      </mat-list>
+    </div>
+  </div>
 
 </div>

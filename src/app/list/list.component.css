@@ -1,9 +1,9 @@
-@font-face {
+/*@font-face {
     font-family: 'dream';
     src:url(/src/assets/fonts/Dream.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
-    }
+}
 
 .card-header {
   font-size: 0.9em;
@@ -16,10 +16,6 @@
 .container{
   width: 100%;
 }
-/* 
-section{
-  padding-top: 68px;
-} */
 
 .enteteListe{
   margin-top: 10vh;
@@ -52,7 +48,6 @@ section{
 }
 
 .nomArtist{
-  /* margin-top: 3vmin; */
   text-align: center;
   font-weight: bold;
 }
@@ -115,5 +110,220 @@ section{
   .listeConcerts{
     min-width: 77.5%;
     margin: 0 auto;
+  }
+} */
+
+/* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
+@font-face {
+  font-family: 'dream';
+  src:url(/src/assets/fonts/Dream.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.listPageContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageTitleMapBtnContainer {
+  width: 60vw;
+  margin: 4vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pageTitle {
+  text-align: center;
+  margin-top: 2vh; 
+  margin-bottom: 2vh;
+  /*CSS de 'titreListe' de la page list.component*/
+  font-family:'dream', Helvetica, Arial, sans-serif;
+  letter-spacing: 5px;
+  border-width: 0.08em;
+  border-radius: 5px;
+  border-color: rgb(78, 78, 78);
+  font-weight: bold;
+}
+
+.mapDisplayBtn {
+  font-weight: bold;
+  font-size: 1.4em;
+  background-color: purple;
+  color: white;
+  /*CSS de 'titreListe' de la page list.component*/
+  font-family:'dream', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+  border-radius: 5px;
+}
+
+.bioConcertListContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.artistCardTitle {
+  width: 90vw;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 5px 5px 0px 0px;
+  /*CSS de 'titreListe' de la page list.component*/
+  background-color: rgb(155, 151, 151);
+  color: white;
+  font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.artistResultCard {
+  width: 90vw;
+  margin: auto;
+  margin-bottom: 2vh;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.artistImage {
+  width: 85vw;
+  padding-top: 2vh;
+  padding-left: 5vw;
+}
+
+.bioPanelTitle {
+  font-family:'dream', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.artistBioText {
+  font-family:'dream', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.cardTitle {
+  width: 90vw;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 5px 5px 0px 0px;
+  /*CSS de 'titreListe' de la page list.component*/
+  background-color: rgb(155, 151, 151);
+  color: white;
+  font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.resultCard {
+  width: 90vw;
+  margin: auto;
+  margin-bottom: 2vh;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.cardBtnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.goToBuyTicketsBtn {
+  font-weight: bold;
+  font-size: 1.1em;
+  /*CSS de 'titreListe' de la page list.component*/
+  font-family:'dream', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+  border-radius: 5px;
+}
+
+.eventCardContent {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.eventInfoIcons {
+  vertical-align: sub;
+  font-size: 36px;
+}
+
+/* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+@media (min-width: 768px) {
+  .listPageContainer {
+    width: 98vw;
+  }
+
+  .pageTitleMapBtnContainer {
+    width: 90vw;
+    flex-direction: row;
+  }
+
+  .pageTitleContainer {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mapDisplayBtnContainer {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bioConcertListContainer {
+    flex-direction: row;
+  }
+
+  .bioContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 30vh;
+  }
+
+  .listContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50vw;
+  }
+
+  .artistCardTitle {
+    width: 25vw;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;  
+  }
+
+  .artistResultCard {
+    width: 25vw;  
+  }
+
+  .artistImage {
+    width: 20vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-left: 5vw;
+  }
+
+  .cardTitle {
+    width: 40vw;
+  }
+
+  .resultCard {
+    width: 40vw;
   }
 }
