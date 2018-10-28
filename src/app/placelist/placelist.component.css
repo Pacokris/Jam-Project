@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: 'dream';
     src:url(/src/assets/fonts/Dream.ttf) format('truetype');
     font-weight: normal;
@@ -78,4 +78,110 @@
         border-color: rgb(78, 78, 78);
         align-self: center;
     }
+}*/
+/* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
+.pageTitle {
+    text-align: center;
+    margin-top: 2vh; 
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    letter-spacing: 5px;
+    border-width: 0.08em;
+    border-radius: 5px;
+    border-color: rgb(78, 78, 78);
+    font-weight: bold;
 }
+
+.datePickerContainer {
+    width: 80vw;
+    margin: 5vh auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.userPromptResult{
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.datePicker {
+    display: block;
+    width: 60vw;
+    margin: auto;
+}
+
+.resultCard {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 2vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.cardBtnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.validateDateBtn {
+    font-weight: bold;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    border-radius: 5px;
+}
+
+.cardTitle {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: rgb(155, 151, 151);
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.resultCardTitle {
+        width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: purple;
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    
+}
+
+.placeListBtn {
+    font-weight: bold;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    border-radius: 5px;
+}
+
+.onTourText {
+    text-align: center;
+    font-size: 1.2em;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold; 
+}
+
+

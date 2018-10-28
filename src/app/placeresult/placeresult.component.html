@@ -1,15 +1,5 @@
-<!--div class="div">
-  <h2 class="titreListe">Locations lists</h2>
-  <ul class="listeConcerts" *ngFor="let lieu of area">
-      <li>{{lieu.city.displayName}}, {{lieu.city.country.displayName}}</li>
-      <div class="choixaffi container ">
-          <button class="m-1" (click)="sendInputList(lieu.metroArea.id, lieu.city.displayName)"  routerLink="/placelist/:value/:name"> Upcoming concerts list</button>
-          COMMENTE <button class="m-1" (click)="sendInputMap(lieu.metroArea.id)" routerLink="/map/:value">Upcoming concerts on map</button> 
-      </div>      
-  </ul>-->
-
 <div class="artistLocationResutContainer">
-  <h2 class="pageTitle">Artists list</h2>
+  <h2 class="pageTitle">Location list</h2>
 
   <mat-list role="list" *ngFor="let lieu of area">
     <mat-card-title class="cardTitle">{{lieu.city.displayName}}, {{lieu.city.country.displayName}}</mat-card-title>

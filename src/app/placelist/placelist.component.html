@@ -1,4 +1,4 @@
-<div class="div">
+<!--<div class="div">
   <h2 class="titreListe" *ngIf="villes.length > 0">Upcoming concerts in <span *ngIf="rechercheElargie == true">{{area}} area</span><span *ngIf="rechercheElargie == false">{{ville}}</span></h2>
 
   <div *ngIf="(nbEvent >=15 && area == ville) || (nbEvent >=15 && rechercheElargie ==1)" class="div mb-5">
@@ -17,8 +17,8 @@
       
       <button class="tickets" (click)="sendDateList(dateDebut, dateFin)" routerLink="/placedateresult/:value1/:value2/:value3/:value4/:value5" >YES!!!!</button>
     </div>  
-</div>
-
+</div> 
+---------DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE----------
   <ul class="listeConcerts" *ngFor="let event of villes, let i=index">
       <li>{{event.displayName}}</li>
       <li>at {{ event.venue.displayName | titlecase}}</li>
@@ -27,7 +27,7 @@
       <li>{{event.start.time | slice : 0 :5}}</li>
       <li><a class="tickets" href={{event.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
   </ul>
-
+---------DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE----------
   <div *ngIf="villes.length <= 10 && villes.length != 0 && displayNoEvent && this.area != this.ville  " class="div mb-5">
       <div class="listeConcerts pt-2 pb-2">
         <p>Do you want to search events in {{ville}} area ?</p>
@@ -35,14 +35,76 @@
       </div>  
   </div>
 </div>
+---------DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE DONE----------
 <div *ngIf="villes.length == 0 && displayNoEvent" class="div">
     <h2 class="titreListe">There's no Upcoming concerts in {{ville}}</h2>
     <div class="listeConcerts pt-2 pb-2">
       <p>Do you want to search events in {{ville}} area ?</p>
       <button class="tickets" (click)="sendInputList()"  routerLink="/placelist/:value/:name">YES!!!!</button>
     </div>  
+</div>-->
+
+<div class="test"> <!--CLASS TO DELETE IF NOT USE-->
+  <h2 class="pageTitle" *ngIf="villes.length > 0">Upcoming concerts in <span *ngIf="rechercheElargie == true">{{area}} area</span><span *ngIf="rechercheElargie == false">{{ville}}</span></h2>
+
+  <!--Too many concert availaible: prompt user to use a date filter-->
+  <div *ngIf="(nbEvent >=15 && area == ville) || (nbEvent >=15 && rechercheElargie ==1)">
+    <mat-card class="datePickerContainer">
+      <p class="userPromptResult">There are {{nbEvent}} upcomming events, do you want to search events by dates ?</p>
+      <mat-form-field class="datePicker">
+        <input  matInput [min]="minDate" [matDatepicker]="picker" placeholder="Start Date"  [(ngModel)]="dateDebut">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="datePicker">
+        <input  matInput [matDatepicker]="picker2" placeholder="End Date" [(ngModel)]="dateFin">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 ></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-card-actions class="cardBtnContainer">
+        <button class="validateDateBtn" (click)="sendDateList(dateDebut, dateFin)" routerLink="/placedateresult/:value1/:value2/:value3/:value4/:value5" >YES!!!!</button>
+      </mat-card-actions>
+    </mat-card>  
+  </div>
 </div>
 
+<!--Concert listing-->
+<mat-list role="list" class="listeConcerts" *ngFor="let event of villes, let i=index">
+  <mat-card-title class="cardTitle">{{event.displayName}}</mat-card-title>
+  <mat-card class="resultCard">
+    <mat-card-content class="onTourText">at {{ event.venue.displayName | titlecase}}</mat-card-content>
+    <mat-card-content class="onTourText" *ngIf = "event.location.city != ville || rechercheElargie == true">at {{event.location.city}} city</mat-card-content>
+    <mat-card-content class="onTourText">{{event.start.date | date : 'dd-MM-yyyy'}}</mat-card-content>
+    <mat-card-content class="onTourText">{{event.start.time | slice : 0 :5}}</mat-card-content>
+    <mat-card-actions class="cardBtnContainer">
+      <a href={{event.uri}} target="_blank"><button class="validateDateBtn">BUY TICKETS</button></a>
+    </mat-card-actions>
+  </mat-card>
+</mat-list>
+
+<!--Total concert < 10: prompt user to extend search area-->
+<div *ngIf="villes.length <= 10 && villes.length != 0 && displayNoEvent && this.area != this.ville  ">
+  <mat-card-title class="resultCardTitle">Want more ?</mat-card-title>
+  <mat-card class="resultCard">
+    <p class="userPromptResult">Do you want to search events in {{ville}} area ?</p>
+    <mat-card-actions class="cardBtnContainer">
+      <button class="validateDateBtn" (click)="sendInputList()"  routerLink="/placelist/:value/:name" >YES!!!!</button>
+    </mat-card-actions>
+  </mat-card> 
+</div>
+
+<!--No concert in this town-->
+<div *ngIf="villes.length == 0 && displayNoEvent" class="div">
+  <h2 class="userPromptResult">There's no Upcoming concerts in {{ville}}</h2>
+  <mat-card-title class="resultCardTitle">Want more ?</mat-card-title>
+  <mat-card class="resultCard">
+    <p class="userPromptResult">Do you want to search events in {{ville}} area ?</p>
+    <mat-card-actions class="cardBtnContainer">
+      <button class="validateDateBtn" (click)="sendInputList()"  routerLink="/placelist/:value/:name" >YES!!!!</button>
+    </mat-card-actions>
+  </mat-card> 
+</div>
 
 
 
