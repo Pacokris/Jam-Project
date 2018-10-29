@@ -56,11 +56,6 @@ agm-map {
     text-align: center;
 }
 
-.eventInfoIcons {
-    vertical-align: sub;
-    font-size: 36px;
-}
-
 @media (min-width: 768px) { 
     .mapCard {
         display: block;
