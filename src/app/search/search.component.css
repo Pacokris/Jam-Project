@@ -21,9 +21,9 @@
 .JAMbtn {
     font-family:'potra', Helvetica, Arial, sans-serif;
     font-weight: bolder;
-    font-size: 1.8em;
+    font-size: 1.6em;
     outline: 0;
-    height: 6vh;
+    height: 5vh;
     box-shadow: 2px 2px 2px black;
     border: 1px solid black;
 }
@@ -35,7 +35,7 @@
 .inputFormField {
     width: 35vw;
     margin-left: 8vw;
-  }
+}
   
 .inputSearchBtnContainer {
     /* This fills the remaining space, by using flexbox. 
@@ -63,7 +63,7 @@
   @media (min-width: 768px) {
     .JAMbtn {
         font-size: 2em;
-        height: 8vh;
+        height: 6vh;
     }
 
     .inputFormField {
@@ -76,9 +76,14 @@
 
     .SearchOptionMenuBtn {
         font-size: 18px;
-        margin-left: 2vw;
+        margin-left: 1vw;
+        color: white;
         box-shadow: 2px 2px 2px black;
         border: 1px solid black;
+    }
+
+    .optionsMenuBtn{
+        font-size: 12em;
     }
 
     .filterBtnContainerMobile {

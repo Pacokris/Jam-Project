@@ -5,6 +5,10 @@ agm-map {
     margin: 32vw auto;
 }
 
+.mapMap {
+    height: 80vh;
+}
+
 .mapCard {
     display: block;
     background-color: rgba(255, 255, 255, 0.75);
@@ -22,14 +26,18 @@ agm-map {
     box-shadow: 4px 4px 4px;
 }
 
-.reservBtn {
+.mapDisplayBtn {
+    font-weight: bold;
+    font-size: 1.4em;
+    background-color: purple;
+    color: white;
     display: block;
-    margin: auto;
+    margin: 2vh auto;
+    /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
-    box-shadow: 4px 4px 4px;
-    background-color: grey;
-    margin-top: 10vh;
-    margin-bottom: -13vh;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    border-radius: 5px;
 }
 
 .reservBtn2 {
@@ -48,6 +56,11 @@ agm-map {
     text-align: center;
 }
 
+.eventInfoIcons {
+    vertical-align: sub;
+    font-size: 36px;
+}
+
 @media (min-width: 768px) { 
     .mapCard {
         display: block;
@@ -61,7 +74,10 @@ agm-map {
         width: 60vw;
         display: block;
         margin: auto;
-       
+    }
+
+    .concertMap {
+        margin-top: 5vh;
     }
     
     .reservBtn {

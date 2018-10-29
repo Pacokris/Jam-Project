@@ -105,7 +105,7 @@
 .resultCard {
   width: 90vw;
   margin: auto;
-  /*margin-bottom: 2vh;*/
+  margin-bottom: 2vh;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
@@ -171,6 +171,7 @@
     flex-direction: column;
     width: 50vw;
     height: 30vh;
+    position: sticky;
   }
 
   .listContainer{
@@ -178,6 +179,10 @@
     flex-direction: column;
     justify-content: space-around;
     width: 50vw;
+  }
+
+  .concertList {
+
   }
   
   .goToBuyTicketsBtn {
@@ -193,7 +198,7 @@
   }
 
   .artistResultCard {
-    width: 40vw;  
+    width: 40vw;
   }
 
   .artistImgContainer {

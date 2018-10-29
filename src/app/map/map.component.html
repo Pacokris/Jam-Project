@@ -1,8 +1,8 @@
-<button class="reservBtn mat-elevation-z10 btn btn-secondary btn-lg" (click)="sendInputList(events[0].performance[0].artist.id, events[0].performance[0].artist.displayName)" routerLink="/list/:value/:name">Show concerts on list</button>
-<agm-map [latitude]="getLatitude()" [longitude]="getLongitude()" [zoom]="getZoom()">
+<button mat-button class="mapDisplayBtn" (click)="sendInputList(events[0].performance[0].artist.id, events[0].performance[0].artist.displayName)" routerLink="/list/:value/:name">Show concerts on list</button>
+<agm-map [latitude]="getLatitude()" [longitude]="getLongitude()" [zoom]="getZoom()" class="mapMap">
 
   <agm-marker *ngFor="let m of events; let i = index" [latitude]="m.venue.lat" [longitude]="m.venue.lng" [label]="m.label"
-    [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+    [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" class="concertMap">
     <agm-snazzy-info-window [closeWhenOthersOpen]="true" [showCloseButton]="false">
       <ng-template>
         <div class="mapCard">
@@ -15,17 +15,3 @@
     </agm-snazzy-info-window>
   </agm-marker>
 </agm-map>
-
-
-<!--<agm-info-window>
-        <p><strong>{{m.venue.metroArea.displayName}}</strong></p>
-        <p>{{m.displayName}}</p>
-        <a class="tickets" href={{m.uri}} target="_blank"><button class="btn btn-success">reservation</button></a>
-      </agm-info-window> -->
-
-<!--<div class="popHeader">
-        <p class="si-shadow-frame">{{m.venue.metroArea.displayName}}</p>
-      </div>
-      <p class="displayArtist"> {{m.performance[0].displayName}} - {{m.venue.displayName}}</p>
-      <p class="displayDate"> {{m.start.date | date:'dd-MM-yyyy'}}</p>
-      <a class="tickets" href={{m.uri}} target="_blank"><button class="reservBtn">reservation</button></a> -->

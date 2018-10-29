@@ -1,8 +1,12 @@
 agm-map {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: block;
-    margin: 32vw auto;
+}
+
+.rhrnMap {
+    margin-top: 0vh;
+    height: 80vh;
 }
 
 .mapCard {
@@ -39,6 +43,10 @@ agm-map {
         margin: auto;
         min-height: 20vh;
         min-width: 30vh;
+    }
+
+    .rhrnMap {
+        margin-top: 5vh;
     }
 
     agm-map {
