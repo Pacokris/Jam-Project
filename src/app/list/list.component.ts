@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
 import { ActivatedRoute, Router, Params, } from "@angular/router";
 
@@ -14,8 +14,17 @@ export class ListComponent implements OnInit {
   public name : string;
   public artist = {};
   public artistBioSummary : string;
+  public screenHeight: number;
+  public screenWidth: number;
 
-constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
+constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { this.onResize(); }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+    console.log(this.screenHeight, this.screenWidth);
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{

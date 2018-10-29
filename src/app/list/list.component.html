@@ -45,7 +45,7 @@
       <h2 class="pageTitle">Concert list</h2>
     </div>
     <div class="mapDisplayBtnContainer">
-      <button mat-button class="mapDisplayBtn">Show concerts on map</button>
+      <button mat-button class="mapDisplayBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
     </div>
   </div>
 
@@ -54,9 +54,11 @@
     <div class="bioContainer">
       <mat-card-title class="artistCardTitle">{{artist.name}}</mat-card-title>
       <mat-card class="artistResultCard">
-          <img mat-card-image *ngIf="artist.image" class="artistImage" [src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+          <mat-card-header class="artistImgContainer">
+            <img *ngIf="artist.image" class="artistImg"[src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+          </mat-card-header>
           <!--Biography in an expansion panel-->
-          <mat-accordion>
+          <mat-accordion *ngIf="screenWidth < 768">
             <mat-expansion-panel> 
                 <mat-expansion-panel-header>
                   <mat-panel-title class="bioPanelTitle">
@@ -66,15 +68,24 @@
               <mat-card-content>
                 <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
               </mat-card-content>
+              <button mat-button class="goToBuyTicketsBtn">
+                  <a [href]="artist.bio.links.link.href" target="_blank">More about this Artist</a>
+              </button>
             </mat-expansion-panel>
           </mat-accordion>
+          <div *ngIf="screenWidth >= 768">
+            <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+            <button mat-button class="goToBuyTicketsBtn">
+                <a [href]="artist.bio.links.link.href" target="_blank">More about this Artist</a>
+            </button>
+          </div>
       </mat-card>
     </div>
 
     <!--Concert List-->
     <div class="listContainer">
-      <mat-list role="list" *ngFor="let event of events">
-        <mat-card-title class="cardTitle">{{event.location.city | titlecase}}</mat-card-title>
+      <mat-list class="consertList" role="list" *ngFor="let event of events">
+        <mat-card-title class="cardTitle">{{event.location.city}}</mat-card-title>
         <mat-card class="resultCard">
             <mat-card-content class="eventCardContent">
               <i class="material-icons eventInfoIcons">place</i>
