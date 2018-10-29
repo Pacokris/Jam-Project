@@ -177,8 +177,9 @@
   .listContainer{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     width: 50vw;
+    height: 75vh;
+    overflow-y: scroll;
   }
 
   .concertList {
