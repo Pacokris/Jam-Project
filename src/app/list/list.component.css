@@ -149,9 +149,14 @@
   font-weight: bold;
 }
 
-.eventInfoIcons {
+.eventInfoIconsPlace {
   vertical-align: sub;
   font-size: 36px;
+}
+
+.eventInfoIcons {
+  vertical-align: sub;
+  font-size: 24px;
 }
 
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/

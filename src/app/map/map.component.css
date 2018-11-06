@@ -55,6 +55,30 @@ agm-map {
     text-align: center;
 }
 
+.eventInfoIcons {
+    vertical-align: sub;
+    font-size: 24px;
+}
+
+.goToBuyTicketsBtn {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+    margin: auto;
+    background-color: #66245A;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    border-radius: 5px;
+}
+
+.bioBuyTicketLink {
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 18px;
+}
+
 @media (min-width: 768px) { 
     .mapCard {
         display: block;
