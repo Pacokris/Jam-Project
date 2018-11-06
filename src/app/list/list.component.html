@@ -37,7 +37,7 @@
           <div *ngIf="screenWidth >= 768">
             <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
             <button mat-button class="goToBuyTicketsBtn">
-                <a [href]="artist.bio.links.link.href" target="_blank">More about this Artist</a>
+                <a [href]="artist.bio.links.link.href" target="_blank" class="bioBuyTicketLink">More about this Artist</a>
             </button>
           </div>
       </mat-card>
@@ -46,7 +46,10 @@
     <!--Concert List-->
     <div class="listContainer">
       <mat-list class="concertList" role="list" *ngFor="let event of events">
-        <mat-card-title class="cardTitle">{{event.location.city}}</mat-card-title>
+        <mat-card-title class="cardTitle">
+          <i class="material-icons eventInfoIcons">location_city</i>
+          {{event.location.city}}
+        </mat-card-title>
         <mat-card class="resultCard">
             <mat-card-content class="eventCardContent">
               <i class="material-icons eventInfoIcons">place</i>
@@ -57,7 +60,7 @@
               {{event.start.date | date : 'dd-MM-yyyy'}} {{event.start.time | slice : 0 :5}}
             </mat-card-content>
             <mat-card-actions class="cardBtnContainer">
-                <button mat-button class="goToBuyTicketsBtn"><a href={{event.uri}} target="_blank">Buy Tickets</a></button>
+                <button mat-button class="goToBuyTicketsBtn"><a href={{event.uri}} target="_blank" class="bioBuyTicketLink">Buy Tickets</a></button>
             </mat-card-actions>
         </mat-card>
       </mat-list>

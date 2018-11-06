@@ -36,7 +36,7 @@
 .mapDisplayBtn {
   font-weight: bold;
   font-size: 1.4em;
-  background-color: purple;
+  background-color: #66245A;
   color: white;
   /*CSS de 'titreListe' de la page list.component*/
   font-family:'dream', Helvetica, Arial, sans-serif;
@@ -126,6 +126,16 @@
   font-weight: bold;
   box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
   border-radius: 5px;
+}
+
+.bioBuyTicketLink {
+  color: black;
+  font-weight: bolder;
+}
+
+.mat-card > .mat-card-actions:last-child {
+  margin-bottom: -16px;
+  padding-bottom: 10px;
 }
 
 .eventCardContent {

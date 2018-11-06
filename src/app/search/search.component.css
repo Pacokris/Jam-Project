@@ -14,7 +14,7 @@
 }
 
 .mainNav {
-    background-color: purple;
+    background-color: #66245A;
     z-index: 1;
 }
 
@@ -22,6 +22,8 @@
     font-family:'potra', Helvetica, Arial, sans-serif;
     font-weight: bolder;
     font-size: 1.6em;
+    background-color: white;
+    color: #66245A;
     outline: 0;
     height: 5vh;
     box-shadow: 2px 2px 2px black;
@@ -35,6 +37,7 @@
 .inputFormField {
     width: 35vw;
     margin-left: 8vw;
+    color: white;
 }
   
 .inputSearchBtnContainer {
@@ -43,8 +46,17 @@
     flex: auto;
 }
 
+.searchInputField {
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
 .searchIconBtn{
     outline: 0;
+    color: white;
 }
 
 .searchIcon{
@@ -57,6 +69,10 @@
 
 .filterIcon {
     font-size: 36px;
+}
+
+.filterBtnContainerMobile {
+    color: white;
 }
 
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
@@ -77,7 +93,8 @@
     .SearchOptionMenuBtn {
         font-size: 18px;
         margin-left: 1vw;
-        color: white;
+        background-color: white;
+        color: #66245A;
         box-shadow: 2px 2px 2px black;
         border: 1px solid black;
     }
