@@ -8,7 +8,8 @@
 
 .pageTitle {
     text-align: center;
-    margin-top: 2vh; 
+    margin-top: 5vh; 
+    margin-bottom: 2vh;
     /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
     letter-spacing: 5px;
@@ -29,6 +30,19 @@
     border-radius: 5px 5px 0px 0px;
     /*CSS de 'titreListe' de la page list.component*/
     background-color: rgb(155, 151, 151);
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.cardTitleTitre {
+    width: 50vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: #9B9797;
     color: white;
     font-family:'dream', Helvetica, Arial, sans-serif;
 }
@@ -74,6 +88,10 @@
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
 @media (min-width: 768px) {
     .cardTitle {
+        width: 35vw;
+    }
+
+    .cardTitleTitre {
         width: 35vw;
     }
 

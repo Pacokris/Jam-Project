@@ -13,24 +13,29 @@
 }
 
 .pageTitleMapBtnContainer {
-  width: 60vw;
+  width: 100vw;
   margin: 4vh auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.pageTitle {
+.cardTitleTitre {
+  width: 50vw;
+  margin: auto;
   text-align: center;
-  margin-top: 2vh; 
-  margin-bottom: 2vh;
-  /*CSS de 'titreListe' de la page list.component*/
-  font-family:'dream', Helvetica, Arial, sans-serif;
-  letter-spacing: 5px;
-  border-width: 0.08em;
-  border-radius: 5px;
-  border-color: rgb(78, 78, 78);
   font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  /*CSS de 'titreListe' de la page list.component*/
+  background-color: #9B9797;
+  color: white;
+  font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.mapDisplayBtnContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .mapDisplayBtn {
@@ -156,8 +161,8 @@
   }
 
   .pageTitleMapBtnContainer {
-    width: 90vw;
     flex-direction: row;
+    width: 98vw;
   }
 
   .pageTitleContainer {
@@ -168,8 +173,6 @@
 
   .mapDisplayBtnContainer {
     width: 40vw;
-    display: flex;
-    justify-content: center;
   }
 
   .bioConcertListContainer {
@@ -190,10 +193,6 @@
     width: 50vw;
     height: 75vh;
     overflow-y: scroll;
-  }
-
-  .concertList {
-
   }
   
   .goToBuyTicketsBtn {
@@ -228,6 +227,10 @@
   }
 
   .cardTitle {
+    width: 40vw;
+  }
+
+  .cardTitleTitre {
     width: 40vw;
   }
 

@@ -1,4 +1,6 @@
-<h2 class="pageTitle" *ngIf="villes.length > 0">Upcoming concerts in <span *ngIf="rechercheElargie == true">{{area}} area</span><span *ngIf="rechercheElargie == false">{{ville}}</span></h2>
+<mat-card-title class="pageTitle">
+  <h2 class="cardTitleTitre" *ngIf="villes.length > 0">Upcoming concerts in <span *ngIf="rechercheElargie == true">{{area}} area</span><span *ngIf="rechercheElargie == false">{{ville}}</span></h2>
+</mat-card-title>
 
 <!--Too many concert availaible: prompt user to use a date filter-->
 <div *ngIf="(nbEvent >=15 && area == ville) || (nbEvent >=15 && rechercheElargie ==1)">

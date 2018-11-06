@@ -1,5 +1,6 @@
-<div class="artistLocationResutContainer">
-  <h2 class="pageTitle">Location list</h2>
+<mat-card-title class="pageTitle">
+  <h2 class="cardTitleTitre">Location list</h2>
+</mat-card-title>
 
   <mat-list role="list" *ngFor="let lieu of area">
     <mat-card-title class="cardTitle">{{lieu.city.displayName}}, {{lieu.city.country.displayName}}</mat-card-title>
@@ -14,4 +15,3 @@
         </mat-card-actions>
     </mat-card>
   </mat-list>
-</div>

@@ -3,7 +3,9 @@
   <!--Page Title and button to display concert on map-->
   <div class="pageTitleMapBtnContainer">
     <div class="pageTitleContainer">
-      <h2 class="pageTitle">Concert list</h2>
+      <mat-card-title class="pageTitle">
+        <h2 class="cardTitleTitre">Artist list</h2>
+      </mat-card-title>
     </div>
     <div class="mapDisplayBtnContainer">
       <button mat-button class="mapDisplayBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
