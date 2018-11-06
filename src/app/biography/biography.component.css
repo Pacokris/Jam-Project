@@ -1,0 +1,129 @@
+.artistCardTitle {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: rgb(155, 151, 151);
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+  }
+  
+  .artistResultCard {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 2vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0px 0px 5px 5px;
+
+  }
+  
+  .bioPanelTitle {
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .artistBioText {
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+  .cardTitle {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: rgb(155, 151, 151);
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+  }
+  
+  .resultCard {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 2vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  .cardBtnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+.mat-card-content{
+  font-family:'dream', Helvetica, Arial, sans-serif;
+}
+  
+  /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+  @media (min-width: 768px) {
+  
+    .pageTitleMapBtnContainer {
+      width: 90vw;
+      flex-direction: row;
+    }
+  
+    .pageTitleContainer {
+      width: 40vw;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .bioConcertListContainer {
+      flex-direction: row;
+    }
+  
+    .bioContainer {
+      margin-top: 2vh;
+      display: flex;
+      flex-direction: column;
+      height: 30vh;
+      position: sticky;
+    }
+  
+    .artistCardTitle {
+      width: 40vw;
+      margin-top: 1vh;
+      margin-left: auto;
+      margin-right: auto;  
+    }
+  
+    .artistResultCard {
+      width: 40vw;
+      
+    }
+  
+    .artistImgContainer {
+      justify-content: center;
+    }
+  
+    .artistImg {
+      width: 12vw;
+      height: 12vw;
+      margin-bottom: 1vh;
+    }
+  
+    .cardTitle {
+      width: 40vw;
+    }
+  
+    .resultCard {
+      width: 40vw;
+    }
+  }

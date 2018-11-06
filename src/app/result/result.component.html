@@ -1,4 +1,6 @@
-<h2 class="pageTitle">Artists list</h2>
+<h2 class="pageTitle" *ngIf="artists !== empty" >Artists list</h2>
+
+<p class="noResult" *ngIf="artists === empty" >No results for this search</p>
 
 <mat-list role="list" *ngFor="let artist of artists">
     <mat-card-title class="cardTitle">{{artist.displayName}}</mat-card-title>
@@ -11,6 +13,9 @@
             </button>
             <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil != null" (click)="sendInputMap(artist.id)" routerLink="/map/:value">
                 Show concerts on map
+            </button>
+            <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil == null" (click)="sendInputBio(artist.id, artist.displayName)" routerLink="/bio/:value/:name">
+                Show bio
             </button>
         </mat-card-actions>
     </mat-card>

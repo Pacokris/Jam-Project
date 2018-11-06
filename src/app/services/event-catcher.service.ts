@@ -10,6 +10,7 @@ export class EventCatcherService {
   public d: Date = new Date();
   public dateUrl: string = this.formatDate(this.d);
   public urlFM: string;
+  public similarUrl: string;
   // U2 ID : 313388
 
   constructor(private http: HttpClient) {}
@@ -90,6 +91,11 @@ export class EventCatcherService {
       inputSearch +
       "/calendar.json?apikey=R82Hox7PJZDJyV0G";
     return this.http.get(this._url);
+  };
+
+  getSimilarArtists(inputSearch): Observable<any>{
+    this.similarUrl = "https://api.songkick.com/api/3.0/artists/" + inputSearch + "/similar_artists.json?apikey=R82Hox7PJZDJyV0G";
+    return this.http.get(this.similarUrl);
   };
 }
 // https://api.songkick.com/api/3.0/search/artists.json?apikey={your_api_key}&query={artist_name}

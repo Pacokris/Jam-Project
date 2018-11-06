@@ -24,6 +24,10 @@ export class ResultComponent implements OnInit {
     this.router.navigate(['/map', input]);
   }
 
+  sendInputBio(input, name){
+    this.router.navigate(['/bio', input, name]);
+  }
+
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
       this.inputSearch = params['value'];

@@ -30,6 +30,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
 import { PlacedateresultComponent } from './placedateresult/placedateresult.component';
+import { BiographyComponent } from './biography/biography.component';
 
 
 const routes: Routes = [
@@ -45,7 +46,9 @@ const routes: Routes = [
   { path: 'placelist/:value/:name', component: PlacelistComponent },
   { path: 'placelist/:value/:name/:name', component: PlacelistComponent },
   { path: 'placeresult/:value', component: PlaceresultComponent },
-  { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent}
+  { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent},
+  {path: 'bio/:value/:name', component: BiographyComponent},
+
 
 ];
 
@@ -63,6 +66,7 @@ const routes: Routes = [
     PlacelistComponent,
     PlaceresultComponent,
     PlacedateresultComponent,
+    BiographyComponent,
 
   ],
   imports: [
