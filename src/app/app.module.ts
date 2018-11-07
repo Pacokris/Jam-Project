@@ -34,6 +34,7 @@ import { BiographyComponent } from './biography/biography.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ResultvenueComponent } from './resultvenue/resultvenue.component';
 import { ListvenuesComponent } from './listvenues/listvenues.component';
+import { MapLocationComponent } from './map-location/map-location.component';
 
 
 
@@ -54,6 +55,9 @@ const routes: Routes = [
   {path: 'bio/:value/:name', component: BiographyComponent},
   {path: 'resultvenue/:value', component: ResultvenueComponent},
   {path: 'listvenue/:value/:name', component: ListvenuesComponent},
+  {path: 'map-location/:lat/:lng/:id/:name', component: MapLocationComponent},
+  {path: 'map-location/:lat/:lng', component: MapLocationComponent},
+  {path: 'map-location/:data', component: MapLocationComponent},
   {path : '**', component: PageNotFoundComponent},
 
 
@@ -77,6 +81,7 @@ const routes: Routes = [
     PageNotFoundComponent,
     ResultvenueComponent,
     ListvenuesComponent,
+    MapLocationComponent,
 
   ],
   imports: [

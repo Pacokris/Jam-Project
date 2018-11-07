@@ -28,6 +28,7 @@ export class PlacelistComponent implements OnInit{
   public dateDebutStr: string;
   public dateFinStr: string;
   public IdArea: number;
+  public detailConcert = [];
 
   constructor(
     private _EventCatcherService: EventCatcherService,
@@ -54,6 +55,14 @@ export class PlacelistComponent implements OnInit{
 
   ngOnInit() {
     this.loadResults();
+  }
+
+  goToMap(lat, lng, i) {
+   
+    this.router.navigate(['map-location',lat , lng]);
+    console.log(this.villes[i]);
+    this.detailConcert = this.villes[i];
+    this._EventCatcherService.getDetailsConcert(this.detailConcert);
   }
 
   sendInputList() {

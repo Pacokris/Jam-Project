@@ -33,9 +33,17 @@ export class EventCatcherService {
   public placeholderValue: string = 'Search your artist' ;
   public checkedArtist: boolean = true;
 
+  public detailsConcert = [];
+
+  getDetailsConcert(detail: any[]) {
+    this.detailsConcert = [];
+    this.detailsConcert.push(detail);
+  }
+
   setToArtist() {
     return this.resultParameter = "Artists", this.placeholderValue = "Search your artist", this.checkedArtist = true;  
   }
+
 
   setToLocation() {
     return this.placeholderValue = "Search your location", this.resultParameter = "Locations",this.checkedArtist = false;  
