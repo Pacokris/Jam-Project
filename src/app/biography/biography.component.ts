@@ -21,16 +21,20 @@ export class BiographyComponent implements OnInit {
     this.route.params.subscribe((params: Params) =>{
       this.name = params['name'];
       this.inputSearch = params['value'];
+      console.log(this.inputSearch)
+      console.log(this.name)
       this._EventCatcherService.getArtistInfoCatcher(this.name)
       .subscribe(data => {
         this.artist = data.artist
         this.bioWithoutLink(data.artist.bio.summary);
+        console.log(this.artist)
+        console.log(this.artistBioSummary)
       });
       this._EventCatcherService.getSimilarArtists(this.inputSearch)
       .subscribe(data =>{
-        this.similars = data.resultsPage.results.artist
+        this.similars = data.resultsPage.results.artist;
+        console.log(this.similars)
       });
-
     })
   }
   
