@@ -1,11 +1,74 @@
-<app-nav></app-nav>
-<app-search></app-search>
+<div class="listPageContainer">
 
-<div class="div">
-    <h2 class="titreListe">Liste des concerts</h2>
-    <ul class="listeConcerts" *ngFor="let event of events">
-        <li>{{event.displayName}}</li>
-        <li>{{event.start.time}}</li>
-        <li><a class="tickets" href={{event.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
-    </ul>
+  <!--Page Title and button to display concert on map-->
+  <div class="pageTitleMapBtnContainer">
+    <div class="pageTitleContainer">
+      <mat-card-title class="pageTitle">
+        <h2 class="cardTitleTitre">Artist concerts list</h2>
+      </mat-card-title>
+    </div>
+    <div class="mapDisplayBtnContainer">
+      <button mat-button class="mapDisplayBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
+    </div>
+  </div>
+
+  <div class="bioConcertListContainer">
+    <!--Artist Biography-->
+    <div class="bioContainer">
+      <mat-card-title class="artistCardTitle">{{artist.name}}</mat-card-title>
+      <mat-card class="artistResultCard">
+          <mat-card-header class="artistImgContainer">
+            <img *ngIf="artist.image" class="artistImg"[src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+          </mat-card-header>
+          <!--Biography in an expansion panel-->
+          <mat-accordion *ngIf="screenWidth < 768">
+            <mat-expansion-panel> 
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="bioPanelTitle">
+                    Artist Biography
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+              <mat-card-content>
+                <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+              </mat-card-content>
+              <button mat-button class="goToBuyTicketsBtn">
+                  <a [href]="artist.bio.links.link.href" target="_blank">More about this Artist</a>
+              </button>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <div *ngIf="screenWidth >= 768">
+            <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+            <a [href]="artist.bio.links.link.href" target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">More about this Artist</button></a>
+          </div>
+      </mat-card>
+    </div>
+
+    <!--Concert List-->
+    <div class="listContainer">
+      <mat-list class="concertList" role="list" *ngFor="let event of events">
+        <mat-card-title class="cardTitle">
+          <i class="material-icons eventInfoIconsPlace">location_city</i>
+          {{event.location.city}}
+        </mat-card-title>
+        <mat-card class="resultCard">
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">place</i>
+              {{event.venue.displayName}}
+            </mat-card-content>
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">calendar_today</i>
+              {{event.start.date | date : 'dd MMMM yyyy'}}
+            </mat-card-content>
+            <mat-card-content *ngIf="event.start.time" class="eventCardContent">
+              <i class="material-icons eventInfoIcons">alarm</i>
+              {{event.start.time | slice : 0 :5}}
+            </mat-card-content>
+            <mat-card-actions class="cardBtnContainer">
+                <a href={{event.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Buy Tickets</button></a>
+            </mat-card-actions>
+        </mat-card>
+      </mat-list>
+    </div>
+  </div>
+
 </div>

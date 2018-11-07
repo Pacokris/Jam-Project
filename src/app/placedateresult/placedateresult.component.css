@@ -1,0 +1,110 @@
+/* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
+@font-face {
+    font-family: 'dream';
+    src:url(/src/assets/fonts/Dream.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pageTitle {
+    text-align: center;
+    margin-top: 5vh; 
+    margin-bottom: 2vh;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    letter-spacing: 5px;
+    border-width: 0.08em;
+    border-radius: 5px;
+    border-color: rgb(78, 78, 78);
+    font-weight: bold;
+}
+
+.cardTitle {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: rgb(155, 151, 151);
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.cardTitleTitre {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: #9B9797;
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.resultCard {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 2vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.eventCardContent {
+    text-align: center;
+    font-size: 1.1em;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.cardBtnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.goToBuyTicketsBtn {
+    font-weight: bold;
+    font-size: 1.1em;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    border-radius: 5px;
+}
+
+.bioBuyTicketLink {
+    color: black;
+    font-weight: bolder;
+}
+
+.eventInfoIcons {
+    vertical-align: sub;
+    font-size: 24px;
+}
+
+/* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+@media (min-width: 768px) {
+    .cardTitle {
+        width: 35vw;
+    }
+
+    .cardTitleTitre {
+        width: 35vw;
+    }
+
+    .resultCard {
+        width: 35vw;
+    }
+
+    .goToBuyTicketsBtn {
+        font-size: 1.2em;
+    }
+}

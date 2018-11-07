@@ -1,0 +1,24 @@
+<mat-card-title class="pageTitle">
+    <h2 class="cardTitleTitre">Upcoming concerts in <span>{{area}} area</span></h2>
+</mat-card-title>
+
+<mat-list role="list" *ngFor="let ville of villes">
+    <mat-card-title class="cardTitle">{{ville.displayName}}</mat-card-title>
+    <mat-card class="resultCard">
+        <mat-card-content class="eventCardContent">
+            <i class="material-icons eventInfoIcons">place</i>
+            {{ville.venue.displayName}}
+          </mat-card-content>
+          <mat-card-content class="eventCardContent">
+            <i class="material-icons eventInfoIcons">calendar_today</i>
+            {{ville.start.date | date : 'dd MMMM yyyy'}}
+          </mat-card-content>
+          <mat-card-content *ngIf="ville.start.time" class="eventCardContent">
+              <i class="material-icons eventInfoIcons">alarm</i>
+              {{ville.start.time | slice : 0 :5}}
+          </mat-card-content>
+          <mat-card-actions class="cardBtnContainer">
+              <a href={{ville.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Buy Tickets</button></a>
+          </mat-card-actions>
+    </mat-card>
+</mat-list>

@@ -1,0 +1,23 @@
+div {
+    display: block;
+    background-image: url("/assets/img/wp2157814.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 92vh;
+    width: auto;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    color: white;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+    margin-top: 35vh;
+}
+
+p{
+    text-align: center;
+    /* margin-top: 40vh; */
+}

@@ -1,0 +1,19 @@
+<mat-card-title class="pageTitle">
+  <h2 class="cardTitleTitre" *ngIf="area !== empty">Location list</h2>
+</mat-card-title>
+  <p class="noResult" *ngIf="area === empty" >No results for this search</p>
+
+
+  <mat-list role="list" *ngFor="let lieu of area">
+    <mat-card-title class="cardTitle">{{lieu.city.displayName}}, {{lieu.city.country.displayName}}</mat-card-title>
+    <mat-card class="resultCard">
+      <mat-card-actions class="cardBtnContainer">
+          <button mat-button class="mapListDisplayBtn" (click)="sendInputList(lieu.metroArea.id, lieu.city.displayName)"  routerLink="/placelist/:value/:name">
+              Show concerts on list
+          </button>
+          <!--<button mat-button class="mat-elevation-z20 mapListDisplayBtn" (click)="sendInputMap(lieu.metroArea.id)" routerLink="/map/:value">
+              Show concerts on map
+          </button>-->
+        </mat-card-actions>
+    </mat-card>
+  </mat-list>

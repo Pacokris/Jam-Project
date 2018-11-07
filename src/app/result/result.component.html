@@ -1,14 +1,26 @@
-<app-nav></app-nav>
-<app-search></app-search>
 
-<div class="div">
-  <h2 class="titreListe">Liste des artistes</h2>
-  <ul class="listeConcerts" *ngFor="let artist of artists">
-      <li>{{artist.displayName}}</li>
-      <li>On tour until {{artist.onTourUntil | date : short}}</li>
-      <div class="choixaffi container ">
-          <button class="m-1" (click)="sendInputList(artist.id)" routerLink="/list/:value">Upcoming concerts list</button>
-          <button class="m-1" (click)="sendInputMap(artist.id)" routerLink="/map/:value">Upcoming concerts on map</button>
-      </div>      
-  </ul>
-</div>
+<mat-card-title class="pageTitle">
+        <h2 class="cardTitleTitre" *ngIf="artists !== empty">Artist list</h2>
+    </mat-card-title>
+
+<p class="noResult" *ngIf="artists === empty" >No results for this search</p>
+
+<mat-list role="list" *ngFor="let artist of artists">
+    <mat-card-title class="cardTitle">{{artist.displayName}}</mat-card-title>
+    <mat-card class="resultCard">
+        <mat-card-content class="onTourText" *ngIf="artist.onTourUntil != null">On tour until {{artist.onTourUntil | date : short}}</mat-card-content>
+        <mat-card-content class="onTourText" *ngIf="artist.onTourUntil === null">Not on tour right now !!</mat-card-content>
+        <mat-card-actions class="cardBtnContainer">
+            <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil != null" (click)="sendInputList(artist.id, artist.displayName)" routerLink="/list/:value/:name">
+                Show concerts on list
+            </button>
+            <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil != null" (click)="sendInputMap(artist.id)" routerLink="/map/:value">
+                Show concerts on map
+            </button>
+            <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil == null" (click)="sendInputBio(artist.id, artist.displayName)" routerLink="/bio/:value/:name">
+                Show bio
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</mat-list>
+      

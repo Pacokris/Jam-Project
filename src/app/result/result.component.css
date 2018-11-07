@@ -1,67 +1,115 @@
+/* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
 @font-face {
     font-family: 'dream';
     src:url(/src/assets/fonts/Dream.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
-    }
-    .choixaffi{
-        display: flex;
-        flex-direction: column;
-        justify-content: center
-    }
-    .div{
-    display: flex;
-    flex-direction: column;
-    }
-    .titreListe {
-    align-self: center;
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    font-size: 2em;
-    padding: 0.4em;
-    letter-spacing: 5px;
-    background-color: rgba(249, 231, 252, 0.836);
-    border-width: 0.1em;
-    border-style: solid;
-    border-color: rgb(78, 78, 78);
-    border-radius: 15px;
-    }
-    
-    .tickets {
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    letter-spacing: 5px;
-    font-weight: bold;
-    width: 50%;
-    }
-    
-    .listeConcerts {
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    list-style-type: none;
-    font-size: 170%;
-    padding: 0;
-    width: 50vw;
-    border-width: 0.08em;
-    border-style: solid;
-    border-color: rgb(78, 78, 78);
-    align-self: center;
-    border-radius: 15px;
-    background-color: rgba(249, 231, 252, 0.836);
-    }
-    
-    .listeConcerts li {
-    padding: .3em 0;
+}
+
+.pageTitle {
     text-align: center;
-    }
-    
-    @media screen and (max-width: 640px) {
-    .listeConcerts {
+    margin-top: 5vh; 
+    margin-bottom: 2vh;
+    /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
-    list-style-type: none;
-    font-size: 110%;
-    padding: 0;
-    width: 90%;
+    letter-spacing: 5px;
     border-width: 0.08em;
-    border-style: solid;
+    border-radius: 5px;
     border-color: rgb(78, 78, 78);
-    align-self: center;
+    font-weight: bold;
+}
+
+.noResult{
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 3em;
+    margin-top: 40vh;
+}
+
+
+.cardTitle {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: rgb(155, 151, 151);
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.cardTitleTitre {
+    width: 50vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: #9B9797;
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
+.resultCard {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 2vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.onTourText {
+    text-align: center;
+    font-size: 1.4em;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold; 
+}
+
+.cardBtnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mapListDisplayBtn {
+    font-weight: bold;
+    /*CSS de 'titreListe' de la page list.component*/
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+    border-radius: 5px;
+}
+
+.mat-card > .mat-card-actions:last-child {
+    margin-bottom: -16px;
+    padding-bottom: 10px;
+}
+
+/* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+@media (min-width: 768px) {
+    .cardTitle {
+        width: 35vw;
     }
+
+    .cardTitleTitre {
+        width: 35vw;
     }
+
+    .resultCard {
+        width: 35vw;
+    }
+
+    .mapListDisplayBtn {
+        font-size: 1.2em;
+    }
+
+}

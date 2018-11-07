@@ -1,3 +1,4 @@
+/* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
 @font-face {
     font-family: 'dream';
     src:url(/src/assets/fonts/Dream.ttf) format('truetype');
@@ -5,56 +6,119 @@
     font-style: normal;
 }
 
-.searchblock{
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    /* padding: 10vh; */
-
-}
-.searchbar{
-    /* display: flex; */
-    align-self: center;
-    justify-content: center;
-    padding: 1vh;
+@font-face {
+    font-family: 'potra';
+    src:url(/src/assets/fonts/Potra.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.bouton {
-    display: flex;
-    justify-content: center;
-    padding: 1vh;
+.searchInputField {
+    font-size: 0.8rem;
+    font-weight: lighter;
 }
 
-.mat-raised-button.mat-primary {
-    background-color:darkmagenta;
+.mainNav {
+    background-color: #66245A;
+    z-index: 20;
 }
 
-.mat-raised-button {
-    display: flex;
-    align-items: center;
-    height: 12vw;
-    font-family: 'dream';
-    font-weight: bold;
-    font-size: 120%;
-    border-radius: 5px;
+.JAMbtn {
+    font-family:'potra', Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 1.6em;
+    background-color: white;
+    color: #66245A;
+    outline: 0;
+    height: 5vh;
+    box-shadow: 2px 2px 2px black;
+    border: 1px solid black;
 }
 
-.mat-elevation-z10 {
-    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.568), 5px 10px 10px rgba(73, 73, 73, 0.425), 5px 5px 10px rgba(61, 61, 61, 0.5);
+.searchIconBtn {
+    outline: 0;
 }
 
-.mat-elevation-z10:hover {
-    box-shadow:  1px 1px 5px rgb(250, 243, 142), -1px -1px 5px rgb(250, 243, 142), -1px 1px 5px rgb(250, 243, 142), 1px -1px 5px rgb(250, 243, 142), 1px 1px 10px rgb(252, 29, 241), -1px -1px 10px rgb(252, 29, 241), -1px 1px 10px rgb(252, 29, 241), 1px -1px 10px rgb(252, 29, 241);
+.inputFormField {
+    width: 35vw;
+    margin-left: 8vw;
+    color: white;
+}
+  
+.inputSearchBtnContainer {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: auto;
+}
+
+.searchInputField {
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+.searchIconBtn{
+    outline: 0;
+    color: white;
+}
+
+.searchIcon{
+    font-size: 36px;    
+}
+
+.filterBtnContainerDesktop {
+    display: none;
+}
+
+.filterIcon {
+    font-size: 36px;
+}
+
+.filterBtnContainerMobile {
+    color: white;
 }
 
 
-@media screen and (min-width: 640px) {
-    .searchblock{
-        flex-direction: row;
+
+/* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
+  @media (min-width: 768px) {
+    .JAMbtn {
+        font-size: 2em;
+        height: 6vh;
     }
-    .mat-raised-button {
-        height: 4vw;
-        font-size: 150%;
-        border-radius: 15px;
+
+    .searchInputField {
+        font-size: 1.1rem;
+        font-weight: lighter;
     }
-}
+    .inputFormField {
+        width: 20vw;
+    }
+
+    .inputSearchBtnContainer {
+        text-align: center;
+    }
+
+    .SearchOptionMenuBtn {
+        font-size: 18px;
+        margin-left: 1vw;
+        background-color: white;
+        color: #66245A;
+        box-shadow: 2px 2px 2px black;
+        border: 1px solid black;
+    }
+
+    .optionsMenuBtn{
+        font-size: 12em;
+    }
+
+    .filterBtnContainerMobile {
+        display: none;
+    }
+
+    .filterBtnContainerDesktop {
+        display: inline;
+    }
+  }

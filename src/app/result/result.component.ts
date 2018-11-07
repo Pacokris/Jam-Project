@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
-import { ActivatedRoute, Params, Router } from "@angular/router"; 
+import { ActivatedRoute, Params, Router } from "@angular/router";
 
 @Component({
   selector: 'app-result',
@@ -16,22 +16,26 @@ export class ResultComponent implements OnInit {
   constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
 
 
-  sendInputList(input) {
-    this.router.navigate(['/list', input]);
+  sendInputList(input, name) {
+    this.router.navigate(['/list', input, name]);
   }
 
   sendInputMap(input) {
     this.router.navigate(['/map', input]);
   }
 
+  sendInputBio(input, name){
+    this.router.navigate(['/bio', input, name]);
+  }
+
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
       this.inputSearch = params['value'];
       this._EventCatcherService.getArtistListCatcher(this.inputSearch)
-      .subscribe(data=> 
+      .subscribe(data=>
         this.artists = data.resultsPage.results.artist);
+
       });
     }
 
 }
-
