@@ -1,5 +1,5 @@
 div {
-    display: flex;
+    display: block;
     background-image: url("/assets/img/wp2157814.jpg");
     background-size:cover;
     background-repeat: no-repeat;
@@ -10,16 +10,14 @@ div {
     font-family:'dream', Helvetica, Arial, sans-serif;
     color: white;
     margin: auto;
-    border: 5px solid red;
-
 }
 
 h2{
-    justify-content: center;
-    margin: auto;
-
+    text-align: center;
+    margin-top: 35vh;
 }
 
 p{
-
+    text-align: center;
+    /* margin-top: 40vh; */
 }
