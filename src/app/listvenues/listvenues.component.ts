@@ -13,8 +13,17 @@ export class ListvenuesComponent implements OnInit {
   public venueInfo = {};
   public inputSearch: string;
   public name : string;
+  public screenHeight: number;
+  public screenWidth: number;
 
-  constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
+  constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { this.onResize();}
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+    console.log(this.screenHeight, this.screenWidth);
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
@@ -26,8 +35,8 @@ export class ListvenuesComponent implements OnInit {
       })
       this._EventCatcherService.getVenueInfo(this.inputSearch)
       .subscribe(data => {
-        this.venueInfo = data.resultsPage.results
-        console.log(this.venueInfo.displayName)
+        this.venueInfo = data.resultsPage.results.venue
+        console.log(this.concerts)
       });
     })
   }

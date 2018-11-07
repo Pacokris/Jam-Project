@@ -8,11 +8,6 @@
 <mat-card-title class="cardTitle">{{venue.displayName}}</mat-card-title>
 <mat-card class="resultCard">
   <mat-card-content class="onTourText" *ngIf="venue.street != null"><i class="material-icons eventInfoIcons">place</i> {{venue.street}} {{venue.city.displayName}}</mat-card-content>
-  <mat-card-content class="onTourText" *ngIf="venue.phone != null"><i class="material-icons eventInfoIcons">phone</i> {{venue.phone}}</mat-card-content>
-  <mat-card-content>{{venue.description}}</mat-card-content>
-  <mat-card-content  class="onTourText" *ngIf="venue.website != null"><a href="{{venue.website}}" target="blank">Website</a></mat-card-content> 
-  <mat-card-content class="onTourText" *ngIf="venue.capacity != null"><i class="material-icons eventInfoIcons">accessibility_new</i> {{venue.capacity}}</mat-card-content>
-
   <mat-card-actions class="cardBtnContainer">
       <button mat-button class="mapListDisplayBtn" (click)="sendInputVenue(venue.id, venue.displayName)" routerLink="/listVenue/:value/:name">
           Show concerts on venue
