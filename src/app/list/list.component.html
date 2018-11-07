@@ -29,7 +29,20 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
               <mat-card-content>
+                <p>{{similars[0].onTourUntil}}</p>
                 <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+                <div *ngIf="similars">
+                    Similar artists : <br>
+                    <button *ngIf="similars[0].onTourUntil !== null" mat-button (click)="sendInputList(similars[0].id, similars[0].displayName)" routerLink="/list/:value/:name">{{similars[0].displayName}}</button> 
+                    <button *ngIf="similars[1].onTourUntil !== null" mat-button (click)="sendInputList(similars[1].id, similars[1].displayName)" routerLink="/list/:value/:name">{{similars[1].displayName}}</button> 
+                    <button *ngIf="similars[2].onTourUntil !== null" mat-button (click)="sendInputList(similars[2].id, similars[2].displayName)" routerLink="/list/:value/:name">{{similars[2].displayName}}</button> 
+                    <button *ngIf="similars[3].onTourUntil !== null" mat-button (click)="sendInputList(similars[3].id, similars[3].displayName)" routerLink="/list/:value/:name">{{similars[3].displayName}}</button> 
+  
+                    <button *ngIf="similars[0].onTourUntil == null" mat-button  (click)="sendInputBio(similars[0].id, similars[0].displayName)" routerLink="/bio/:value/:name">{{similars[0].displayName}}</button> 
+                    <button *ngIf="similars[1].onTourUntil == null" mat-button  (click)="sendInputBio(similars[1].id, similars[1].displayName)" routerLink="/bio/:value/:name">{{similars[1].displayName}}</button> 
+                    <button *ngIf="similars[2].onTourUntil == null" mat-button (click)="sendInputBio(similars[2].id, similars[2].displayName)" routerLink="/bio/:value/:name">{{similars[2].displayName}}</button> 
+                    <button *ngIf="similars[3].onTourUntil == null" mat-button (click)="sendInputBio(similars[3].id, similars[3].displayName)" routerLink="/bio/:value/:name">{{similars[3].displayName}}</button> 
+                  </div>
               </mat-card-content>
               <button mat-button class="goToBuyTicketsBtn">
                   <a [href]="artist.bio.links.link.href" target="_blank">More about this Artist</a>
@@ -38,6 +51,18 @@
           </mat-accordion>
           <div *ngIf="screenWidth >= 768">
             <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+            <div *ngIf="similars">
+                Similar artists : <br>
+                <button *ngIf="similars[0].onTourUntil !== null" mat-button (click)="sendInputList(similars[0].id, similars[0].displayName)" routerLink="/list/:value/:name">{{similars[0].displayName}}</button> 
+                <button *ngIf="similars[1].onTourUntil !== null" mat-button (click)="sendInputList(similars[1].id, similars[1].displayName)" routerLink="/list/:value/:name">{{similars[1].displayName}}</button> 
+                <button *ngIf="similars[2].onTourUntil !== null" mat-button (click)="sendInputList(similars[2].id, similars[2].displayName)" routerLink="/list/:value/:name">{{similars[2].displayName}}</button> 
+                <button *ngIf="similars[3].onTourUntil !== null" mat-button (click)="sendInputList(similars[3].id, similars[3].displayName)" routerLink="/list/:value/:name">{{similars[3].displayName}}</button> 
+
+                <button *ngIf="similars[0].onTourUntil == null" mat-button  (click)="sendInputBio(similars[0].id, similars[0].displayName)" routerLink="/bio/:value/:name">{{similars[0].displayName}}</button> 
+                <button *ngIf="similars[1].onTourUntil == null" mat-button  (click)="sendInputBio(similars[1].id, similars[1].displayName)" routerLink="/bio/:value/:name">{{similars[1].displayName}}</button> 
+                <button *ngIf="similars[2].onTourUntil == null" mat-button (click)="sendInputBio(similars[2].id, similars[2].displayName)" routerLink="/bio/:value/:name">{{similars[2].displayName}}</button> 
+                <button *ngIf="similars[3].onTourUntil == null" mat-button (click)="sendInputBio(similars[3].id, similars[3].displayName)" routerLink="/bio/:value/:name">{{similars[3].displayName}}</button> 
+              </div>
             <a [href]="artist.bio.links.link.href" target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">More about this Artist</button></a>
           </div>
       </mat-card>

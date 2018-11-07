@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   public artistBioSummary : string;
   public screenHeight: number;
   public screenWidth: number;
-
+  public similars = [];
 constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { this.onResize(); }
 
   @HostListener('window:resize', ['$event'])
@@ -42,8 +42,15 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
         this.artist = data.artist
         this.bioWithoutLink(data.artist.bio.summary);
       });
+      this._EventCatcherService.getSimilarArtists(this.inputSearch)
+      .subscribe(data =>{
+        this.similars = data.resultsPage.results.artist;
+        console.log(this.similars)
+      });
 
     });
+
+    
 
     // ngOnInit() {
     //   this.route.params.subscribe((params: Params) =>{
@@ -61,7 +68,14 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
     //   });
 
   }
+  
+  sendInputList(value, name) {
+    this.router.navigate(['/list', value, name]);
+  }
 
+  sendInputBio(value, name){
+    this.router.navigate(['/bio', value, name])
+  }
   sendInputMap(input) {
     this.router.navigate(['/map', input]);
   }
