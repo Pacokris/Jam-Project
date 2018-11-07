@@ -30,10 +30,12 @@ body { font-family: 'Roboto', sans-serif; }
   }
 
 .mat-menu-content {
-    /* margin-right: 7vw !important; */
     width: 183px !important;
     padding-bottom: 0px !important;
+    padding-left: 15px !important;
+    overflow: hidden;
 }
 .mat-divider {
     padding-top: 8px !important;
+    margin-left: -15px !important;
 }
