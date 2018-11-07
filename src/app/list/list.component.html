@@ -4,7 +4,7 @@
   <div class="pageTitleMapBtnContainer">
     <div class="pageTitleContainer">
       <mat-card-title class="pageTitle">
-        <h2 class="cardTitleTitre">Artist list</h2>
+        <h2 class="cardTitleTitre">Artist concerts list</h2>
       </mat-card-title>
     </div>
     <div class="mapDisplayBtnContainer">
@@ -38,9 +38,7 @@
           </mat-accordion>
           <div *ngIf="screenWidth >= 768">
             <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
-            <button mat-button class="goToBuyTicketsBtn">
-                <a [href]="artist.bio.links.link.href" target="_blank" class="bioBuyTicketLink">More about this Artist</a>
-            </button>
+            <a [href]="artist.bio.links.link.href" target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">More about this Artist</button></a>
           </div>
       </mat-card>
     </div>
