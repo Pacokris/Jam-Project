@@ -1,0 +1,80 @@
+<div class="listPageContainer">
+
+  <!--Page Title and button to display concert on map-->
+  <div class="pageTitleMapBtnContainer">
+    <div class="pageTitleContainer">
+      <mat-card-title class="pageTitle">
+        <h2 class="cardTitleTitre">Artist list</h2>
+      </mat-card-title>
+    </div>
+    <div class="mapDisplayBtnContainer">
+      <button mat-button class="mapDisplayBtn" (click)="sendInputMap(events[0].performance[0].artist.id)" routerLink="/map/:value">Show concerts on map</button>
+    </div>
+  </div>
+  <mat-card-content class="onTourText" *ngIf="venue.street != null"><i class="material-icons eventInfoIcons">place</i> {{venue.street}} {{venue.city.displayName}}</mat-card-content>
+  <mat-card-content class="onTourText" *ngIf="venue.phone != null"><i class="material-icons eventInfoIcons">phone</i> {{venue.phone}}</mat-card-content>
+  <mat-card-content>{{venue.description}}</mat-card-content>
+  <mat-card-content  class="onTourText" *ngIf="venue.website != null"><a href="{{venue.website}}" target="blank">Website</a></mat-card-content> 
+  <mat-card-content class="onTourText" *ngIf="venue.capacity != null"><i class="material-icons eventInfoIcons">accessibility_new</i> {{venue.capacity}}</mat-card-content>
+  <div class="bioConcertListContainer">
+    <!--Artist Biography-->
+    <div class="bioContainer">
+      <mat-card-title class="artistCardTitle">{{venueInfo.displayName}}</mat-card-title>
+      <mat-card class="artistResultCard">
+          <mat-card-header class="artistImgContainer">
+            <img *ngIf="artist.image" class="artistImg"[src]="artist.image[3]['#text']" alt="Photo de l'artiste">
+          </mat-card-header>
+          <!--Biography in an expansion panel-->
+          <mat-accordion *ngIf="screenWidth < 768">
+            <mat-expansion-panel> 
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="bioPanelTitle">
+                    Artist Biography
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+              <mat-card-content>
+                <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+              </mat-card-content>
+              <button mat-button class="goToBuyTicketsBtn">
+                  <a [href]="artist.bio.links.link.href" target="_blank">More about this Artist</a>
+              </button>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <div *ngIf="screenWidth >= 768">
+            <p *ngIf="artist.bio && artistBioSummary" class="artistBioText">{{artistBioSummary}}</p>
+            <button mat-button class="goToBuyTicketsBtn">
+                <a [href]="artist.bio.links.link.href" target="_blank" class="bioBuyTicketLink">More about this Artist</a>
+            </button>
+          </div>
+      </mat-card>
+    </div>
+
+    <!--Concert List-->
+    <div class="listContainer">
+      <mat-list class="concertList" role="list" *ngFor="let event of events">
+        <mat-card-title class="cardTitle">
+          <i class="material-icons eventInfoIconsPlace">location_city</i>
+          {{event.location.city}}
+        </mat-card-title>
+        <mat-card class="resultCard">
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">place</i>
+              {{event.venue.displayName}}
+            </mat-card-content>
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">calendar_today</i>
+              {{event.start.date | date : 'dd MMMM yyyy'}}
+            </mat-card-content>
+            <mat-card-content class="eventCardContent">
+              <i class="material-icons eventInfoIcons">alarm</i>
+              {{event.start.time | slice : 0 :5}}
+            </mat-card-content>
+            <mat-card-actions class="cardBtnContainer">
+                <button mat-button class="goToBuyTicketsBtn"><a href={{event.uri}} target="_blank" class="bioBuyTicketLink">Buy Tickets</a></button>
+            </mat-card-actions>
+        </mat-card>
+      </mat-list>
+    </div>
+  </div>
+
+</div>

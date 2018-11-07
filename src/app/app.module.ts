@@ -32,6 +32,8 @@ import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angu
 import { PlacedateresultComponent } from './placedateresult/placedateresult.component';
 import { BiographyComponent } from './biography/biography.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ResultvenueComponent } from './resultvenue/resultvenue.component';
+import { ListvenuesComponent } from './listvenues/listvenues.component';
 
 
 const routes: Routes = [
@@ -49,6 +51,8 @@ const routes: Routes = [
   { path: 'placeresult/:value', component: PlaceresultComponent },
   { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent},
   {path: 'bio/:value/:name', component: BiographyComponent},
+  {path: 'resultvenue/:value', component: ResultvenueComponent},
+  {path: 'listvenue/:value/:name', component: ListvenuesComponent},
   {path : '**', component: PageNotFoundComponent},
 
 
@@ -70,6 +74,8 @@ const routes: Routes = [
     PlacedateresultComponent,
     BiographyComponent,
     PageNotFoundComponent,
+    ResultvenueComponent,
+    ListvenuesComponent,
 
   ],
   imports: [

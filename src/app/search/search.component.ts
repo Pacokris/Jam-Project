@@ -16,13 +16,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-  sendInputResult(input) {
-    this.router.navigate(['/result', input]);
-  }
-
-  sendInputLocation(input) {
-    this.router.navigate(['/placeresult', input]);
-  }
 
   setToArtist() {
     this.resultParameter = "Artists";
@@ -32,6 +25,10 @@ export class SearchComponent implements OnInit {
     this.resultParameter = "Locations";
   }
 
+  setToVenue() {
+    this.resultParameter = "Venues";
+  }
+
   goToResult(input) {
     if (this.resultParameter === "Artists") {
       this.router.navigate(['/result', input]);
@@ -39,6 +36,9 @@ export class SearchComponent implements OnInit {
     } else if (this.resultParameter === "Locations") {
       this.router.navigate(['/placeresult', input]);
       //this.routerLinkValue === "/placeresult/:value";
-    }
+    } else if (this.resultParameter === "Venues") {
+      this.router.navigate(['/resultvenue', input]);
+      //this.routerLinkValue === "/resultvenue/:value";
   }
+}
 }

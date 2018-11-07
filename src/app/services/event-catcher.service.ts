@@ -11,6 +11,7 @@ export class EventCatcherService {
   public dateUrl: string = this.formatDate(this.d);
   public urlFM: string;
   public similarUrl: string;
+  public venueUrl:string;
   // U2 ID : 313388
 
   constructor(private http: HttpClient) {}
@@ -97,5 +98,20 @@ export class EventCatcherService {
     this.similarUrl = "https://api.songkick.com/api/3.0/artists/" + inputSearch + "/similar_artists.json?apikey=R82Hox7PJZDJyV0G";
     return this.http.get(this.similarUrl);
   };
+
+  getVenueList(inputSearch) : Observable<any>{
+    this.venueUrl = "https://api.songkick.com/api/3.0/search/venues.json?query=" + inputSearch + "&apikey=R82Hox7PJZDJyV0G";
+    return this.http.get(this.venueUrl);
+  };
+
+  getVenueConcert(inputsearch) : Observable<any>{
+    this.venueUrl = "https://api.songkick.com/api/3.0/venues/" + inputsearch + "/calendar.json?apikey=R82Hox7PJZDJyV0G"
+    return this.http.get(this.venueUrl);
+  }
+
+  getVenueInfo(inputsearch) : Observable<any>{
+    this._url = "https://api.songkick.com/api/3.0/venues/"+inputsearch+".json?apikey=R82Hox7PJZDJyV0G"
+    return this.http.get(this._url)
+  }
 }
 // https://api.songkick.com/api/3.0/search/artists.json?apikey={your_api_key}&query={artist_name}
