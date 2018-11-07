@@ -8,11 +8,11 @@
       <!--Search Input-->
       <mat-form-field class="inputFormField">
         <mat-label></mat-label> <!--Allows to disable placeholder animation-->
-        <input matInput class="searchInputField" #searchInput type="text" (keyup.enter)="goToResult(searchInput.value)" placeholder="search..." autofocus>
+        <input matInput class="searchInputField" #searchInput [(ngModel)]="searchValue" type="text" (keyup.enter)="goToResult(searchInput.value)" [placeholder]="placeholderValue" autofocus >
       </mat-form-field>
 
       <!--Search Icon-->
-      <button mat-icon-button class="searchIconBtn" (click)="goToResult(searchInput.value)">
+      <button mat-icon-button class="searchIconBtn" (click)="goToResult(searchInput.value)" >
         <mat-icon class="searchIcon" aria-label="Search icon">search</mat-icon>
       </button>
 
@@ -24,7 +24,7 @@
             </button>
             <mat-menu #menu="matMenu" [overlapTrigger]="false">
               <mat-radio-group>
-                  <mat-radio-button (click)="setToArtist()" value="1" checked>Artist</mat-radio-button>
+                  <mat-radio-button (click)="setToArtist()" value="1" [checked]="checkedArtist">Artist</mat-radio-button>
                   <mat-divider></mat-divider>
                   <mat-radio-button (click)="setToLocation()" value="2">Location</mat-radio-button>
                   <mat-divider></mat-divider>
@@ -41,7 +41,7 @@
       </button>
       <mat-menu #menu="matMenu" [overlapTrigger]="false">
         <mat-radio-group>
-            <mat-radio-button (click)="setToArtist()" value="1" checked>Artist</mat-radio-button>
+            <mat-radio-button (click)="setToArtist()" value="1" [checked]="checkedArtist">Artist</mat-radio-button>
             <mat-divider></mat-divider>
             <mat-radio-button (click)="setToLocation()" value="2">Location</mat-radio-button>
             <mat-divider></mat-divider>

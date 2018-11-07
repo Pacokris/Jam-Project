@@ -89,7 +89,7 @@ export class PlacelistComponent implements OnInit{
             const city = event.location.city;
             event.location.city = city.slice(0, city.indexOf(","));
             const artiste = event.displayName;
-            event.displayName = artiste.slice(0, artiste.indexOf("at"));
+            event.displayName = artiste.slice(0, artiste.indexOf(" at"));
             if (this._EventCatcherService.rechercheElargie == 0) {
               this.displayNoEvent = true;
               this.villes = this.places.filter(ville => {

@@ -9,7 +9,7 @@
           <p class="si-shadow-frame"> <i class="material-icons eventInfoIcons">location_city</i> {{m.venue.metroArea.displayName}}</p>
           <p class="displayArtist"> <i class="material-icons eventInfoIcons">place</i> {{m.venue.displayName}} </p>
           <p class="displayDate" *ngIf="m.start.time"> <i class="material-icons eventInfoIcons">alarm</i> {{m.start.date | date:'dd-MM-yyyy'}} </p>
-          <a class="tickets" href={{m.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Reservation</button></a>
+          <a class="tickets" href={{m.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Booking</button></a>
         </div>
       </ng-template>
     </agm-snazzy-info-window>

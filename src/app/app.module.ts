@@ -36,6 +36,7 @@ import { ResultvenueComponent } from './resultvenue/resultvenue.component';
 import { ListvenuesComponent } from './listvenues/listvenues.component';
 
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list/:value', component: ListComponent},
