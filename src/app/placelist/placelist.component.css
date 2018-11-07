@@ -1,88 +1,8 @@
-/*@font-face {
-    font-family: 'dream';
-    src:url(/src/assets/fonts/Dream.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.matinput {
-    margin-left: 5% !important;
-    margin-right: 5% !important;
-} 
-    
-.div{
-    display: flex;
-    flex-direction: column;
-    margin-top: 10vh;
-}
-
-.titreListe {
-    align-self: center;
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    font-size: 1.8em;
-    padding: 0.4em;
-    letter-spacing: 5px;
-    background-color: rgba(249, 231, 252, 0.836);
-    border-width: 0.1em;
-    border-style: solid;
-    border-color: rgb(78, 78, 78);
-    border-radius: 15px;
-}
-    
-.tickets {
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    letter-spacing: 5px;
-    font-weight: bold;
-    width: 50%;
-}
-    
-.listeConcerts {
-    font-family:'dream', Helvetica, Arial, sans-serif;
-    list-style-type: none;
-    font-size: 120%;
-    line-height: 1em;
-    padding: 0;
-    width: 50vw;
-    border-width: 0.08em;
-    border-style: solid;
-    border-color: rgb(78, 78, 78);
-    align-self: center;
-    text-align: center;
-    border-radius: 15px;
-    background-color: rgba(249, 231, 252, 0.836);
-}
-    
-.listeConcerts li {
-    padding: .3em 0;
-    text-align: center;
-}
-
-    
-@media screen and (max-width: 640px) {
-    .div{
-        display: flex;
-        flex-direction: column;
-        margin-top: 16vh;
-    }
-
-
-    
-    .listeConcerts {
-        font-family:'dream', Helvetica, Arial, sans-serif;
-        list-style-type: none;
-        font-size: 110%;
-        padding: 0;
-        width: 90%;
-        border-width: 0.08em;
-        border-style: solid;
-        border-color: rgb(78, 78, 78);
-        align-self: center;
-    }
-}*/
 /* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
 .pageTitle {
     text-align: center;
-    margin-top: 2vh; 
+    margin-top: 5vh; 
+    margin-bottom: 2vh;
     /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
     letter-spacing: 5px;
@@ -90,6 +10,19 @@
     border-radius: 5px;
     border-color: rgb(78, 78, 78);
     font-weight: bold;
+}
+
+.cardTitleTitre {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: #9B9797;
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
 }
 
 .datePickerContainer {
@@ -134,6 +67,7 @@
 
 .validateDateBtn {
     font-weight: bold;
+    color: black;
     /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
     font-weight: bold;
@@ -171,6 +105,11 @@
     font-family:'dream', Helvetica, Arial, sans-serif; 
 }
 
+.mat-card > .mat-card-actions:last-child {
+    margin-bottom: -16px;
+    padding-bottom: 10px;
+}
+
 .placeListBtn {
     font-weight: bold;
     /*CSS de 'titreListe' de la page list.component*/
@@ -186,6 +125,11 @@
     /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
     font-weight: bold; 
+}
+
+.eventInfoIcons {
+    vertical-align: sub;
+    font-size: 24px;
 }
 
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
@@ -208,11 +152,15 @@
     }
 
     .resultCard {
-        width: 50vw;
+        width: 40vw;
     }
 
     .cardTitle {
-        width: 50vw;
+        width: 40vw;
+    }
+
+    .cardTitleTitre {
+        width: 40vw;
     }
 
     .resultCardTitle {

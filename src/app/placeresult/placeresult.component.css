@@ -8,7 +8,8 @@
 
 .pageTitle {
     text-align: center;
-    margin-top: 2vh; 
+    margin-top: 5vh; 
+    margin-bottom: 2vh;
     /*CSS de 'titreListe' de la page list.component*/
     font-family:'dream', Helvetica, Arial, sans-serif;
     letter-spacing: 5px;
@@ -41,6 +42,19 @@
     font-family:'dream', Helvetica, Arial, sans-serif;
 }
 
+.cardTitleTitre {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*CSS de 'titreListe' de la page list.component*/
+    background-color: #9B9797;
+    color: white;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+}
+
 .resultCard {
     width: 90vw;
     margin: auto;
@@ -69,6 +83,10 @@
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
 @media (min-width: 768px) {
     .cardTitle {
+        width: 35vw;
+    }
+
+    .cardTitleTitre {
         width: 35vw;
     }
 

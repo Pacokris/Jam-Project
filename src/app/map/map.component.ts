@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
 import { ActivatedRoute, Params, Router } from "@angular/router"; 
 
@@ -16,12 +16,129 @@ export class MapComponent implements OnInit {
 
 	public events = [];
 	public inputSearch : string;
+	public name: string;
+	public screenHeight: number;
+	public screenWidth: number;
 
-	constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
+	styles =
+
+		[
+			{
+				"featureType": "road",
+				"stylers": [
+					{
+						"hue": "#5e00ff"
+					},
+					{
+						"saturation": -79
+					}
+				]
+			},
+			{
+				"featureType": "poi",
+				"stylers": [
+					{
+						"saturation": -78
+					},
+					{
+						"hue": "#6600ff"
+					},
+					{
+						"lightness": -47
+					},
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "road.local",
+				"stylers": [
+					{
+						"lightness": 22
+					}
+				]
+			},
+			{
+				"featureType": "landscape",
+				"stylers": [
+					{
+						"hue": "#6600ff"
+					},
+					{
+						"saturation": -11
+					}
+				]
+			},
+			{},
+			{},
+			{
+				"featureType": "water",
+				"stylers": [
+					{
+						"saturation": -65
+					},
+					{
+						"hue": "#1900ff"
+					},
+					{
+						"lightness": 8
+					}
+				]
+			},
+			{
+				"featureType": "road.local",
+				"stylers": [
+					{
+						"weight": 1.3
+					},
+					{
+						"lightness": 30
+					}
+				]
+			},
+			{
+				"featureType": "transit",
+				"stylers": [
+					{
+						"visibility": "simplified"
+					},
+					{
+						"hue": "#5e00ff"
+					},
+					{
+						"saturation": -16
+					}
+				]
+			},
+			{
+				"featureType": "transit.line",
+				"stylers": [
+					{
+						"saturation": -72
+					}
+				]
+			},
+			{}
+		];
+
+	icon = {
+		url: '../assets/img/Google-Play-Music-icon.png',
+	}
+
+	constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { this.onResize();}
+
+	@HostListener('window:resize', ['$event'])
+    onResize(event?) {
+      this.screenHeight = window.innerHeight;
+			this.screenWidth = window.innerWidth;
+			console.log(this.screenHeight, this.screenWidth)
+}
 
 	ngOnInit() {
 		this.route.params.subscribe((params: Params) =>{
 			this.inputSearch = params['value'];
+			this.name = params['name']
 			this._EventCatcherService.getEventListCatcher(this.inputSearch)
 			.subscribe(data=> 
 			  this.events = data.resultsPage.results.event);
@@ -30,7 +147,7 @@ export class MapComponent implements OnInit {
 			}
 			
 	sendInputList(input, name) {
-    this.router.navigate(['/list', input, name]);
+    this.router.navigate(['/list', this.inputSearch, name]);
   }
 	
 		  getLatitude() { 
@@ -81,14 +198,20 @@ export class MapComponent implements OnInit {
 		if (minLng >= 0) {
 			x = maxLng-minLng;}
 		else { 	x = maxLng+Math.abs(minLng);}
-		if (x <= 3 )
-		  {return this.zoom = 6;}
+		if ( x<= 2)
+		{this.zoom = 7;}
+		if (x <= 3 && x >2 )
+		  { this.zoom = 6;}
 		if (x < 21 && x> 3) 
-		  {return this.zoom =5;}
+		  {this.zoom =5;}
 		if (x < 60 && x >= 21) 
-		  {return this.zoom = 4;}
+			{ this.zoom = 4;}
+			if (x < 21 && x >= 150) 
+			{this.zoom = 4;}	
 		if (x < 150 && x>= 60) 
-		  {return this.zoom =3;}
-		if (x>=150) {return this.zoom = 2;}
+		  { this.zoom =3;}
+		if (x>=150) {this.zoom = 2;}
+		if (this.screenWidth <768 && this.zoom <=4){ this.zoom --;}
+		return this.zoom;
 	  }
 }
