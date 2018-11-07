@@ -1,0 +1,25 @@
+div {
+    display: flex;
+    background-image: url("/assets/img/wp2157814.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 92vh;
+    width: auto;
+    font-family:'dream', Helvetica, Arial, sans-serif;
+    color: white;
+    margin: auto;
+    border: 5px solid red;
+
+}
+
+h2{
+    justify-content: center;
+    margin: auto;
+
+}
+
+p{
+
+}

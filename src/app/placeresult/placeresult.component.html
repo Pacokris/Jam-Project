@@ -1,5 +1,7 @@
 <div class="artistLocationResutContainer">
-  <h2 class="pageTitle">Location list</h2>
+  <h2 class="pageTitle" *ngIf="area !== empty">Location list</h2>
+  <p class="noResult" *ngIf="area === empty" >No results for this search</p>
+
 
   <mat-list role="list" *ngFor="let lieu of area">
     <mat-card-title class="cardTitle">{{lieu.city.displayName}}, {{lieu.city.country.displayName}}</mat-card-title>

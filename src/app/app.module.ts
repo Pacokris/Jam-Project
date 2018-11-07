@@ -31,6 +31,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
 import { PlacedateresultComponent } from './placedateresult/placedateresult.component';
 import { BiographyComponent } from './biography/biography.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'placeresult/:value', component: PlaceresultComponent },
   { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent},
   {path: 'bio/:value/:name', component: BiographyComponent},
+  {path : '**', component: PageNotFoundComponent},
 
 
 ];
@@ -67,6 +69,7 @@ const routes: Routes = [
     PlaceresultComponent,
     PlacedateresultComponent,
     BiographyComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
