@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'dream';
+  src:url(/src/assets/fonts/Dream.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -17,6 +24,7 @@
   -webkit-border-radius: 100px;
   border-radius: 50vw;
   font: normal 20px/1.1 "Black Ops One", Helvetica, sans-serif;
+  font-size: 2em;
   color: rgba(255,255,255,0.9);
   text-align: center;
   -o-text-overflow: clip;
@@ -95,8 +103,9 @@
   text-align: center;
   font-size: 2.5em;
   font-weight: bold;
-  font-family:'potra', Helvetica, Arial, sans-serif;
-  color: black;
+  font-family:'dream', Helvetica, Arial, sans-serif;
+  color: #f2f2f2;
+  text-shadow: -2px 0 #66245a, 0 2px #66245a, 2px 0 #66245a, 0 -2px #66245a;
 }
 
 @media (min-width: 768px) {
@@ -104,5 +113,8 @@
     width: 15vw;
     height: 15vw;
     border-radius: 15vw;
+  }
+  .RHRNparagraph {
+    font-size: 4em;
   }
 }
