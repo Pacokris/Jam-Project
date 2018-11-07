@@ -14,7 +14,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field class="datePicker">
-        <input  matInput [matDatepicker]="picker2" placeholder="End Date" [(ngModel)]="dateFin">
+        <input  matInput [min]="minDate" [matDatepicker]="picker2" placeholder="End Date" [(ngModel)]="dateFin">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2 ></mat-datepicker>
       </mat-form-field>
@@ -32,7 +32,7 @@
   <mat-card-title class="cardTitle">{{event.displayName}}</mat-card-title>
   <mat-card class="resultCard">
     <mat-card-content class="onTourText"> <i class="material-icons eventInfoIcons">place</i> {{ event.venue.displayName | titlecase}}</mat-card-content>
-    <mat-card-content class="onTourText" *ngIf = "event.location.city != ville || rechercheElargie == true">at {{event.location.city}} city</mat-card-content>
+    <mat-card-content class="onTourText" *ngIf = "event.location.city != ville || rechercheElargie == true"> <i class="material-icons eventInfoIcons">location_city</i> {{event.location.city}}</mat-card-content>
     <mat-card-content class="onTourText"> 
       <i class="material-icons eventInfoIcons">calendar_today</i> 
       {{event.start.date | date : 'dd MMMM yyyy'}}

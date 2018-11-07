@@ -1,17 +1,6 @@
-<!--<div class="div">
-  <h2 class="titreListe">Upcoming concerts in <span>{{area}} area</span></h2>
-
-  <ul class="listeConcerts" *ngFor="let ville of villes, let i=index">
-      <li>{{ville.displayName}}</li>
-      <li>at {{ ville.venue.displayName | titlecase}}</li>
-      <li >at {{ville.location.city}} city</li>
-      <li >{{ville.start.date | date : 'dd-MM-yyyy'}}</li>
-      <li>{{ville.start.time | slice : 0 :5}}</li>
-      <li><a class="tickets" href={{ville.uri}} target="_blank"><button>BUY TICKETS</button></a></li>
-  </ul>
-</div>-->
-
-<h2 class="pageTitle">Upcoming concerts in <span>{{area}} area</span></h2>
+<mat-card-title class="pageTitle">
+    <h2 class="cardTitleTitre">Upcoming concerts in <span>{{area}} area</span></h2>
+</mat-card-title>
 
 <mat-list role="list" *ngFor="let ville of villes">
     <mat-card-title class="cardTitle">{{ville.displayName}}</mat-card-title>
@@ -22,14 +11,14 @@
           </mat-card-content>
           <mat-card-content class="eventCardContent">
             <i class="material-icons eventInfoIcons">calendar_today</i>
-            {{ville.start.date | date : 'dd-MM-yyyy'}}
+            {{ville.start.date | date : 'dd MMMM yyyy'}}
           </mat-card-content>
-          <mat-card-content class="eventCardContent">
+          <mat-card-content *ngIf="ville.start.time" class="eventCardContent">
               <i class="material-icons eventInfoIcons">alarm</i>
               {{ville.start.time | slice : 0 :5}}
           </mat-card-content>
           <mat-card-actions class="cardBtnContainer">
-              <button mat-button class="goToBuyTicketsBtn"><a href={{ville.uri}} target="_blank">Buy Tickets</a></button>
+              <a href={{ville.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Buy Tickets</button></a>
           </mat-card-actions>
     </mat-card>
 </mat-list>
