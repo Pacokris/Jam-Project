@@ -46,6 +46,9 @@
     <mat-card-actions class="cardBtnContainer">
       <a href={{event.uri}} target="_blank"><button mat-button class="validateDateBtn">BUY TICKETS</button></a>
     </mat-card-actions>
+    <mat-card-actions class="cardBtnContainer">
+      <button mat-button class="validateDateBtn" (click)="goToMap(event.venue.lat, event.venue.lng, i)">See on Map</button>
+    </mat-card-actions>
   </mat-card>
 </mat-list>
 
