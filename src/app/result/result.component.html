@@ -1,5 +1,5 @@
 <mat-card-title class="pageTitle">
-        <h2 class="cardTitleTitre">Artist list</h2>
+        <h2 class="cardTitleTitre" *ngIf="artists !== empty">Artist list</h2>
     </mat-card-title>
 
 <p class="noResult" *ngIf="artists === empty" >No results for this search</p>
