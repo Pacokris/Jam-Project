@@ -15,3 +15,25 @@ a:hover{
 }
 /* html, body { height: 100%; } */
 body { font-family: 'Roboto', sans-serif; }
+
+.mat-radio-checked.mat-radio-outer-circle {
+    border-color: #66245A !important;
+  }
+
+
+.mat-radio-outer-circle {
+    border-color: #66245A !important;
+  }
+
+.mat-radio-inner-circle {
+    background-color: #66245A !important;
+  }
+
+.mat-menu-content {
+    /* margin-right: 7vw !important; */
+    width: 183px !important;
+    padding-bottom: 0px !important;
+}
+.mat-divider {
+    padding-top: 8px !important;
+}

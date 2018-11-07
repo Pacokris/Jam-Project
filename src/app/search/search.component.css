@@ -13,6 +13,11 @@
     font-style: normal;
 }
 
+.searchInputField {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
 .mainNav {
     background-color: #66245A;
     z-index: 20;
@@ -75,6 +80,8 @@
     color: white;
 }
 
+
+
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
   @media (min-width: 768px) {
     .JAMbtn {
@@ -82,6 +89,10 @@
         height: 6vh;
     }
 
+    .searchInputField {
+        font-size: 1.1rem;
+        font-weight: lighter;
+    }
     .inputFormField {
         width: 20vw;
     }

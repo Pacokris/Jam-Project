@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventCatcherService } from "../services/event-catcher.service";
+
 
 
 @Component({
@@ -11,34 +13,37 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
   resultParameter: string = "Artists";
   routerLinkValue: string = "/result/:value";
+  public checkedArtist: boolean = this.service.checkedArtist;
+  public placeholderValue: string = this.service.placeholderValue;
+  public searchValue:string = '';
 
-  constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
-  sendInputResult(input) {
-    this.router.navigate(['/result', input]);
-  }
 
-  sendInputLocation(input) {
-    this.router.navigate(['/placeresult', input]);
-  }
+  constructor(private router: Router, private service: EventCatcherService) {}
+
+  ngOnInit() {}
+
 
   setToArtist() {
-    this.resultParameter = "Artists";
+    this.service.setToArtist();
+    this.placeholderValue  = "Search your artist";
+    this.checkedArtist = this.service.checkedArtist;
   }
 
   setToLocation() {
-    this.resultParameter = "Locations";
+    this.service.setToLocation();
+    this.placeholderValue  = "Search your location";
+    this.checkedArtist = !this.service.checkedArtist;
   }
 
   goToResult(input) {
-    if (this.resultParameter === "Artists") {
-      this.router.navigate(['/result', input]);
-      //this.routerLinkValue === "/result/:value";
-    } else if (this.resultParameter === "Locations") {
-      this.router.navigate(['/placeresult', input]);
-      //this.routerLinkValue === "/placeresult/:value";
+  
+    if (this.service.resultParameter === "Artists") {
+      this.searchValue='';
+      this.router.navigate(["/result", input]);
+    } else if (this.service.resultParameter === "Locations") {
+      this.searchValue= '';
+      this.router.navigate(["/placeresult", input]);
     }
   }
 }

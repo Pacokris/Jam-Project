@@ -28,6 +28,18 @@ export class EventCatcherService {
 
   rechercheElargie: number = 0;
 
+  public resultParameter: string = 'Artists' ;
+  public placeholderValue: string = 'Search your artist' ;
+  public checkedArtist: boolean = true;
+
+  setToArtist() {
+    return this.resultParameter = "Artists", this.placeholderValue = "Search your artist", this.checkedArtist = true;  
+  }
+
+  setToLocation() {
+    return this.placeholderValue = "Search your location", this.resultParameter = "Locations",this.checkedArtist = false;  
+  }
+
   setRechercheElargie(isElargie) {
     this.rechercheElargie = isElargie ? 1 : 0;
   };
