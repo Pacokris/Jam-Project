@@ -114,7 +114,11 @@ export class RhrnMapComponent implements OnInit {
     ];
 
   icon = {
-    url: '../assets/img/Google-Play-Music-icon.png',
+    url: '../assets/img/Google-Play-Music-icon.png', 
+  }
+
+  userIcon = {
+    url: '../assets/img/user-icon.png'
   }
 
   constructor(private _EventCatcherService: EventCatcherService) { }

@@ -1,7 +1,8 @@
 <agm-map class="rhrnMap" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [styles]="styles">
       <agm-marker 
         [latitude]="userLatitude"
-        [longitude]="userLongitude">
+        [longitude]="userLongitude"
+        [iconUrl]="userIcon">
       </agm-marker>
       <agm-marker
         *ngFor="let m of events; let i = index"
