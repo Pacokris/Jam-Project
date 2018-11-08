@@ -27,6 +27,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { PlacelistComponent } from './placelist/placelist.component';
 import { PlaceresultComponent } from './placeresult/placeresult.component';
+import { AgmDirectionModule } from 'agm-direction'   // agm-direction
+
 
 
 import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
@@ -103,10 +105,12 @@ const routes: Routes = [
     MatExpansionModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCT2v5Owh6TcjngP2fO2Gbis9ihAYYObYQ'
+      apiKey: 'AIzaSyCTwghPiz09vTF_5-F3lo5xm10Bsj8T8L4'
     }),
     AgmSnazzyInfoWindowModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmDirectionModule,
+
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'}],
   bootstrap: [AppComponent]

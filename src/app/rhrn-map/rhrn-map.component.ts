@@ -128,8 +128,13 @@ export class RhrnMapComponent implements OnInit {
   zoom: number = 12;
   latitude: number;
   longitude: number;
-  userLatitude: number;
-  userLongitude: number;
+  // userLatitude: number;
+  // userLongitude: number;
+  public pos: any = {};
+  public dest: any = {};
+  public origin: any;
+  public destination: any;
+  public bidon : boolean = false;
 
   setPosition(position) {
     this.latitude = position.coords.latitude;
@@ -139,17 +144,37 @@ export class RhrnMapComponent implements OnInit {
     console.log(position.coords);
   }
 
-  getUserPosition(position) {
-    this.userLatitude = position.coords.latitude;
-    this.userLongitude = position.coords.longitude;;
-  }
+  // getUserPosition(position) {
+  //   this.userLatitude = position.coords.latitude;
+  //   this.userLongitude = position.coords.longitude;;
+  // }
 
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
-      navigator.geolocation.getCurrentPosition(this.getUserPosition.bind(this));
+      // navigator.geolocation.getCurrentPosition(this.getUserPosition.bind(this));
     };
     // navigator.geolocation.getCurrentPosition((pos)=>this.setPosition(pos))
   }
 
+  goToConcert(i){
+    navigator.geolocation.getCurrentPosition(this.getDirection.bind(this));
+    this.dest = {
+      lat : this.events[i].venue.lat,
+      lng : this.events[i].venue.lng
+    }
+    this.bidon = true;
+  }
+  getDirection(position){
+    this.pos = {
+      lat : position.coords.latitude,
+      lng : position.coords.longitude
+    }
+    // this.dest = {
+    //   lat : this.events[i].venue,
+    //   lng :
+    // }
+    this.origin = { lat: this.pos.lat, lng: this.pos.lng }
+    this.destination = { lat: this.dest.lat, lng: this.dest.lng }
+  }
 }
