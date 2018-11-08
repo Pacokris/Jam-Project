@@ -27,12 +27,7 @@ export class EventCatcherService {
     ].join("-");
   };
 
-<<<<<<< HEAD
   public rechercheElargie: number = 0;
-=======
-  rechercheElargie: number = 0;
-
->>>>>>> 1f72560b7a7829f1464553a94dfbcbfd1a600db8
   public resultParameter: string ;
   public placeholderValue: string = 'Search your artist' ;
   public checkedArtist: boolean = true;
