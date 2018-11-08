@@ -19,14 +19,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
-import { PlacelistComponent } from './placelist/placelist.component';
-import { PlaceresultComponent } from './placeresult/placeresult.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { PlacelistComponent } from './placelist/placelist.component';
+import { PlaceresultComponent } from './placeresult/placeresult.component';
+
 
 import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
 import { PlacedateresultComponent } from './placedateresult/placedateresult.component';

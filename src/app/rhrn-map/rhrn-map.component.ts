@@ -114,7 +114,11 @@ export class RhrnMapComponent implements OnInit {
     ];
 
   icon = {
-    url: '../assets/img/Google-Play-Music-icon.png',
+    url: '../assets/img/Google-Play-Music-icon.png', 
+  }
+
+  userIcon = {
+    url: '../assets/img/user-icon.png'
   }
 
   constructor(private _EventCatcherService: EventCatcherService) { }
@@ -124,6 +128,8 @@ export class RhrnMapComponent implements OnInit {
   zoom: number = 12;
   latitude: number;
   longitude: number;
+  userLatitude: number;
+  userLongitude: number;
 
   setPosition(position) {
     this.latitude = position.coords.latitude;
@@ -133,15 +139,17 @@ export class RhrnMapComponent implements OnInit {
     console.log(position.coords);
   }
 
+  getUserPosition(position) {
+    this.userLatitude = position.coords.latitude;
+    this.userLongitude = position.coords.longitude;;
+  }
+
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+      navigator.geolocation.getCurrentPosition(this.getUserPosition.bind(this));
     };
     // navigator.geolocation.getCurrentPosition((pos)=>this.setPosition(pos))
-
-
-
-
   }
 
 }
