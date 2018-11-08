@@ -1,8 +1,9 @@
 <agm-map class="rhrnMap" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [styles]="styles">
-      <agm-marker 
-        [latitude]="userLatitude"
-        [longitude]="userLongitude"
+      <agm-marker *ngIf ="!bidon"
+        [latitude]="latitude"
+        [longitude]="longitude"
         [iconUrl]="userIcon">
+        
       </agm-marker>
       <agm-marker
         *ngFor="let m of events; let i = index"
@@ -21,10 +22,13 @@
               <p class="displayArtist"> <i class="material-icons eventInfoIcons">music_note</i> {{m.performance[0].displayName}} </p>
               <p class="displayArtist"> <i class="material-icons eventInfoIcons">place</i> {{m.venue.displayName}} </p>
               <p class="displayDate" *ngIf="m.start.time"> <i class="material-icons eventInfoIcons">alarm</i> {{m.start.time | slice : 0 : 5}}</p>
+              <button mat-button class="goToConcertLocation" (click)="goToConcert(i)">Go</button>
               <a class="tickets" href={{m.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Booking</button></a>
             </div>
           </ng-template>
         </agm-snazzy-info-window>
       </agm-marker>
   
+      <agm-direction *ngIf="bidon" [origin]="origin" [destination]="destination">
+      </agm-direction>
   </agm-map>
