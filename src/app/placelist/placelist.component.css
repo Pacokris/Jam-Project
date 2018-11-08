@@ -1,4 +1,14 @@
 /* --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT --- MOBILE/CSS PAR DEFAUT*/
+
+.mat-card>:first-child  {
+    display: block;
+    margin: 1vh auto;
+
+}
+.mat-card {
+    padding: 2vh;
+}
+
 .pageTitle {
     text-align: center;
     margin-top: 5vh; 
