@@ -27,38 +27,30 @@ export class EventCatcherService {
     ].join("-");
   };
 
-  rechercheElargie: number = 0;
-
+  public rechercheElargie: number = 0;
   public resultParameter: string ;
   public placeholderValue: string = 'Search your artist' ;
   public checkedArtist: boolean = true;
   public checkedLocation: boolean = false;
   public checkedVenue:boolean = false;
-
   public detailsConcert = [];
 
   getDetailsConcert(detail: any[]) {
     this.detailsConcert = [];
     this.detailsConcert.push(detail);
   }
-
   setToArtist() {
     return this.resultParameter = "Artists", this.placeholderValue = "Search your artist", this.checkedArtist = true, this.checkedLocation = false, this.checkedVenue=false;  
   }
-
-
   setToLocation() {
     return this.placeholderValue = "Search your location", this.resultParameter = "Locations",this.checkedArtist = false, this.checkedLocation = true, this.checkedVenue=false;  
   }
-
   setToVenue() {
     return this.placeholderValue = "Search your venue", this.resultParameter = "Venues",this.checkedArtist = false, this.checkedLocation = false, this.checkedVenue=true;  
   }
-
   setRechercheElargie(isElargie) {
     this.rechercheElargie = isElargie ? 1 : 0;
   };
-
   getEventListCatcher(inputSearch): Observable<any> {
     this._url =
       "https://api.songkick.com/api/3.0/artists/" +
