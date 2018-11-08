@@ -36,6 +36,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ResultvenueComponent } from './resultvenue/resultvenue.component';
 import { ListvenuesComponent } from './listvenues/listvenues.component';
 import { MapLocationComponent } from './map-location/map-location.component';
+import { MapLocationDateComponent } from './map-location-date/map-location-date.component';
 
 
 
@@ -58,6 +59,7 @@ const routes: Routes = [
   {path: 'listvenue/:value/:name', component: ListvenuesComponent},
   {path: 'map-location/:lat/:lng/:id/:name', component: MapLocationComponent},
   {path: 'map-location/:lat/:lng', component: MapLocationComponent},
+  {path: 'map-location-date/:dateDebut/:dateFin/:lat/:lng', component: MapLocationDateComponent},
   {path : '**', component: PageNotFoundComponent},
 
 
@@ -82,6 +84,7 @@ const routes: Routes = [
     ResultvenueComponent,
     ListvenuesComponent,
     MapLocationComponent,
+    MapLocationDateComponent,
 
   ],
   imports: [

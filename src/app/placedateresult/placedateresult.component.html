@@ -2,13 +2,14 @@
     <h2 class="cardTitleTitre">Upcoming concerts in <span>{{area}} area</span></h2>
 </mat-card-title>
 
-<mat-list role="list" *ngFor="let ville of villes">
+<mat-list role="list" *ngFor="let ville of villes, let i=index">
     <mat-card-title class="cardTitle">{{ville.displayName}}</mat-card-title>
     <mat-card class="resultCard">
-        <mat-card-content class="eventCardContent">
+            <button mat-raised-button class="buttonMap" (click)="goToMap(ville.venue.lat, ville.venue.lng, i)" class="onTourText"> <i class="material-icons eventInfoIcons" >place</i> {{ ville.venue.displayName | titlecase}}</button>
+        <!-- <mat-card-content class="eventCardContent">
             <i class="material-icons eventInfoIcons">place</i>
             {{ville.venue.displayName}}
-          </mat-card-content>
+          </mat-card-content> -->
           <mat-card-content class="eventCardContent">
             <i class="material-icons eventInfoIcons">calendar_today</i>
             {{ville.start.date | date : 'dd MMMM yyyy'}}

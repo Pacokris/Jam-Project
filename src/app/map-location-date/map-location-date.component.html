@@ -1,0 +1,19 @@
+<button mat-button class="mapDisplayBtn" (click)="retourList()"
+  routerLink="/list/:value/:name">Return on list</button>
+
+<agm-map class="rhrnMap" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [styles]="styles">
+  <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="icon">
+    <agm-snazzy-info-window [closeWhenOthersOpen]="true" [showCloseButton]="false">
+      <ng-template>
+        <div class="mapCard">
+          <p class="si-shadow-frame"> <i class="material-icons eventInfoIcons">location_city</i> {{detailConcert[0].location.city}}</p>
+          <p class="displayArtist"> <i class="material-icons eventInfoIcons">music_note</i> {{detailConcert[0].displayName}} </p>
+          <p class="displayArtist"> <i class="material-icons eventInfoIcons">place</i> {{detailConcert[0].venue.displayName}} </p>
+          <p class="displayDate"> <i class="material-icons eventInfoIcons">calendar_today</i> {{detailConcert[0].start.date}}</p>
+          <p class="displayDate" *ngIf="detailConcert[0].start.time"> <i class="material-icons eventInfoIcons">alarm</i> {{detailConcert[0].start.time | slice : 0 : 5}}</p>
+        </div>
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+
+</agm-map>
