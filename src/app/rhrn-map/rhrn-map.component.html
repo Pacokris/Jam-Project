@@ -22,7 +22,7 @@
               <p class="displayArtist"> <i class="material-icons eventInfoIcons">music_note</i> {{m.performance[0].displayName}} </p>
               <p class="displayArtist"> <i class="material-icons eventInfoIcons">place</i> {{m.venue.displayName}} </p>
               <p class="displayDate" *ngIf="m.start.time"> <i class="material-icons eventInfoIcons">alarm</i> {{m.start.time | slice : 0 : 5}}</p>
-              <button mat-button class="goToBuyTicketsBtn" (click)="goToConcert(i)">GO</button>
+              <button mat-button class="goToConcertLocation" (click)="goToConcert(i)">Go</button>
               <a class="tickets" href={{m.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Booking</button></a>
             </div>
           </ng-template>
