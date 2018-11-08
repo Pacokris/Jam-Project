@@ -6,6 +6,19 @@
     font-style: normal;
 }
 
+.mat-card>:first-child  {
+    display: block;
+    margin: 1vh auto;
+
+}
+.mat-card {
+    padding: 2vh;
+}
+
+.mat-card>.mat-card-actions:last-child {
+    margin-bottom: 0;
+}
+
 .pageTitle {
     text-align: center;
     margin-top: 5vh; 

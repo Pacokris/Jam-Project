@@ -16,9 +16,17 @@ export class PlacedateresultComponent implements OnInit {
   public villes = [];
   public ville: string;
   public rechercheElargie: boolean;
+  public detailConcert = [];
 
   constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router: Router) { }
 
+  goToMap(lat, lng, i) {
+   
+    this.router.navigate(['map-location-date',this.dateDebut, this.dateFin,lat , lng]);
+    console.log(this.villes[i]);
+    this.detailConcert = this.villes[i];
+    this._EventCatcherService.getDetailsConcert(this.detailConcert);
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
