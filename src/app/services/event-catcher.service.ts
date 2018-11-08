@@ -29,7 +29,7 @@ export class EventCatcherService {
 
   rechercheElargie: number = 0;
 
-  public resultParameter: string = 'Artists' ;
+  public resultParameter: string ;
   public placeholderValue: string = 'Search your artist' ;
   public checkedArtist: boolean = true;
   public checkedLocation: boolean = false;
@@ -52,7 +52,7 @@ export class EventCatcherService {
   }
 
   setToVenue() {
-    return this.placeholderValue = "Search your venue", this.resultParameter = "Venue",this.checkedArtist = false, this.checkedLocation = false, this.checkedVenue=true;  
+    return this.placeholderValue = "Search your venue", this.resultParameter = "Venues",this.checkedArtist = false, this.checkedLocation = false, this.checkedVenue=true;  
   }
 
   setRechercheElargie(isElargie) {
