@@ -63,7 +63,9 @@
 
 <!--No concert in this town-->
 <div *ngIf="villes.length == 0 && displayNoEvent" class="div">
-  <h2 class="userPromptResult">There's no Upcoming concerts in {{ville}}</h2>
+  <mat-card-title class="pageTitle">
+    <h2 class="cardTitleTitre">There's no Upcoming concerts in {{ville}}</h2>
+  </mat-card-title>
   <mat-card-title class="resultCardTitle">Want more ?</mat-card-title>
   <mat-card class="resultCard">
     <p class="userPromptResult">Do you want to search events in {{ville}} area ?</p>
