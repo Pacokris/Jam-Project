@@ -11,7 +11,7 @@ import { EventCatcherService } from "../services/event-catcher.service";
 })
 
 export class SearchComponent implements OnInit {
-  resultParameter: string = "Artists";
+  resultParameter: string ;
   routerLinkValue: string = "/result/:value";
   public checkedArtist: boolean = this.service.checkedArtist;
   public checkedLocation: boolean = this.service.checkedLocation;
@@ -49,15 +49,18 @@ export class SearchComponent implements OnInit {
   }
 
   goToResult(input) {
-    if (this.resultParameter === "Artists") {
+    if (this.service.resultParameter === "Artists") {
+      this.searchValue='';
       this.router.navigate(['/result', input]);
       //this.routerLinkValue === "/result/:value";
     } 
-    else if (this.resultParameter === "Locations") {
+    else if (this.service.resultParameter === "Locations") {
+      this.searchValue='';
       this.router.navigate(['/placeresult', input]);
       //this.routerLinkValue === "/placeresult/:value";
     } 
-    else if (this.resultParameter === "Venues") {
+    else if (this.service.resultParameter === "Venues") {
+      this.searchValue='';
       this.router.navigate(['/resultvenue', input]);
       //this.routerLinkValue === "/resultvenue/:value";
   }
