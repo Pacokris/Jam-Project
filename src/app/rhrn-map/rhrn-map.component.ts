@@ -118,7 +118,7 @@ export class RhrnMapComponent implements OnInit {
   }
 
   userIcon = {
-    url: '../assets/img/user-icon.png'
+    url: '../assets/img/user-headphone.png'
   }
 
   constructor(private _EventCatcherService: EventCatcherService) { }
