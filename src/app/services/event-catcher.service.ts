@@ -32,6 +32,8 @@ export class EventCatcherService {
   public resultParameter: string = 'Artists' ;
   public placeholderValue: string = 'Search your artist' ;
   public checkedArtist: boolean = true;
+  public checkedLocation: boolean = false;
+  public checkedVenue:boolean = false;
 
   public detailsConcert = [];
 
@@ -41,12 +43,16 @@ export class EventCatcherService {
   }
 
   setToArtist() {
-    return this.resultParameter = "Artists", this.placeholderValue = "Search your artist", this.checkedArtist = true;  
+    return this.resultParameter = "Artists", this.placeholderValue = "Search your artist", this.checkedArtist = true, this.checkedLocation = false, this.checkedVenue=false;  
   }
 
 
   setToLocation() {
-    return this.placeholderValue = "Search your location", this.resultParameter = "Locations",this.checkedArtist = false;  
+    return this.placeholderValue = "Search your location", this.resultParameter = "Locations",this.checkedArtist = false, this.checkedLocation = true, this.checkedVenue=false;  
+  }
+
+  setToVenue() {
+    return this.placeholderValue = "Search your venue", this.resultParameter = "Venue",this.checkedArtist = false, this.checkedLocation = false, this.checkedVenue=true;  
   }
 
   setRechercheElargie(isElargie) {

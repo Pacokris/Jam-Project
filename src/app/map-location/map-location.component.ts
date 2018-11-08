@@ -121,7 +121,7 @@ export class MapLocationComponent implements OnInit {
   zoom: number = 16;
   latitude: number;
   longitude: number;
-  public detailConcert[];
+  public detailConcert =[];
 
   retourList(){
     this.router.navigate(['placelist', this.detailConcert[0].venue.metroArea.id, this.detailConcert[0].location.city ])

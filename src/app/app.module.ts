@@ -57,7 +57,6 @@ const routes: Routes = [
   {path: 'listvenue/:value/:name', component: ListvenuesComponent},
   {path: 'map-location/:lat/:lng/:id/:name', component: MapLocationComponent},
   {path: 'map-location/:lat/:lng', component: MapLocationComponent},
-  {path: 'map-location/:data', component: MapLocationComponent},
   {path : '**', component: PageNotFoundComponent},
 
 
