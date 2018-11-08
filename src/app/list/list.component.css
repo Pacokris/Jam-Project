@@ -159,6 +159,10 @@
   font-size: 24px;
 }
 
+.similarArtBtn {
+  margin: 1vh 0.25vw;
+}
+
 /* --- DESKTOP --- DESKTOP --- DESKTOP --- DESKTOP*/
 @media (min-width: 768px) {
   .listPageContainer {
@@ -196,7 +200,7 @@
     display: flex;
     flex-direction: column;
     width: 50vw;
-    height: 75vh;
+    height: 70vh;
     overflow-y: scroll;
   }
 

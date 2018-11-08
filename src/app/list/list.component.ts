@@ -17,14 +17,7 @@ export class ListComponent implements OnInit {
   public screenHeight: number;
   public screenWidth: number;
   public similars = [];
-constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { this.onResize(); }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event?) {
-    this.screenHeight = window.innerHeight;
-    this.screenWidth = window.innerWidth;
-    console.log(this.screenHeight, this.screenWidth);
-  }
+constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
