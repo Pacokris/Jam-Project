@@ -28,7 +28,7 @@ export class EventCatcherService {
   };
 
   public rechercheElargie: number = 0;
-  public resultParameter: string ;
+  public resultParameter: string = "Artists";
   public placeholderValue: string = 'Search your artist' ;
   public checkedArtist: boolean = true;
   public checkedLocation: boolean = false;

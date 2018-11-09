@@ -26,7 +26,6 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
       this._EventCatcherService.getEventListCatcher(this.inputSearch)
       .subscribe((data)=>
         {this.events = data.resultsPage.results.event;
-          console.log(this.events)
         this.events.forEach(event => {
             const artiste = event.displayName;
             event.displayName = artiste.slice(0, artiste.indexOf('at'))});
@@ -39,7 +38,6 @@ constructor(private _EventCatcherService: EventCatcherService, private route: Ac
       this._EventCatcherService.getSimilarArtists(this.inputSearch)
       .subscribe(data =>{
         this.similars = data.resultsPage.results.artist;
-        console.log(this.similars)
       });
 
     });

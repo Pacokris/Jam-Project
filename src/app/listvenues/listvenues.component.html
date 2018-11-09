@@ -51,7 +51,7 @@
               <i class="material-icons eventInfoIcons">calendar_today</i>
               {{event.start.date | date : 'dd MMMM yyyy'}}
             </mat-card-content>
-            <mat-card-content class="eventCardContent">
+            <mat-card-content *ngIf="event.start.time" class="eventCardContent">
               <i class="material-icons eventInfoIcons">alarm</i>
               {{event.start.time | slice : 0 :5}}
             </mat-card-content>
