@@ -12,13 +12,13 @@
         <mat-card-content class="onTourText" *ngIf="artist.onTourUntil === null">Not on tour right now !!</mat-card-content>
         <mat-card-actions class="cardBtnContainer">
             <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil != null" (click)="sendInputList(artist.id, artist.displayName)" routerLink="/list/:value/:name">
-                Show concerts on list
+                Show on list
             </button>
             <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil != null" (click)="sendInputMap(artist.id)" routerLink="/map/:value">
-                Show concerts on map
+                Show on map
             </button>
             <button mat-button class="mapListDisplayBtn" *ngIf="artist.onTourUntil == null" (click)="sendInputBio(artist.id, artist.displayName)" routerLink="/bio/:value/:name">
-                Show bio
+                See bio
             </button>
         </mat-card-actions>
     </mat-card>

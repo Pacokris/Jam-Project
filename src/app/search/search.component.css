@@ -89,6 +89,12 @@
         height: 6vh;
     }
 
+    .mainNav {
+        background-color: #66245A;
+        z-index: 20;
+        height: 8vh;
+    }
+
     .searchInputField {
         font-size: 1.1rem;
         font-weight: lighter;
