@@ -13,98 +13,98 @@ export class MapLocationComponent implements OnInit {
 
     [
       {
-        "featureType": "road",
-        "stylers": [
+        'featureType': 'road',
+        'stylers': [
           {
-            "hue": "#5e00ff"
+            'hue': '#5e00ff'
           },
           {
-            "saturation": -79
+            'saturation': -79
           }
         ]
       },
       {
-        "featureType": "poi",
-        "stylers": [
+        'featureType': 'poi',
+        'stylers': [
           {
-            "saturation": -78
+            'saturation': -78
           },
           {
-            "hue": "#6600ff"
+            'hue': '#6600ff'
           },
           {
-            "lightness": -47
+            'lightness': -47
           },
           {
-            "visibility": "off"
+            'visibility': 'off'
           }
         ]
       },
       {
-        "featureType": "road.local",
-        "stylers": [
+        'featureType': 'road.local',
+        'stylers': [
           {
-            "lightness": 22
+            'lightness': 22
           }
         ]
       },
       {
-        "featureType": "landscape",
-        "stylers": [
+        'featureType': 'landscape',
+        'stylers': [
           {
-            "hue": "#6600ff"
+            'hue': '#6600ff'
           },
           {
-            "saturation": -11
+            'saturation': -11
           }
         ]
       },
       {},
       {},
       {
-        "featureType": "water",
-        "stylers": [
+        'featureType': 'water',
+        'stylers': [
           {
-            "saturation": -65
+            'saturation': -65
           },
           {
-            "hue": "#1900ff"
+            'hue': '#1900ff'
           },
           {
-            "lightness": 8
+            'lightness': 8
           }
         ]
       },
       {
-        "featureType": "road.local",
-        "stylers": [
+        'featureType': 'road.local',
+        'stylers': [
           {
-            "weight": 1.3
+            'weight': 1.3
           },
           {
-            "lightness": 30
+            'lightness': 30
           }
         ]
       },
       {
-        "featureType": "transit",
-        "stylers": [
+        'featureType': 'transit',
+        'stylers': [
           {
-            "visibility": "simplified"
+            'visibility': 'simplified'
           },
           {
-            "hue": "#5e00ff"
+            'hue': '#5e00ff'
           },
           {
-            "saturation": -16
+            'saturation': -16
           }
         ]
       },
       {
-        "featureType": "transit.line",
-        "stylers": [
+        'featureType': 'transit.line',
+        'stylers': [
           {
-            "saturation": -72
+            'saturation': -72
           }
         ]
       },
@@ -113,18 +113,18 @@ export class MapLocationComponent implements OnInit {
 
   icon = {
     url: '../assets/img/Google-Play-Music-icon.png',
-  }
+  };
 
   constructor(private route: ActivatedRoute, private service: EventCatcherService, private router: Router) { }
 
 
-  zoom: number = 16;
+  zoom = 16;
   latitude: number;
   longitude: number;
-  public detailConcert =[];
+  public detailConcert = [];
 
-  retourList(){
-    this.router.navigate(['placelist', this.detailConcert[0].venue.metroArea.id, this.detailConcert[0].location.city ])
+  retourList() {
+    this.router.navigate(['placelist', this.detailConcert[0].venue.metroArea.id, this.detailConcert[0].location.city]);
   }
 
   ngOnInit() {
@@ -136,13 +136,13 @@ export class MapLocationComponent implements OnInit {
     );
 
     console.log(this.longitude, this.latitude);
-    console.log(this.service.detailsConcert)
+    console.log(this.service.detailsConcert);
 
     this.detailConcert = this.service.detailsConcert;
-    console.log(this.detailConcert[0])
+    console.log(this.detailConcert[0]);
   }
 
 
 }
-  
+
 

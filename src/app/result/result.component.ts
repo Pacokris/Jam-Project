@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventCatcherService } from '../services/event-catcher.service';
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -10,10 +10,10 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 export class ResultComponent implements OnInit {
 
   public artists = [];
-  public inputSearch : string;
+  public inputSearch: string;
 
 
-  constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router : Router) { }
+  constructor(private _EventCatcherService: EventCatcherService, private route: ActivatedRoute, private router: Router) { }
 
 
   sendInputList(input, name) {
@@ -24,18 +24,18 @@ export class ResultComponent implements OnInit {
     this.router.navigate(['/map', input]);
   }
 
-  sendInputBio(input, name){
+  sendInputBio(input, name) {
     this.router.navigate(['/bio', input, name]);
   }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) =>{
+    this.route.params.subscribe((params: Params) => {
       this.inputSearch = params['value'];
       this._EventCatcherService.getArtistListCatcher(this.inputSearch)
-      .subscribe(data=>
-        this.artists = data.resultsPage.results.artist);
+        .subscribe(data =>
+          this.artists = data.resultsPage.results.artist);
 
-      });
-    }
+    });
+  }
 
 }

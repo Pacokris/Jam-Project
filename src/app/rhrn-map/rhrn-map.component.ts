@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { EventCatcherService } from '../services/event-catcher.service';
-import { Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-rhrn-map',
@@ -15,98 +12,98 @@ export class RhrnMapComponent implements OnInit {
 
     [
       {
-        "featureType": "road",
-        "stylers": [
+        'featureType': 'road',
+        'stylers': [
           {
-            "hue": "#5e00ff"
+            'hue': '#5e00ff'
           },
           {
-            "saturation": -79
+            'saturation': -79
           }
         ]
       },
       {
-        "featureType": "poi",
-        "stylers": [
+        'featureType': 'poi',
+        'stylers': [
           {
-            "saturation": -78
+            'saturation': -78
           },
           {
-            "hue": "#6600ff"
+            'hue': '#6600ff'
           },
           {
-            "lightness": -47
+            'lightness': -47
           },
           {
-            "visibility": "off"
+            'visibility': 'off'
           }
         ]
       },
       {
-        "featureType": "road.local",
-        "stylers": [
+        'featureType': 'road.local',
+        'stylers': [
           {
-            "lightness": 22
+            'lightness': 22
           }
         ]
       },
       {
-        "featureType": "landscape",
-        "stylers": [
+        'featureType': 'landscape',
+        'stylers': [
           {
-            "hue": "#6600ff"
+            'hue': '#6600ff'
           },
           {
-            "saturation": -11
+            'saturation': -11
           }
         ]
       },
       {},
       {},
       {
-        "featureType": "water",
-        "stylers": [
+        'featureType': 'water',
+        'stylers': [
           {
-            "saturation": -65
+            'saturation': -65
           },
           {
-            "hue": "#1900ff"
+            'hue': '#1900ff'
           },
           {
-            "lightness": 8
+            'lightness': 8
           }
         ]
       },
       {
-        "featureType": "road.local",
-        "stylers": [
+        'featureType': 'road.local',
+        'stylers': [
           {
-            "weight": 1.3
+            'weight': 1.3
           },
           {
-            "lightness": 30
+            'lightness': 30
           }
         ]
       },
       {
-        "featureType": "transit",
-        "stylers": [
+        'featureType': 'transit',
+        'stylers': [
           {
-            "visibility": "simplified"
+            'visibility': 'simplified'
           },
           {
-            "hue": "#5e00ff"
+            'hue': '#5e00ff'
           },
           {
-            "saturation": -16
+            'saturation': -16
           }
         ]
       },
       {
-        "featureType": "transit.line",
-        "stylers": [
+        'featureType': 'transit.line',
+        'stylers': [
           {
-            "saturation": -72
+            'saturation': -72
           }
         ]
       },
@@ -114,18 +111,18 @@ export class RhrnMapComponent implements OnInit {
     ];
 
   icon = {
-    url: '../assets/img/Google-Play-Music-icon.png', 
-  }
+    url: '../assets/img/Google-Play-Music-icon.png',
+  };
 
   userIcon = {
     url: '../assets/img/user-headphone.png'
-  }
+  };
 
   constructor(private _EventCatcherService: EventCatcherService) { }
 
 
   public events: any[];
-  zoom: number = 12;
+  zoom = 12;
   latitude: number;
   longitude: number;
   // userLatitude: number;
@@ -134,7 +131,7 @@ export class RhrnMapComponent implements OnInit {
   public dest: any = {};
   public origin: any;
   public destination: any;
-  public bidon : boolean = false;
+  public bidon = false;
 
   setPosition(position) {
     this.latitude = position.coords.latitude;
@@ -153,28 +150,28 @@ export class RhrnMapComponent implements OnInit {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       // navigator.geolocation.getCurrentPosition(this.getUserPosition.bind(this));
-    };
+    }
     // navigator.geolocation.getCurrentPosition((pos)=>this.setPosition(pos))
   }
 
-  goToConcert(i){
+  goToConcert(i) {
     navigator.geolocation.getCurrentPosition(this.getDirection.bind(this));
     this.dest = {
-      lat : this.events[i].venue.lat,
-      lng : this.events[i].venue.lng
-    }
+      lat: this.events[i].venue.lat,
+      lng: this.events[i].venue.lng
+    };
     this.bidon = true;
   }
-  getDirection(position){
+  getDirection(position) {
     this.pos = {
-      lat : position.coords.latitude,
-      lng : position.coords.longitude
-    }
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
     // this.dest = {
     //   lat : this.events[i].venue,
     //   lng :
     // }
-    this.origin = { lat: this.pos.lat, lng: this.pos.lng }
-    this.destination = { lat: this.dest.lat, lng: this.dest.lng }
+    this.origin = { lat: this.pos.lat, lng: this.pos.lng };
+    this.destination = { lat: this.dest.lat, lng: this.dest.lng };
   }
 }

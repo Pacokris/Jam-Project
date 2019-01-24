@@ -1,52 +1,54 @@
 <mat-toolbar class="mainNav fixed-top">
-    <!--JAM Btn-->
-    <span>
-      <button mat-button class="JAMbtn mat-elevation-z20" routerLink="/home">JAM</button>
-    </span>
-  
-    <span class="inputSearchBtnContainer">
-      <!--Search Input-->
-      <mat-form-field class="inputFormField">
-        <mat-label></mat-label> <!--Allows to disable placeholder animation-->
-        <input matInput class="searchInputField" #searchInput [(ngModel)]="searchValue" type="text" (keyup.enter)="goToResult(searchInput.value)" [placeholder]="placeholderValue" autofocus >
-      </mat-form-field>
+  <!--JAM Btn-->
+  <span>
+    <button mat-button class="JAMbtn mat-elevation-z20" routerLink="/home">JAM</button>
+  </span>
 
-      <!--Search Icon-->
-      <button mat-icon-button class="searchIconBtn" (click)="goToResult(searchInput.value)" >
-        <mat-icon class="searchIcon" aria-label="Search icon">search</mat-icon>
-      </button>
+  <span class="inputSearchBtnContainer">
+    <!--Search Input-->
+    <mat-form-field class="inputFormField">
+      <mat-label></mat-label>
+      <!--Allows to disable placeholder animation-->
+      <input matInput class="searchInputField" #searchInput [(ngModel)]="searchValue" type="text" (keyup.enter)="goToResult(searchInput.value)"
+        [placeholder]="placeholderValue" autofocus>
+    </mat-form-field>
 
-      <!--Search Options Btn displayed in Desktop Only-->
-      <span class="filterBtnContainerDesktop">
-            <button mat-button class="SearchOptionMenuBtn mat-elevation-z20" [matMenuTriggerFor]="menu">
-                <i class="material-icons" aria-label="Drop menu icon">keyboard_arrow_down</i>
-                Search options
-            </button>
-            <mat-menu #menu="matMenu" [overlapTrigger]="false">
-              <mat-radio-group>
-                  <mat-radio-button (click)="setToArtist()" value="1" [checked]="checkedArtist">Artist</mat-radio-button>
-                  <mat-divider></mat-divider>
-                  <mat-radio-button (click)="setToLocation()" value="2" [checked]="checkedLocation">Location</mat-radio-button>
-                  <mat-divider></mat-divider>
-                  <mat-radio-button (click)="setToVenue()" value="3" [checked]="checkedVenue">Venue</mat-radio-button>
-              </mat-radio-group>
-            </mat-menu>
-      </span>
-    </span>
-  
-    <!--Search Options Btn displayed in Mobile Only-->
-    <span class="filterBtnContainerMobile">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <i class="material-icons filterIcon" aria-label="Filter icon">add_circle_outline</i>
+    <!--Search Icon-->
+    <button mat-icon-button class="searchIconBtn" (click)="goToResult(searchInput.value)">
+      <mat-icon class="searchIcon" aria-label="Search icon">search</mat-icon>
+    </button>
+
+    <!--Search Options Btn displayed in Desktop Only-->
+    <span class="filterBtnContainerDesktop">
+      <button mat-button class="SearchOptionMenuBtn mat-elevation-z20" [matMenuTriggerFor]="menu">
+        <i class="material-icons" aria-label="Drop menu icon">keyboard_arrow_down</i>
+        Search options
       </button>
       <mat-menu #menu="matMenu" [overlapTrigger]="false">
         <mat-radio-group>
-            <mat-radio-button (click)="setToArtist()" value="1" [checked]="checkedArtist">Artist</mat-radio-button>
-            <mat-divider></mat-divider>
-            <mat-radio-button (click)="setToLocation()" value="2" [checked]="checkedLocation">Location</mat-radio-button>
-            <mat-divider></mat-divider>
-            <mat-radio-button (click)="setToVenue()" value="3" [checked]="checkedVenue">Venue</mat-radio-button>
+          <mat-radio-button (click)="setToArtist()" value="1" [checked]="checkedArtist">Artist</mat-radio-button>
+          <mat-divider></mat-divider>
+          <mat-radio-button (click)="setToLocation()" value="2" [checked]="checkedLocation">Location</mat-radio-button>
+          <mat-divider></mat-divider>
+          <mat-radio-button (click)="setToVenue()" value="3" [checked]="checkedVenue">Venue</mat-radio-button>
         </mat-radio-group>
       </mat-menu>
     </span>
+  </span>
+
+  <!--Search Options Btn displayed in Mobile Only-->
+  <span class="filterBtnContainerMobile">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <i class="material-icons filterIcon" aria-label="Filter icon">add_circle_outline</i>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <mat-radio-group>
+        <mat-radio-button (click)="setToArtist()" value="1" [checked]="checkedArtist">Artist</mat-radio-button>
+        <mat-divider></mat-divider>
+        <mat-radio-button (click)="setToLocation()" value="2" [checked]="checkedLocation">Location</mat-radio-button>
+        <mat-divider></mat-divider>
+        <mat-radio-button (click)="setToVenue()" value="3" [checked]="checkedVenue">Venue</mat-radio-button>
+      </mat-radio-group>
+    </mat-menu>
+  </span>
 </mat-toolbar>

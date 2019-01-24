@@ -1,16 +1,16 @@
-import { Component, OnInit} from "@angular/core";
-import { EventCatcherService } from "../services/event-catcher.service";
-import { ActivatedRoute, Router, Params } from "@angular/router";
-import { FormControl } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { EventCatcherService } from '../services/event-catcher.service';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 
 
 @Component({
-  selector: "app-placelist",
-  templateUrl: "./placelist.component.html",
-  styleUrls: ["./placelist.component.css"]
+  selector: 'app-placelist',
+  templateUrl: './placelist.component.html',
+  styleUrls: ['./placelist.component.css']
 })
-export class PlacelistComponent implements OnInit{
+export class PlacelistComponent implements OnInit {
   public places = [];
   public inputSearch: string;
   public villes = [];
@@ -18,7 +18,7 @@ export class PlacelistComponent implements OnInit{
   public Id: number;
   public area: string;
   private displayNoEvent;
-  public rechercheElargie: boolean = false;
+  public rechercheElargie = false;
   public test = [];
   public nbEvent: number;
   public minDate = new Date();
@@ -41,16 +41,11 @@ export class PlacelistComponent implements OnInit{
 
   sendDateList(dateDebut, dateFin) {
 
-  this.dateDebutStr=this._EventCatcherService.formatDate(dateDebut);
-  this.dateFinStr=this._EventCatcherService.formatDate(dateFin);  
-    
-    //  this.dateDebutStr= dateDebut.getFullYear()+"-"+(dateDebut.getMonth()+1)+"-"+dateDebut.getDate();
-
-    //  this.dateFinStr= dateFin.getFullYear()+"-"+(dateFin.getMonth()+1)+"-"+dateFin.getDate();
-    // console.log(this.dateDebutStr, this.dateFinStr);
+    this.dateDebutStr = this._EventCatcherService.formatDate(dateDebut);
+    this.dateFinStr = this._EventCatcherService.formatDate(dateFin);
 
     this.router.navigate(['/placedateresult', this.dateDebutStr, this.dateFinStr, this.IdArea, this.ville, this.rechercheElargie]);
-    
+
   }
 
   ngOnInit() {
@@ -58,8 +53,8 @@ export class PlacelistComponent implements OnInit{
   }
 
   goToMap(lat, lng, i) {
-   
-    this.router.navigate(['map-location',lat , lng]);
+
+    this.router.navigate(['map-location', lat, lng]);
     console.log(this.villes[i]);
     this.detailConcert = this.villes[i];
     this._EventCatcherService.getDetailsConcert(this.detailConcert);
@@ -68,7 +63,7 @@ export class PlacelistComponent implements OnInit{
   sendInputList() {
     this._EventCatcherService.setRechercheElargie(1);
     this.router.navigate([
-      "/placelist",
+      '/placelist',
       this.inputSearch,
       this.ville,
       this.ville
@@ -79,9 +74,9 @@ export class PlacelistComponent implements OnInit{
     this.displayNoEvent = false;
     console.log(this._EventCatcherService.rechercheElargie);
     this.route.params.subscribe((params: Params) => {
-      this.inputSearch = params["value"];
-      this.ville = params["name"];
-      console.log(this.ville, "test");
+      this.inputSearch = params['value'];
+      this.ville = params['name'];
+      console.log(this.ville, 'test');
       this._EventCatcherService
         .getAreaEvent(this.inputSearch)
         .subscribe(data => {
@@ -91,18 +86,18 @@ export class PlacelistComponent implements OnInit{
           this.IdArea = this.places[0].venue.metroArea.id;
           console.log(this.IdArea);
           console.log(this.nbEvent);
-          
+
           this.area = this.places[0].venue.metroArea.displayName;
-          console.log(this.area, "area")
+          console.log(this.area, 'area');
           this.places.forEach(event => {
             const city = event.location.city;
-            event.location.city = city.slice(0, city.indexOf(","));
+            event.location.city = city.slice(0, city.indexOf(','));
             const artiste = event.displayName;
-            event.displayName = artiste.slice(0, artiste.indexOf(" at"));
-            if (this._EventCatcherService.rechercheElargie == 0) {
+            event.displayName = artiste.slice(0, artiste.indexOf(' at'));
+            if (this._EventCatcherService.rechercheElargie === 0) {
               this.displayNoEvent = true;
               this.villes = this.places.filter(ville => {
-                return ville.location.city == this.ville;
+                return ville.location.city === this.ville;
               });
             } else {
               this.villes = this.places;
@@ -110,12 +105,12 @@ export class PlacelistComponent implements OnInit{
           });
           if (this._EventCatcherService.rechercheElargie >= 1) {
             this._EventCatcherService.setRechercheElargie(0);
-            this.rechercheElargie = true
+            this.rechercheElargie = true;
           }
         });
     });
-    
-    console.log(this._EventCatcherService.rechercheElargie, "2");
-  
+
+    console.log(this._EventCatcherService.rechercheElargie, '2');
+
   }
 }

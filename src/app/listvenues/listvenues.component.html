@@ -8,36 +8,34 @@
       </mat-card-title>
     </div>
   </div>
- <div class="bioConcertListContainer">
+  <div class="bioConcertListContainer">
     <!--Artist Biography-->
     <div class="bioContainer">
-        <mat-card-title class="artistCardTitle">{{venueInfo.displayName}}</mat-card-title>
-        <mat-card class="artistResultCard">
-            <mat-card-content class="onTourText" *ngIf="venueInfo.street != null"><i class="material-icons eventInfoIcons">place</i> {{venueInfo.street}} {{venueInfo.city.displayName}}</mat-card-content>
-            <mat-card-content class="onTourText" *ngIf="venueInfo.phone != null"><i class="material-icons eventInfoIcons">phone</i> {{venueInfo.phone}}</mat-card-content>
-            <mat-card-content class="onTourText" *ngIf="venueInfo.capacity != null"><i class="material-icons eventInfoIcons">accessibility_new</i> {{venueInfo.capacity}}</mat-card-content>
-            <mat-card-content  class="onTourText" *ngIf="venueInfo.website != null"><a href="{{venueInfo.website}}" target="blank">Website</a></mat-card-content>
+      <mat-card-title class="artistCardTitle">{{venueInfo.displayName}}</mat-card-title>
+      <mat-card class="artistResultCard">
+        <mat-card-content class="onTourText" *ngIf="venueInfo.street != null"><i class="material-icons eventInfoIcons">place</i>
+          {{venueInfo.street}} {{venueInfo.city.displayName}}</mat-card-content>
+        <mat-card-content class="onTourText" *ngIf="venueInfo.phone != null"><i class="material-icons eventInfoIcons">phone</i>
+          {{venueInfo.phone}}</mat-card-content>
+        <mat-card-content class="onTourText" *ngIf="venueInfo.capacity != null"><i class="material-icons eventInfoIcons">accessibility_new</i>
+          {{venueInfo.capacity}}</mat-card-content>
+        <mat-card-content class="onTourText" *ngIf="venueInfo.website != null"><a href="{{venueInfo.website}}" target="blank">Website</a></mat-card-content>
 
-            <!--Biography in an expansion panel-->
-            <mat-accordion *ngIf="venueInfo.website != null">
-              <mat-expansion-panel> 
-                  <mat-expansion-panel-header>
-                    <mat-panel-title class="bioPanelTitle">
-                      Venue Infos
-                    </mat-panel-title>
-                  </mat-expansion-panel-header>
-                <mat-card-content>
-                  <p *ngIf="venueInfo.description" class="artistBioText">{{venueInfo.description}}</p>
-                </mat-card-content>
-              </mat-expansion-panel>
-            </mat-accordion>
-
-            <!-- <div *ngIf="screenWidth >= 768 && venueInfo.website != null">
+        <!--Biography in an expansion panel-->
+        <mat-accordion *ngIf="venueInfo.website != null">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="bioPanelTitle">
+                Venue Infos
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-card-content>
               <p *ngIf="venueInfo.description" class="artistBioText">{{venueInfo.description}}</p>
-              <mat-card-content  class="onTourText" *ngIf="venueInfo.website != null"><a href="{{venueInfo.website}}" target="blank">Website</a></mat-card-content>
-            </div> -->
-        </mat-card>
-      </div>
+            </mat-card-content>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card>
+    </div>
 
     <!--Concert List-->
     <div class="listContainer">
@@ -47,17 +45,18 @@
           {{event.performance[0].displayName}}
         </mat-card-title>
         <mat-card class="resultCard">
-            <mat-card-content class="eventCardContent">
-              <i class="material-icons eventInfoIcons">calendar_today</i>
-              {{event.start.date | date : 'dd MMMM yyyy'}}
-            </mat-card-content>
-            <mat-card-content *ngIf="event.start.time" class="eventCardContent">
-              <i class="material-icons eventInfoIcons">alarm</i>
-              {{event.start.time | slice : 0 :5}}
-            </mat-card-content>
-            <mat-card-actions class="cardBtnContainer">
-                <a href={{event.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Buy Tickets</button></a>
-            </mat-card-actions>
+          <mat-card-content class="eventCardContent">
+            <i class="material-icons eventInfoIcons">calendar_today</i>
+            {{event.start.date | date : 'dd MMMM yyyy'}}
+          </mat-card-content>
+          <mat-card-content *ngIf="event.start.time" class="eventCardContent">
+            <i class="material-icons eventInfoIcons">alarm</i>
+            {{event.start.time | slice : 0 :5}}
+          </mat-card-content>
+          <mat-card-actions class="cardBtnContainer">
+            <a href={{event.uri}} target="_blank" class="bioBuyTicketLink"><button mat-button class="goToBuyTicketsBtn">Buy
+                Tickets</button></a>
+          </mat-card-actions>
         </mat-card>
       </mat-list>
     </div>

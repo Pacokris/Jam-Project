@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class EventCatcherService {
   public _url: string;
@@ -11,28 +11,28 @@ export class EventCatcherService {
   public dateUrl: string = this.formatDate(this.d);
   public urlFM: string;
   public similarUrl: string;
-  public venueUrl:string;
+  public venueUrl: string;
   // U2 ID : 313388
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   formatDate(date) {
-    let mm = date.getMonth() + 1; // getMonth() is zero-based
-    let dd = date.getDate();
+    const mm = date.getMonth() + 1; // getMonth() is zero-based
+    const dd = date.getDate();
 
     return [
       date.getFullYear(),
-      (mm > 9 ? "" : "0") + mm,
-      (dd > 9 ? "" : "0") + dd
-    ].join("-");
-  };
+      (mm > 9 ? '' : '0') + mm,
+      (dd > 9 ? '' : '0') + dd
+    ].join('-');
+  }
 
   public rechercheElargie: number = 0;
-  public resultParameter: string = "Artists";
-  public placeholderValue: string = 'Search your artist' ;
+  public resultParameter: string = 'Artists';
+  public placeholderValue: string = 'Search your artist';
   public checkedArtist: boolean = true;
   public checkedLocation: boolean = false;
-  public checkedVenue:boolean = false;
+  public checkedVenue: boolean = false;
   public detailsConcert = [];
 
   getDetailsConcert(detail: any[]) {
@@ -40,96 +40,99 @@ export class EventCatcherService {
     this.detailsConcert.push(detail);
   }
   setToArtist() {
-    return this.resultParameter = "Artists", this.placeholderValue = "Search your artist", this.checkedArtist = true, this.checkedLocation = false, this.checkedVenue=false;  
+    return this.resultParameter = 'Artists', this.placeholderValue = 'Search your artist',
+      this.checkedArtist = true, this.checkedLocation = false, this.checkedVenue = false;
   }
   setToLocation() {
-    return this.placeholderValue = "Search your location", this.resultParameter = "Locations",this.checkedArtist = false, this.checkedLocation = true, this.checkedVenue=false;  
+    return this.placeholderValue = 'Search your location', this.resultParameter = 'Locations',
+      this.checkedArtist = false, this.checkedLocation = true, this.checkedVenue = false;
   }
   setToVenue() {
-    return this.placeholderValue = "Search your venue", this.resultParameter = "Venues",this.checkedArtist = false, this.checkedLocation = false, this.checkedVenue=true;  
+    return this.placeholderValue = 'Search your venue', this.resultParameter = 'Venues',
+      this.checkedArtist = false, this.checkedLocation = false, this.checkedVenue = true;
   }
   setRechercheElargie(isElargie) {
     this.rechercheElargie = isElargie ? 1 : 0;
-  };
+  }
   getEventListCatcher(inputSearch): Observable<any> {
     this._url =
-      "https://api.songkick.com/api/3.0/artists/" +
+      'https://api.songkick.com/api/3.0/artists/' +
       inputSearch +
-      "/calendar.json?apikey=R82Hox7PJZDJyV0G";
+      '/calendar.json?apikey=R82Hox7PJZDJyV0G';
     return this.http.get(this._url);
-  };
+  }
 
   getArtistListCatcher(inputSearch): Observable<any> {
     this._url =
-      "https://api.songkick.com/api/3.0/search/artists.json?apikey=R82Hox7PJZDJyV0G&query=" +
+      'https://api.songkick.com/api/3.0/search/artists.json?apikey=R82Hox7PJZDJyV0G&query=' +
       inputSearch;
     return this.http.get(this._url);
-  };
+  }
   getArtistRhrn(latitude, longitude): Observable<any> {
     this._url =
-      "https://api.songkick.com/api/3.0/events.json?apikey=R82Hox7PJZDJyV0G&min_date=" +
+      'https://api.songkick.com/api/3.0/events.json?apikey=R82Hox7PJZDJyV0G&min_date=' +
       this.dateUrl +
-      "&max_date=" +
+      '&max_date=' +
       this.dateUrl +
-      "&location=geo:" +
+      '&location=geo:' +
       latitude +
-      "," +
+      ',' +
       longitude;
     return this.http.get(this._url);
-  };
+  }
 
   getLocationDate(dateDebutStr, dateFinStr, IdArea): Observable<any> {
     this._url =
-      "https://api.songkick.com/api/3.0/events.json?apikey=R82Hox7PJZDJyV0G&min_date=" +
+      'https://api.songkick.com/api/3.0/events.json?apikey=R82Hox7PJZDJyV0G&min_date=' +
       dateDebutStr +
-      "&max_date=" +
+      '&max_date=' +
       dateFinStr +
-      "&location=sk:" +
+      '&location=sk:' +
       IdArea;
     return this.http.get(this._url);
-  };
+  }
 
   getArtistInfoCatcher(inputSearch): Observable<any> {
     this.urlFM =
-      "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
+      'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' +
       inputSearch +
-      "&api_key=d50d7e40256f53b0a6d56732619d1903&format=json";
+      '&api_key=d50d7e40256f53b0a6d56732619d1903&format=json';
     return this.http.get(this.urlFM);
-  };
+  }
 
   getArea(inputSearch): Observable<any> {
     this._url =
-      "https://api.songkick.com/api/3.0/search/locations.json?apikey=R82Hox7PJZDJyV0G&query=" +
+      'https://api.songkick.com/api/3.0/search/locations.json?apikey=R82Hox7PJZDJyV0G&query=' +
       inputSearch;
     return this.http.get(this._url);
-  };
+  }
 
   getAreaEvent(inputSearch): Observable<any> {
     this._url =
-      "https://api.songkick.com/api/3.0/metro_areas/" +
+      'https://api.songkick.com/api/3.0/metro_areas/' +
       inputSearch +
-      "/calendar.json?apikey=R82Hox7PJZDJyV0G";
+      '/calendar.json?apikey=R82Hox7PJZDJyV0G';
     return this.http.get(this._url);
-  };
+  }
 
-  getSimilarArtists(inputSearch): Observable<any>{
-    this.similarUrl = "https://api.songkick.com/api/3.0/artists/" + inputSearch + "/similar_artists.json?apikey=R82Hox7PJZDJyV0G";
+  getSimilarArtists(inputSearch): Observable<any> {
+    this.similarUrl = 'https://api.songkick.com/api/3.0/artists/' + inputSearch + '/similar_artists.json?apikey=R82Hox7PJZDJyV0G';
     return this.http.get(this.similarUrl);
-  };
+  }
 
-  getVenueList(inputSearch) : Observable<any>{
-    this.venueUrl = "https://api.songkick.com/api/3.0/search/venues.json?query=" + inputSearch + "&apikey=R82Hox7PJZDJyV0G";
-    return this.http.get(this.venueUrl);
-  };
-
-  getVenueConcert(inputsearch) : Observable<any>{
-    this.venueUrl = "https://api.songkick.com/api/3.0/venues/" + inputsearch + "/calendar.json?apikey=R82Hox7PJZDJyV0G"
+  getVenueList(inputSearch): Observable<any> {
+    this.venueUrl = 'https://api.songkick.com/api/3.0/search/venues.json?query=' + inputSearch + '&apikey=R82Hox7PJZDJyV0G';
     return this.http.get(this.venueUrl);
   }
 
-  getVenueInfo(inputsearch) : Observable<any>{
-    this._url = "https://api.songkick.com/api/3.0/venues/"+inputsearch+".json?apikey=R82Hox7PJZDJyV0G"
-    return this.http.get(this._url)
+  getVenueConcert(inputsearch): Observable<any> {
+    this.venueUrl = 'https://api.songkick.com/api/3.0/venues/' + inputsearch + '/calendar.json?apikey=R82Hox7PJZDJyV0G';
+    return this.http.get(this.venueUrl);
+  }
+
+  getVenueInfo(inputsearch): Observable<any> {
+    this._url = 'https://api.songkick.com/api/3.0/venues/' + inputsearch + '.json?apikey=R82Hox7PJZDJyV0G';
+    return this.http.get(this._url);
   }
 }
 // https://api.songkick.com/api/3.0/search/artists.json?apikey={your_api_key}&query={artist_name}

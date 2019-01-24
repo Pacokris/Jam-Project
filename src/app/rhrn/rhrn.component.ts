@@ -10,7 +10,7 @@ export class RhrnComponent implements OnInit {
 
   constructor() { }
 
-     
-     ngOnInit(){
-       }
+
+  ngOnInit() {
+  }
 }

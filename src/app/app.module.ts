@@ -27,7 +27,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { PlacelistComponent } from './placelist/placelist.component';
 import { PlaceresultComponent } from './placeresult/placeresult.component';
-import { AgmDirectionModule } from 'agm-direction'   // agm-direction
+import { AgmDirectionModule } from 'agm-direction'; // agm-direction
 
 
 
@@ -43,10 +43,10 @@ import { MapLocationDateComponent } from './map-location-date/map-location-date.
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'list/:value', component: ListComponent},
-  {path: 'list/:value/:name', component: ListComponent},
-  {path: 'home', component: HomeComponent},
+  { path: '', component: HomeComponent },
+  { path: 'list/:value', component: ListComponent },
+  { path: 'list/:value/:name', component: ListComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'map', component: MapComponent },
   { path: 'rhrn', component: RhrnComponent },
   { path: 'rhrnMap', component: RhrnMapComponent },
@@ -55,14 +55,14 @@ const routes: Routes = [
   { path: 'placelist/:value/:name', component: PlacelistComponent },
   { path: 'placelist/:value/:name/:name', component: PlacelistComponent },
   { path: 'placeresult/:value', component: PlaceresultComponent },
-  { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent},
-  {path: 'bio/:value/:name', component: BiographyComponent},
-  {path: 'resultvenue/:value', component: ResultvenueComponent},
-  {path: 'listvenue/:value/:name', component: ListvenuesComponent},
-  {path: 'map-location/:lat/:lng/:id/:name', component: MapLocationComponent},
-  {path: 'map-location/:lat/:lng', component: MapLocationComponent},
-  {path: 'map-location-date/:dateDebut/:dateFin/:lat/:lng', component: MapLocationDateComponent},
-  {path : '**', component: PageNotFoundComponent},
+  { path: 'placedateresult/:value1/:value2/:value3/:value4/:value5', component: PlacedateresultComponent },
+  { path: 'bio/:value/:name', component: BiographyComponent },
+  { path: 'resultvenue/:value', component: ResultvenueComponent },
+  { path: 'listvenue/:value/:name', component: ListvenuesComponent },
+  { path: 'map-location/:lat/:lng/:id/:name', component: MapLocationComponent },
+  { path: 'map-location/:lat/:lng', component: MapLocationComponent },
+  { path: 'map-location-date/:dateDebut/:dateFin/:lat/:lng', component: MapLocationDateComponent },
+  { path: '**', component: PageNotFoundComponent },
 
 
 ];
@@ -115,7 +115,7 @@ const routes: Routes = [
     AgmDirectionModule,
 
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'}],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
