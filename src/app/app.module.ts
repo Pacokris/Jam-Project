@@ -108,7 +108,7 @@ const routes: Routes = [
     MatExpansionModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCTwghPiz09vTF_5-F3lo5xm10Bsj8T8L4'
+      apiKey: 'AIzaSyBhqCcaN5OfApXOWr_1b2VkIBQqIwPQK44'
     }),
     AgmSnazzyInfoWindowModule,
     BrowserAnimationsModule,
